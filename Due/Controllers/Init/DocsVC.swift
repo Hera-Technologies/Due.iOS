@@ -9,27 +9,48 @@
 import UIKit
 
 class DocsVC: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+    
+    var page: String?
+    
+    init(webpage: String) {
+        super.init(nibName: nil, bundle: nil)
+        page = webpage
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    let closeBtn: UIButton = {
+        let btn = UIButton(type: .system)
+        btn.setTitle("x", for: .normal)
+        btn.titleLabel!.font = UIFont(name: "ArialRoundedMTBold", size: 28)
+        btn.setTitleColor(dark, for: UIControlState())
+        btn.translatesAutoresizingMaskIntoConstraints = false
+        return btn
+    }()
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        view.backgroundColor = .white
+        let web = UIWebView(frame: view.frame)
+        view.addSubview(web)
+        if let webpage = page {
+            if let url = URL(string: webpage) {
+                web.loadRequest(URLRequest(url: url))
+            }
+        }
+        
+        view.addSubview(closeBtn)
+        closeBtn.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -15).isActive = true
+        closeBtn.topAnchor.constraint(equalTo: view.topAnchor, constant: 30).isActive = true
+        closeBtn.addTarget(self, action: #selector(close), for: .touchUpInside)
     }
-    */
-
+    
+    @objc func close() {
+        dismiss(animated: true, completion: nil)
+    }
+    
 }
+
+
