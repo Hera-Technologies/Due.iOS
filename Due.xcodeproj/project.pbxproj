@@ -41,6 +41,51 @@
 		A04131AB1F758301007337EA /* PhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04131AA1F758301007337EA /* PhotoCell.swift */; };
 		A04131AE1F75845D007337EA /* InitialVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04131AD1F75845D007337EA /* InitialVC.swift */; };
 		A04131B01F7584A0007337EA /* SignupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04131AF1F7584A0007337EA /* SignupVC.swift */; };
+		A04131B21F758505007337EA /* DocsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04131B11F758505007337EA /* DocsVC.swift */; };
+		A04131B41F758515007337EA /* FaqVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04131B31F758515007337EA /* FaqVC.swift */; };
+		A04131B61F758538007337EA /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04131B51F758538007337EA /* HomeVC.swift */; };
+		A04131B81F758549007337EA /* SaleVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04131B71F758549007337EA /* SaleVC.swift */; };
+		A04131BA1F758557007337EA /* PriceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04131B91F758557007337EA /* PriceVC.swift */; };
+		A04131BC1F75856D007337EA /* CheckoutVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04131BB1F75856D007337EA /* CheckoutVC.swift */; };
+		A04131BE1F75857B007337EA /* ReceiptVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04131BD1F75857B007337EA /* ReceiptVC.swift */; };
+		A04131C01F75858A007337EA /* AccessVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04131BF1F75858A007337EA /* AccessVC.swift */; };
+		A04131C21F758596007337EA /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04131C11F758596007337EA /* SettingsVC.swift */; };
+		A04131C41F7585E1007337EA /* GuideVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04131C31F7585E1007337EA /* GuideVC.swift */; };
+		A04131C61F7585F1007337EA /* PortalVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04131C51F7585F1007337EA /* PortalVC.swift */; };
+		A04131C81F758603007337EA /* RenewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04131C71F758603007337EA /* RenewVC.swift */; };
+		A04131CA1F758613007337EA /* EventNameVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04131C91F758613007337EA /* EventNameVC.swift */; };
+		A04131CC1F758622007337EA /* NameChangeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04131CB1F758622007337EA /* NameChangeVC.swift */; };
+		A04131CE1F758637007337EA /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04131CD1F758637007337EA /* MainVC.swift */; };
+		A04131D01F758646007337EA /* EditSongVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04131CF1F758646007337EA /* EditSongVC.swift */; };
+		A04131D21F75865C007337EA /* CoupleVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04131D11F75865C007337EA /* CoupleVC.swift */; };
+		A04131D41F75866A007337EA /* EditCoupleVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04131D31F75866A007337EA /* EditCoupleVC.swift */; };
+		A04131D61F75867B007337EA /* PhotoAlbumVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04131D51F75867B007337EA /* PhotoAlbumVC.swift */; };
+		A04131D81F75868F007337EA /* AddPhotoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04131D71F75868F007337EA /* AddPhotoVC.swift */; };
+		A04131DA1F7586A1007337EA /* PadrinhosVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04131D91F7586A1007337EA /* PadrinhosVC.swift */; };
+		A04131DC1F7586BA007337EA /* AddPadrinhoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04131DB1F7586BA007337EA /* AddPadrinhoVC.swift */; };
+		A04131DE1F7586CC007337EA /* EventoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04131DD1F7586CC007337EA /* EventoVC.swift */; };
+		A04131E01F7586D8007337EA /* InfoListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04131DF1F7586D8007337EA /* InfoListVC.swift */; };
+		A04131E21F7586E7007337EA /* EditInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04131E11F7586E7007337EA /* EditInfoVC.swift */; };
+		A04131E41F7586FF007337EA /* GiftsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04131E31F7586FF007337EA /* GiftsVC.swift */; };
+		A04131E61F758712007337EA /* GiftsGuideVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04131E51F758712007337EA /* GiftsGuideVC.swift */; };
+		A04131E81F758720007337EA /* FormVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04131E71F758720007337EA /* FormVC.swift */; };
+		A04131EA1F758755007337EA /* LoadingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04131E91F758755007337EA /* LoadingVC.swift */; };
+		A04131EC1F75877F007337EA /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04131EB1F75877F007337EA /* TabBar.swift */; };
+		A04131EE1F758795007337EA /* FirstVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04131ED1F758795007337EA /* FirstVC.swift */; };
+		A04131F01F7587A2007337EA /* CasalVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04131EF1F7587A2007337EA /* CasalVC.swift */; };
+		A04131F21F7587B5007337EA /* AlbumVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04131F11F7587B5007337EA /* AlbumVC.swift */; };
+		A04131F41F7587C4007337EA /* SecondVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04131F31F7587C4007337EA /* SecondVC.swift */; };
+		A04131F61F7587D2007337EA /* ThirdVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04131F51F7587D2007337EA /* ThirdVC.swift */; };
+		A04131F81F7587EC007337EA /* MessagesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04131F71F7587EC007337EA /* MessagesVC.swift */; };
+		A04131FA1F7587FC007337EA /* MessageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04131F91F7587FC007337EA /* MessageVC.swift */; };
+		A04131FC1F75880E007337EA /* PhotosVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04131FB1F75880E007337EA /* PhotosVC.swift */; };
+		A04131FE1F758822007337EA /* PhotoZoomVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04131FD1F758822007337EA /* PhotoZoomVC.swift */; };
+		A04132001F75882F007337EA /* PhotoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04131FF1F75882F007337EA /* PhotoVC.swift */; };
+		A04132021F75883D007337EA /* EventVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04132011F75883D007337EA /* EventVC.swift */; };
+		A04132041F758847007337EA /* InfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04132031F758847007337EA /* InfoVC.swift */; };
+		A04132061F758854007337EA /* FourthVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04132051F758854007337EA /* FourthVC.swift */; };
+		A04132081F758865007337EA /* ChargeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04132071F758865007337EA /* ChargeVC.swift */; };
+		A041320A1F758876007337EA /* ChargeFaqVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04132091F758876007337EA /* ChargeFaqVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -81,6 +126,51 @@
 		A04131AC1F7583E5007337EA /* SweetAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SweetAlert.swift; sourceTree = "<group>"; };
 		A04131AD1F75845D007337EA /* InitialVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialVC.swift; sourceTree = "<group>"; };
 		A04131AF1F7584A0007337EA /* SignupVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupVC.swift; sourceTree = "<group>"; };
+		A04131B11F758505007337EA /* DocsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocsVC.swift; sourceTree = "<group>"; };
+		A04131B31F758515007337EA /* FaqVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaqVC.swift; sourceTree = "<group>"; };
+		A04131B51F758538007337EA /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
+		A04131B71F758549007337EA /* SaleVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaleVC.swift; sourceTree = "<group>"; };
+		A04131B91F758557007337EA /* PriceVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceVC.swift; sourceTree = "<group>"; };
+		A04131BB1F75856D007337EA /* CheckoutVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutVC.swift; sourceTree = "<group>"; };
+		A04131BD1F75857B007337EA /* ReceiptVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiptVC.swift; sourceTree = "<group>"; };
+		A04131BF1F75858A007337EA /* AccessVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessVC.swift; sourceTree = "<group>"; };
+		A04131C11F758596007337EA /* SettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
+		A04131C31F7585E1007337EA /* GuideVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideVC.swift; sourceTree = "<group>"; };
+		A04131C51F7585F1007337EA /* PortalVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortalVC.swift; sourceTree = "<group>"; };
+		A04131C71F758603007337EA /* RenewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RenewVC.swift; sourceTree = "<group>"; };
+		A04131C91F758613007337EA /* EventNameVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventNameVC.swift; sourceTree = "<group>"; };
+		A04131CB1F758622007337EA /* NameChangeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameChangeVC.swift; sourceTree = "<group>"; };
+		A04131CD1F758637007337EA /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
+		A04131CF1F758646007337EA /* EditSongVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditSongVC.swift; sourceTree = "<group>"; };
+		A04131D11F75865C007337EA /* CoupleVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoupleVC.swift; sourceTree = "<group>"; };
+		A04131D31F75866A007337EA /* EditCoupleVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditCoupleVC.swift; sourceTree = "<group>"; };
+		A04131D51F75867B007337EA /* PhotoAlbumVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoAlbumVC.swift; sourceTree = "<group>"; };
+		A04131D71F75868F007337EA /* AddPhotoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPhotoVC.swift; sourceTree = "<group>"; };
+		A04131D91F7586A1007337EA /* PadrinhosVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PadrinhosVC.swift; sourceTree = "<group>"; };
+		A04131DB1F7586BA007337EA /* AddPadrinhoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPadrinhoVC.swift; sourceTree = "<group>"; };
+		A04131DD1F7586CC007337EA /* EventoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventoVC.swift; sourceTree = "<group>"; };
+		A04131DF1F7586D8007337EA /* InfoListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoListVC.swift; sourceTree = "<group>"; };
+		A04131E11F7586E7007337EA /* EditInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditInfoVC.swift; sourceTree = "<group>"; };
+		A04131E31F7586FF007337EA /* GiftsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GiftsVC.swift; sourceTree = "<group>"; };
+		A04131E51F758712007337EA /* GiftsGuideVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GiftsGuideVC.swift; sourceTree = "<group>"; };
+		A04131E71F758720007337EA /* FormVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormVC.swift; sourceTree = "<group>"; };
+		A04131E91F758755007337EA /* LoadingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingVC.swift; sourceTree = "<group>"; };
+		A04131EB1F75877F007337EA /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
+		A04131ED1F758795007337EA /* FirstVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstVC.swift; sourceTree = "<group>"; };
+		A04131EF1F7587A2007337EA /* CasalVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CasalVC.swift; sourceTree = "<group>"; };
+		A04131F11F7587B5007337EA /* AlbumVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumVC.swift; sourceTree = "<group>"; };
+		A04131F31F7587C4007337EA /* SecondVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondVC.swift; sourceTree = "<group>"; };
+		A04131F51F7587D2007337EA /* ThirdVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdVC.swift; sourceTree = "<group>"; };
+		A04131F71F7587EC007337EA /* MessagesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesVC.swift; sourceTree = "<group>"; };
+		A04131F91F7587FC007337EA /* MessageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageVC.swift; sourceTree = "<group>"; };
+		A04131FB1F75880E007337EA /* PhotosVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosVC.swift; sourceTree = "<group>"; };
+		A04131FD1F758822007337EA /* PhotoZoomVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoZoomVC.swift; sourceTree = "<group>"; };
+		A04131FF1F75882F007337EA /* PhotoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoVC.swift; sourceTree = "<group>"; };
+		A04132011F75883D007337EA /* EventVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventVC.swift; sourceTree = "<group>"; };
+		A04132031F758847007337EA /* InfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoVC.swift; sourceTree = "<group>"; };
+		A04132051F758854007337EA /* FourthVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FourthVC.swift; sourceTree = "<group>"; };
+		A04132071F758865007337EA /* ChargeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChargeVC.swift; sourceTree = "<group>"; };
+		A04132091F758876007337EA /* ChargeFaqVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChargeFaqVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,6 +249,8 @@
 			children = (
 				A04131AD1F75845D007337EA /* InitialVC.swift */,
 				A04131AF1F7584A0007337EA /* SignupVC.swift */,
+				A04131B11F758505007337EA /* DocsVC.swift */,
+				A04131B31F758515007337EA /* FaqVC.swift */,
 			);
 			path = Init;
 			sourceTree = "<group>";
@@ -166,6 +258,13 @@
 		A04131691F757F28007337EA /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				A04131B51F758538007337EA /* HomeVC.swift */,
+				A04131B71F758549007337EA /* SaleVC.swift */,
+				A04131B91F758557007337EA /* PriceVC.swift */,
+				A04131BB1F75856D007337EA /* CheckoutVC.swift */,
+				A04131BD1F75857B007337EA /* ReceiptVC.swift */,
+				A04131BF1F75858A007337EA /* AccessVC.swift */,
+				A04131C11F758596007337EA /* SettingsVC.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -173,6 +272,25 @@
 		A041316A1F757F30007337EA /* Portal */ = {
 			isa = PBXGroup;
 			children = (
+				A04131C31F7585E1007337EA /* GuideVC.swift */,
+				A04131C51F7585F1007337EA /* PortalVC.swift */,
+				A04131C71F758603007337EA /* RenewVC.swift */,
+				A04131C91F758613007337EA /* EventNameVC.swift */,
+				A04131CB1F758622007337EA /* NameChangeVC.swift */,
+				A04131CD1F758637007337EA /* MainVC.swift */,
+				A04131CF1F758646007337EA /* EditSongVC.swift */,
+				A04131D11F75865C007337EA /* CoupleVC.swift */,
+				A04131D31F75866A007337EA /* EditCoupleVC.swift */,
+				A04131D51F75867B007337EA /* PhotoAlbumVC.swift */,
+				A04131D71F75868F007337EA /* AddPhotoVC.swift */,
+				A04131D91F7586A1007337EA /* PadrinhosVC.swift */,
+				A04131DB1F7586BA007337EA /* AddPadrinhoVC.swift */,
+				A04131DD1F7586CC007337EA /* EventoVC.swift */,
+				A04131DF1F7586D8007337EA /* InfoListVC.swift */,
+				A04131E11F7586E7007337EA /* EditInfoVC.swift */,
+				A04131E31F7586FF007337EA /* GiftsVC.swift */,
+				A04131E51F758712007337EA /* GiftsGuideVC.swift */,
+				A04131E71F758720007337EA /* FormVC.swift */,
 			);
 			path = Portal;
 			sourceTree = "<group>";
@@ -180,6 +298,23 @@
 		A041316B1F757F35007337EA /* DueVersion */ = {
 			isa = PBXGroup;
 			children = (
+				A04131E91F758755007337EA /* LoadingVC.swift */,
+				A04131EB1F75877F007337EA /* TabBar.swift */,
+				A04131ED1F758795007337EA /* FirstVC.swift */,
+				A04131EF1F7587A2007337EA /* CasalVC.swift */,
+				A04131F11F7587B5007337EA /* AlbumVC.swift */,
+				A04131F31F7587C4007337EA /* SecondVC.swift */,
+				A04131F51F7587D2007337EA /* ThirdVC.swift */,
+				A04131F71F7587EC007337EA /* MessagesVC.swift */,
+				A04131F91F7587FC007337EA /* MessageVC.swift */,
+				A04131FB1F75880E007337EA /* PhotosVC.swift */,
+				A04131FD1F758822007337EA /* PhotoZoomVC.swift */,
+				A04131FF1F75882F007337EA /* PhotoVC.swift */,
+				A04132011F75883D007337EA /* EventVC.swift */,
+				A04132031F758847007337EA /* InfoVC.swift */,
+				A04132051F758854007337EA /* FourthVC.swift */,
+				A04132071F758865007337EA /* ChargeVC.swift */,
+				A04132091F758876007337EA /* ChargeFaqVC.swift */,
 			);
 			path = DueVersion;
 			sourceTree = "<group>";
@@ -312,38 +447,83 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A04131BC1F75856D007337EA /* CheckoutVC.swift in Sources */,
+				A04131FA1F7587FC007337EA /* MessageVC.swift in Sources */,
 				A041317B1F758171007337EA /* Photo.swift in Sources */,
+				A04131E21F7586E7007337EA /* EditInfoVC.swift in Sources */,
+				A04131B61F758538007337EA /* HomeVC.swift in Sources */,
 				A04131991F758269007337EA /* CardFront.swift in Sources */,
 				A04131A71F7582E6007337EA /* StoryCell.swift in Sources */,
+				A04131B41F758515007337EA /* FaqVC.swift in Sources */,
+				A04131D41F75866A007337EA /* EditCoupleVC.swift in Sources */,
+				A04131FC1F75880E007337EA /* PhotosVC.swift in Sources */,
+				A04131DE1F7586CC007337EA /* EventoVC.swift in Sources */,
+				A04131D81F75868F007337EA /* AddPhotoVC.swift in Sources */,
+				A04131B81F758549007337EA /* SaleVC.swift in Sources */,
+				A04131F21F7587B5007337EA /* AlbumVC.swift in Sources */,
 				A04131871F7581C4007337EA /* AlbumPhoto.swift in Sources */,
 				A04131771F758155007337EA /* PortalButton.swift in Sources */,
 				A04131751F7580F0007337EA /* DetailsModel.swift in Sources */,
 				A04131811F758197007337EA /* Info.swift in Sources */,
+				A04131EA1F758755007337EA /* LoadingVC.swift in Sources */,
 				A04131851F7581B1007337EA /* Foto.swift in Sources */,
 				A04131951F758250007337EA /* DiagonalView.swift in Sources */,
+				A04131C21F758596007337EA /* SettingsVC.swift in Sources */,
+				A04131F81F7587EC007337EA /* MessagesVC.swift in Sources */,
+				A04131F61F7587D2007337EA /* ThirdVC.swift in Sources */,
+				A04132041F758847007337EA /* InfoVC.swift in Sources */,
+				A04131E41F7586FF007337EA /* GiftsVC.swift in Sources */,
+				A04131C81F758603007337EA /* RenewVC.swift in Sources */,
+				A04132021F75883D007337EA /* EventVC.swift in Sources */,
+				A04131E81F758720007337EA /* FormVC.swift in Sources */,
+				A04131DA1F7586A1007337EA /* PadrinhosVC.swift in Sources */,
+				A04132061F758854007337EA /* FourthVC.swift in Sources */,
+				A04131B21F758505007337EA /* DocsVC.swift in Sources */,
+				A04131C41F7585E1007337EA /* GuideVC.swift in Sources */,
+				A04131D61F75867B007337EA /* PhotoAlbumVC.swift in Sources */,
+				A04131D01F758646007337EA /* EditSongVC.swift in Sources */,
+				A04131F41F7587C4007337EA /* SecondVC.swift in Sources */,
 				A041319F1F758299007337EA /* InfoCell.swift in Sources */,
 				A04131891F7581EE007337EA /* NetworkImageView.swift in Sources */,
+				A04132001F75882F007337EA /* PhotoVC.swift in Sources */,
 				A04131911F758235007337EA /* CellView.swift in Sources */,
+				A04131E61F758712007337EA /* GiftsGuideVC.swift in Sources */,
 				A04131AE1F75845D007337EA /* InitialVC.swift in Sources */,
+				A04131CA1F758613007337EA /* EventNameVC.swift in Sources */,
 				A041317F1F75818B007337EA /* Padrinho.swift in Sources */,
 				A04131791F758163007337EA /* Donation.swift in Sources */,
 				A041317D1F75817C007337EA /* Message.swift in Sources */,
+				A04131CC1F758622007337EA /* NameChangeVC.swift in Sources */,
+				A04131F01F7587A2007337EA /* CasalVC.swift in Sources */,
+				A04132081F758865007337EA /* ChargeVC.swift in Sources */,
 				A041318B1F758201007337EA /* BounceButton.swift in Sources */,
+				A04131FE1F758822007337EA /* PhotoZoomVC.swift in Sources */,
+				A041320A1F758876007337EA /* ChargeFaqVC.swift in Sources */,
 				A04131731F7580B9007337EA /* EventModel.swift in Sources */,
 				A04131831F7581A8007337EA /* Forne.swift in Sources */,
+				A04131CE1F758637007337EA /* MainVC.swift in Sources */,
 				A041318D1F75820F007337EA /* CustomTF.swift in Sources */,
 				A04131A91F7582F6007337EA /* AlbumPhotoCell.swift in Sources */,
 				A04131A51F7582D3007337EA /* CoupleCell.swift in Sources */,
+				A04131BA1F758557007337EA /* PriceVC.swift in Sources */,
 				A04131A31F7582C0007337EA /* ForneCell.swift in Sources */,
 				A041318F1F758222007337EA /* Support.swift in Sources */,
 				A04131B01F7584A0007337EA /* SignupVC.swift in Sources */,
+				A04131BE1F75857B007337EA /* ReceiptVC.swift in Sources */,
+				A04131E01F7586D8007337EA /* InfoListVC.swift in Sources */,
 				A04131AB1F758301007337EA /* PhotoCell.swift in Sources */,
+				A04131D21F75865C007337EA /* CoupleVC.swift in Sources */,
+				A04131EE1F758795007337EA /* FirstVC.swift in Sources */,
+				A04131DC1F7586BA007337EA /* AddPadrinhoVC.swift in Sources */,
+				A04131C61F7585F1007337EA /* PortalVC.swift in Sources */,
 				A04131971F758260007337EA /* CardBack.swift in Sources */,
 				A041319B1F758284007337EA /* HomeScreenCell.swift in Sources */,
 				A04131A11F7582A8007337EA /* PadrinhoCell.swift in Sources */,
+				A04131C01F75858A007337EA /* AccessVC.swift in Sources */,
 				A041319D1F758290007337EA /* PortalCell.swift in Sources */,
 				A04131931F758241007337EA /* LoadingView.swift in Sources */,
 				A04131541F75731C007337EA /* AppDelegate.swift in Sources */,
+				A04131EC1F75877F007337EA /* TabBar.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
