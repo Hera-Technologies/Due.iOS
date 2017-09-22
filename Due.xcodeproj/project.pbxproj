@@ -25,7 +25,6 @@
 		A041318B1F758201007337EA /* BounceButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A041318A1F758201007337EA /* BounceButton.swift */; };
 		A041318D1F75820F007337EA /* CustomTF.swift in Sources */ = {isa = PBXBuildFile; fileRef = A041318C1F75820F007337EA /* CustomTF.swift */; };
 		A041318F1F758222007337EA /* Support.swift in Sources */ = {isa = PBXBuildFile; fileRef = A041318E1F758222007337EA /* Support.swift */; };
-		A04131911F758235007337EA /* CellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04131901F758235007337EA /* CellView.swift */; };
 		A04131931F758241007337EA /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04131921F758241007337EA /* LoadingView.swift */; };
 		A04131951F758250007337EA /* DiagonalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04131941F758250007337EA /* DiagonalView.swift */; };
 		A04131971F758260007337EA /* CardBack.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04131961F758260007337EA /* CardBack.swift */; };
@@ -109,7 +108,6 @@
 		A041318A1F758201007337EA /* BounceButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BounceButton.swift; sourceTree = "<group>"; };
 		A041318C1F75820F007337EA /* CustomTF.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTF.swift; sourceTree = "<group>"; };
 		A041318E1F758222007337EA /* Support.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Support.swift; sourceTree = "<group>"; };
-		A04131901F758235007337EA /* CellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellView.swift; sourceTree = "<group>"; };
 		A04131921F758241007337EA /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		A04131941F758250007337EA /* DiagonalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiagonalView.swift; sourceTree = "<group>"; };
 		A04131961F758260007337EA /* CardBack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardBack.swift; sourceTree = "<group>"; };
@@ -333,7 +331,6 @@
 		A041316E1F757F8F007337EA /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				A04131901F758235007337EA /* CellView.swift */,
 				A04131921F758241007337EA /* LoadingView.swift */,
 				A04131941F758250007337EA /* DiagonalView.swift */,
 				A04131961F758260007337EA /* CardBack.swift */,
@@ -486,7 +483,6 @@
 				A041319F1F758299007337EA /* InfoCell.swift in Sources */,
 				A04131891F7581EE007337EA /* NetworkImageView.swift in Sources */,
 				A04132001F75882F007337EA /* PhotoVC.swift in Sources */,
-				A04131911F758235007337EA /* CellView.swift in Sources */,
 				A04131E61F758712007337EA /* GiftsGuideVC.swift in Sources */,
 				A04131AE1F75845D007337EA /* InitialVC.swift in Sources */,
 				A04131CA1F758613007337EA /* EventNameVC.swift in Sources */,
