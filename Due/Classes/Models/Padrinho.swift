@@ -7,3 +7,24 @@
 //
 
 import Foundation
+
+class Padrinho: NSObject {
+    
+    var postID: String?
+    var message: String?
+    var photo: String?
+    
+    init(postID: String, postData: [String: AnyObject]) {
+        
+        self.postID = postID
+        if let message = postData["texto"] as? String {
+            self.message = message
+        }
+        
+        if let photo = postData["foto"] as? String {
+            self.photo = photo
+        }
+        
+    }
+    
+}

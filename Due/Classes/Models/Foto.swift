@@ -7,3 +7,7 @@
 //
 
 import Foundation
+
+class Foto: NSObject {
+    var imageUrl: String?
+}

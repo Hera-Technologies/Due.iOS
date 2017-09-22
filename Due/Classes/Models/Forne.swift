@@ -6,4 +6,22 @@
 //  Copyright © 2017 Hera Technologies. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+class Forne: NSObject {
+    var childID: String?
+    var categoria: String?
+    var fornecedor: String?
+    var fbUrl: String?
+    var instaUrl: String?
+    
+    init(childID: String, postData: [String: AnyObject]) {
+        self.childID = childID
+        if let title = postData["categoria"] as? String {
+            self.categoria = title
+        }
+        if let forne = postData["fornecedor"] as? String {
+            self.fornecedor = forne
+        }
+    }
+}

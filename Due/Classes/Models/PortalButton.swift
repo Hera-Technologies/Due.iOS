@@ -6,4 +6,16 @@
 //  Copyright © 2017 Hera Technologies. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+class PortalButton: NSObject {
+    var icon: String?
+    var titulo: String?
+    var items: String?
+    
+    init(titulo: String, icon: String, items: String) {
+        self.titulo = titulo
+        self.icon = icon
+        self.items = items
+    }
+}
