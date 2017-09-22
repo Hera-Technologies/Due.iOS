@@ -9,27 +9,35 @@
 import UIKit
 
 class FormVC: UIViewController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        
+        view.backgroundColor = .white
+        setup()
+        
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    override func viewWillAppear(_ animated: Bool) {
+        navigationController?.isNavigationBarHidden = false
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(close))
     }
-    */
-
+    
+    func setup() {
+        let data: [String: String] = ["code": details.eventID!, "userEmail": details.email!]
+        let params = data.stringFromHttpParameters()
+        let url = "https://herasoft.com.br/form.html"
+        if let requestURL = URL(string:"\(url)?\(params)") {
+            let request = URLRequest(url: requestURL)
+            let web = UIWebView(frame: view.frame)
+            web.backgroundColor = .white
+            view.addSubview(web)
+            web.loadRequest(request)
+        }
+    }
+    
+    @objc func close() {
+        dismiss(animated: true, completion: nil)
+    }
+    
 }
