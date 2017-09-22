@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		A04131541F75731C007337EA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04131531F75731C007337EA /* AppDelegate.swift */; };
-		A04131561F75731C007337EA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04131551F75731C007337EA /* ViewController.swift */; };
 		A041315B1F75731C007337EA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A041315A1F75731C007337EA /* Assets.xcassets */; };
 		A041315E1F75731C007337EA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A041315C1F75731C007337EA /* LaunchScreen.storyboard */; };
 		A04131731F7580B9007337EA /* EventModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04131721F7580B9007337EA /* EventModel.swift */; };
@@ -40,12 +39,13 @@
 		A04131A71F7582E6007337EA /* StoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04131A61F7582E6007337EA /* StoryCell.swift */; };
 		A04131A91F7582F6007337EA /* AlbumPhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04131A81F7582F6007337EA /* AlbumPhotoCell.swift */; };
 		A04131AB1F758301007337EA /* PhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04131AA1F758301007337EA /* PhotoCell.swift */; };
+		A04131AE1F75845D007337EA /* InitialVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04131AD1F75845D007337EA /* InitialVC.swift */; };
+		A04131B01F7584A0007337EA /* SignupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04131AF1F7584A0007337EA /* SignupVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		A04131501F75731C007337EA /* Due.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Due.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A04131531F75731C007337EA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		A04131551F75731C007337EA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		A041315A1F75731C007337EA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A041315D1F75731C007337EA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A041315F1F75731C007337EA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -78,6 +78,9 @@
 		A04131A61F7582E6007337EA /* StoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryCell.swift; sourceTree = "<group>"; };
 		A04131A81F7582F6007337EA /* AlbumPhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumPhotoCell.swift; sourceTree = "<group>"; };
 		A04131AA1F758301007337EA /* PhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCell.swift; sourceTree = "<group>"; };
+		A04131AC1F7583E5007337EA /* SweetAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SweetAlert.swift; sourceTree = "<group>"; };
+		A04131AD1F75845D007337EA /* InitialVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialVC.swift; sourceTree = "<group>"; };
+		A04131AF1F7584A0007337EA /* SignupVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,7 +116,6 @@
 				A04131671F757EBC007337EA /* Classes */,
 				A04131651F757E9C007337EA /* Dependencies */,
 				A04131661F757EA9007337EA /* Controllers */,
-				A04131551F75731C007337EA /* ViewController.swift */,
 				A04131531F75731C007337EA /* AppDelegate.swift */,
 				A041315A1F75731C007337EA /* Assets.xcassets */,
 				A041315C1F75731C007337EA /* LaunchScreen.storyboard */,
@@ -125,6 +127,7 @@
 		A04131651F757E9C007337EA /* Dependencies */ = {
 			isa = PBXGroup;
 			children = (
+				A04131AC1F7583E5007337EA /* SweetAlert.swift */,
 			);
 			path = Dependencies;
 			sourceTree = "<group>";
@@ -154,6 +157,8 @@
 		A04131681F757F20007337EA /* Init */ = {
 			isa = PBXGroup;
 			children = (
+				A04131AD1F75845D007337EA /* InitialVC.swift */,
+				A04131AF1F7584A0007337EA /* SignupVC.swift */,
 			);
 			path = Init;
 			sourceTree = "<group>";
@@ -314,12 +319,12 @@
 				A04131771F758155007337EA /* PortalButton.swift in Sources */,
 				A04131751F7580F0007337EA /* DetailsModel.swift in Sources */,
 				A04131811F758197007337EA /* Info.swift in Sources */,
-				A04131561F75731C007337EA /* ViewController.swift in Sources */,
 				A04131851F7581B1007337EA /* Foto.swift in Sources */,
 				A04131951F758250007337EA /* DiagonalView.swift in Sources */,
 				A041319F1F758299007337EA /* InfoCell.swift in Sources */,
 				A04131891F7581EE007337EA /* NetworkImageView.swift in Sources */,
 				A04131911F758235007337EA /* CellView.swift in Sources */,
+				A04131AE1F75845D007337EA /* InitialVC.swift in Sources */,
 				A041317F1F75818B007337EA /* Padrinho.swift in Sources */,
 				A04131791F758163007337EA /* Donation.swift in Sources */,
 				A041317D1F75817C007337EA /* Message.swift in Sources */,
@@ -331,6 +336,7 @@
 				A04131A51F7582D3007337EA /* CoupleCell.swift in Sources */,
 				A04131A31F7582C0007337EA /* ForneCell.swift in Sources */,
 				A041318F1F758222007337EA /* Support.swift in Sources */,
+				A04131B01F7584A0007337EA /* SignupVC.swift in Sources */,
 				A04131AB1F758301007337EA /* PhotoCell.swift in Sources */,
 				A04131971F758260007337EA /* CardBack.swift in Sources */,
 				A041319B1F758284007337EA /* HomeScreenCell.swift in Sources */,
