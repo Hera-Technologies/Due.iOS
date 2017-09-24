@@ -6,30 +6,43 @@
 //  Copyright © 2017 Hera Technologies. All rights reserved.
 //
 
+
 import UIKit
 
 class TabBar: UITabBarController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    init() {
+        super.init(nibName: nil, bundle: nil)
+        
+        let one = FirstVC()
+        let navOne = UINavigationController(rootViewController: one)
+        navOne.title = "Principal"
+        navOne.tabBarItem.image = UIImage(named: "infinity")
+        
+        let two = SecondVC()
+        two.title = "Padrinhos"
+        two.tabBarItem.image = UIImage(named: "love")
+        
+        let three = ThirdVC()
+        let navThree = UINavigationController(rootViewController: three)
+        navThree.title = "Casamento"
+        navThree.tabBarItem.image = UIImage(named: "home")
+        
+        let four = FourthVC()
+        let navFour = UINavigationController(rootViewController: four)
+        navFour.title = "Presentes"
+        navFour.tabBarItem.image = UIImage(named: "present")
+        
+        viewControllers = [navOne, two, navThree, navFour]
+        
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
-    */
-
+    
+    override func viewDidAppear(_ animated: Bool) {
+        self.tabBarController?.selectedIndex = 0
+    }
+    
 }
