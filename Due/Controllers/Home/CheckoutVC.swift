@@ -352,13 +352,13 @@ class CheckoutVC: UIViewController, STPPaymentCardTextFieldDelegate {
         cardParams.cvc = payField.cvc
         STPAPIClient.shared().createToken(withCard: cardParams) { (token, err) in
             if err != nil {
-                _ = SweetAlert().showAlert("Oops...", subTitle: err?.localizedDescription, style: AlertStyle.error)
+                _ = SweetAlert().showAlert("Oops...", subTitle: err?.localizedDescription, style: .error)
                 return
             }
             if let token = token {
                 self.sendToken(token: token, completion: { (err: Error?) in
                     if err != nil {
-                        _ = SweetAlert().showAlert("Oops...", subTitle: err?.localizedDescription, style: AlertStyle.error)
+                        _ = SweetAlert().showAlert("Oops...", subTitle: err?.localizedDescription, style: .error)
                         return
                     }
                 })

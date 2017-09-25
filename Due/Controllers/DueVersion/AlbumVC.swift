@@ -134,7 +134,7 @@ class AlbumVC: UIViewController, UICollectionViewDelegateFlowLayout, UICollectio
     class AlbumCell: UICollectionViewCell {
         
         var model: Foto!
-        var vc: Album?
+        var vc: AlbumVC?
         
         let photo: NetworkImageView = {
             let img = NetworkImageView()

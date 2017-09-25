@@ -222,7 +222,7 @@ class PadrinhosVC: UIViewController, UICollectionViewDelegateFlowLayout, UIColle
 
 extension PadrinhosVC: PadrinhoCellDelegate {
     func deletePad(cell: PadrinhoCell) {
-        SweetAlert().showAlert("Atenção...", subTitle: "Tem certeza que quer deletar este padrinho?", style: AlertStyle.warning, buttonTitle: "Cancelar", buttonColor: UIColor.colorFromRGB(0xFF8989), otherButtonTitle: "Confirmar", otherButtonColor: UIColor.colorFromRGB(0x99B9f3)) { (isOtherButton) -> Void in
+        SweetAlert().showAlert("Atenção...", subTitle: "Tem certeza que quer deletar este padrinho?", style: .warning, buttonTitle: "Cancelar", buttonColor: UIColor.colorFromRGB(0xFF8989), otherButtonTitle: "Confirmar", otherButtonColor: UIColor.colorFromRGB(0x99B9f3)) { (isOtherButton) -> Void in
             if isOtherButton == false {
                 if let indexPath = self.collec.indexPath(for: cell) {
                     self.deletePhotos(index: indexPath.item)

@@ -86,6 +86,18 @@
 		A04132061F758854007337EA /* FourthVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04132051F758854007337EA /* FourthVC.swift */; };
 		A04132081F758865007337EA /* ChargeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04132071F758865007337EA /* ChargeVC.swift */; };
 		A041320A1F758876007337EA /* ChargeFaqVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04132091F758876007337EA /* ChargeFaqVC.swift */; };
+		A06362C11F79650A004870D3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A06362C01F79650A004870D3 /* GoogleService-Info.plist */; };
+		A0AA08DA1F792F4600BC9E69 /* SweetAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D8F2241F7925D1005CB665 /* SweetAlert.swift */; };
+		A0AA08DB1F792F4E00BC9E69 /* KCFABManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D8F21D1F7924C5005CB665 /* KCFABManager.swift */; };
+		A0AA08DC1F792F5000BC9E69 /* KCFABViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D8F21E1F7924C5005CB665 /* KCFABViewController.swift */; };
+		A0AA08DD1F792F5300BC9E69 /* KCFABWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D8F21F1F7924C5005CB665 /* KCFABWindow.swift */; };
+		A0AA08DE1F792F5D00BC9E69 /* KCFloatingActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D8F2211F7924C5005CB665 /* KCFloatingActionButton.swift */; };
+		A0AA08DF1F792F5F00BC9E69 /* KCFloatingActionButtonDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D8F2221F7924C5005CB665 /* KCFloatingActionButtonDelegate.swift */; };
+		A0AA08E01F792F6100BC9E69 /* KCFloatingActionButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D8F2231F7924C5005CB665 /* KCFloatingActionButtonItem.swift */; };
+		A0AA08E11F792F6800BC9E69 /* iCarousel.m in Sources */ = {isa = PBXBuildFile; fileRef = A0D8F2191F79169F005CB665 /* iCarousel.m */; };
+		A0AA08E31F79303E00BC9E69 /* ForneVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0AA08E21F79303E00BC9E69 /* ForneVC.swift */; };
+		A0AA08E51F79307E00BC9E69 /* ForneListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0AA08E41F79307E00BC9E69 /* ForneListVC.swift */; };
+		A0AA08E71F7930A000BC9E69 /* EditForneVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0AA08E61F7930A000BC9E69 /* EditForneVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -172,10 +184,13 @@
 		A04132051F758854007337EA /* FourthVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FourthVC.swift; sourceTree = "<group>"; };
 		A04132071F758865007337EA /* ChargeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChargeVC.swift; sourceTree = "<group>"; };
 		A04132091F758876007337EA /* ChargeFaqVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChargeFaqVC.swift; sourceTree = "<group>"; };
+		A06362C01F79650A004870D3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		A0AA08E21F79303E00BC9E69 /* ForneVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForneVC.swift; sourceTree = "<group>"; };
+		A0AA08E41F79307E00BC9E69 /* ForneListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForneListVC.swift; sourceTree = "<group>"; };
+		A0AA08E61F7930A000BC9E69 /* EditForneVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditForneVC.swift; sourceTree = "<group>"; };
 		A0D8F2171F79169E005CB665 /* Due-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Due-Bridging-Header.h"; sourceTree = "<group>"; };
 		A0D8F2181F79169F005CB665 /* iCarousel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = iCarousel.h; sourceTree = "<group>"; };
 		A0D8F2191F79169F005CB665 /* iCarousel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iCarousel.m; sourceTree = "<group>"; };
-		A0D8F21A1F791907005CB665 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A0D8F21D1F7924C5005CB665 /* KCFABManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KCFABManager.swift; sourceTree = "<group>"; };
 		A0D8F21E1F7924C5005CB665 /* KCFABViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KCFABViewController.swift; sourceTree = "<group>"; };
 		A0D8F21F1F7924C5005CB665 /* KCFABWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KCFABWindow.swift; sourceTree = "<group>"; };
@@ -234,8 +249,8 @@
 				A04131531F75731C007337EA /* AppDelegate.swift */,
 				A041315A1F75731C007337EA /* Assets.xcassets */,
 				A041315C1F75731C007337EA /* LaunchScreen.storyboard */,
+				A06362C01F79650A004870D3 /* GoogleService-Info.plist */,
 				A041315F1F75731C007337EA /* Info.plist */,
-				A0D8F21A1F791907005CB665 /* GoogleService-Info.plist */,
 			);
 			path = Due;
 			sourceTree = "<group>";
@@ -318,6 +333,8 @@
 				A04131DD1F7586CC007337EA /* EventoVC.swift */,
 				A04131DF1F7586D8007337EA /* InfoListVC.swift */,
 				A04131E11F7586E7007337EA /* EditInfoVC.swift */,
+				A0AA08E41F79307E00BC9E69 /* ForneListVC.swift */,
+				A0AA08E61F7930A000BC9E69 /* EditForneVC.swift */,
 				A04131E31F7586FF007337EA /* GiftsVC.swift */,
 				A04131E51F758712007337EA /* GiftsGuideVC.swift */,
 				A04131E71F758720007337EA /* FormVC.swift */,
@@ -342,6 +359,7 @@
 				A04131FF1F75882F007337EA /* PhotoVC.swift */,
 				A04132011F75883D007337EA /* EventVC.swift */,
 				A04132031F758847007337EA /* InfoVC.swift */,
+				A0AA08E21F79303E00BC9E69 /* ForneVC.swift */,
 				A04132051F758854007337EA /* FourthVC.swift */,
 				A04132071F758865007337EA /* ChargeVC.swift */,
 				A04132091F758876007337EA /* ChargeFaqVC.swift */,
@@ -492,6 +510,7 @@
 			files = (
 				A041315E1F75731C007337EA /* LaunchScreen.storyboard in Resources */,
 				A041315B1F75731C007337EA /* Assets.xcassets in Resources */,
+				A06362C11F79650A004870D3 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -594,9 +613,11 @@
 				A04131D41F75866A007337EA /* EditCoupleVC.swift in Sources */,
 				A04131FC1F75880E007337EA /* PhotosVC.swift in Sources */,
 				A04131DE1F7586CC007337EA /* EventoVC.swift in Sources */,
+				A0AA08DB1F792F4E00BC9E69 /* KCFABManager.swift in Sources */,
 				A04131D81F75868F007337EA /* AddPhotoVC.swift in Sources */,
 				A04131B81F758549007337EA /* SaleVC.swift in Sources */,
 				A04131F21F7587B5007337EA /* AlbumVC.swift in Sources */,
+				A0AA08E01F792F6100BC9E69 /* KCFloatingActionButtonItem.swift in Sources */,
 				A04131871F7581C4007337EA /* AlbumPhoto.swift in Sources */,
 				A04131771F758155007337EA /* PortalButton.swift in Sources */,
 				A04131751F7580F0007337EA /* DetailsModel.swift in Sources */,
@@ -608,11 +629,14 @@
 				A04131F81F7587EC007337EA /* MessagesVC.swift in Sources */,
 				A04131F61F7587D2007337EA /* ThirdVC.swift in Sources */,
 				A04132041F758847007337EA /* InfoVC.swift in Sources */,
+				A0AA08DF1F792F5F00BC9E69 /* KCFloatingActionButtonDelegate.swift in Sources */,
 				A04131E41F7586FF007337EA /* GiftsVC.swift in Sources */,
 				A04131C81F758603007337EA /* RenewVC.swift in Sources */,
 				A04132021F75883D007337EA /* EventVC.swift in Sources */,
 				A04131E81F758720007337EA /* FormVC.swift in Sources */,
 				A04131DA1F7586A1007337EA /* PadrinhosVC.swift in Sources */,
+				A0AA08E11F792F6800BC9E69 /* iCarousel.m in Sources */,
+				A0AA08DE1F792F5D00BC9E69 /* KCFloatingActionButton.swift in Sources */,
 				A04132061F758854007337EA /* FourthVC.swift in Sources */,
 				A04131B21F758505007337EA /* DocsVC.swift in Sources */,
 				A04131C41F7585E1007337EA /* GuideVC.swift in Sources */,
@@ -625,10 +649,12 @@
 				A04131E61F758712007337EA /* GiftsGuideVC.swift in Sources */,
 				A04131AE1F75845D007337EA /* InitialVC.swift in Sources */,
 				A04131CA1F758613007337EA /* EventNameVC.swift in Sources */,
+				A0AA08DD1F792F5300BC9E69 /* KCFABWindow.swift in Sources */,
 				A041317F1F75818B007337EA /* Padrinho.swift in Sources */,
 				A04131791F758163007337EA /* Donation.swift in Sources */,
 				A041317D1F75817C007337EA /* Message.swift in Sources */,
 				A04131CC1F758622007337EA /* NameChangeVC.swift in Sources */,
+				A0AA08E31F79303E00BC9E69 /* ForneVC.swift in Sources */,
 				A04131F01F7587A2007337EA /* CasalVC.swift in Sources */,
 				A04132081F758865007337EA /* ChargeVC.swift in Sources */,
 				A041318B1F758201007337EA /* BounceButton.swift in Sources */,
@@ -637,6 +663,7 @@
 				A04131731F7580B9007337EA /* EventModel.swift in Sources */,
 				A04131831F7581A8007337EA /* Forne.swift in Sources */,
 				A04131CE1F758637007337EA /* MainVC.swift in Sources */,
+				A0AA08E51F79307E00BC9E69 /* ForneListVC.swift in Sources */,
 				A041318D1F75820F007337EA /* CustomTF.swift in Sources */,
 				A04131A91F7582F6007337EA /* AlbumPhotoCell.swift in Sources */,
 				A04131A51F7582D3007337EA /* CoupleCell.swift in Sources */,
@@ -651,14 +678,17 @@
 				A04131EE1F758795007337EA /* FirstVC.swift in Sources */,
 				A04131DC1F7586BA007337EA /* AddPadrinhoVC.swift in Sources */,
 				A04131C61F7585F1007337EA /* PortalVC.swift in Sources */,
+				A0AA08DA1F792F4600BC9E69 /* SweetAlert.swift in Sources */,
 				A04131971F758260007337EA /* CardBack.swift in Sources */,
 				A041319B1F758284007337EA /* HomeScreenCell.swift in Sources */,
 				A04131A11F7582A8007337EA /* PadrinhoCell.swift in Sources */,
 				A04131C01F75858A007337EA /* AccessVC.swift in Sources */,
+				A0AA08E71F7930A000BC9E69 /* EditForneVC.swift in Sources */,
 				A041319D1F758290007337EA /* PortalCell.swift in Sources */,
 				A04131931F758241007337EA /* LoadingView.swift in Sources */,
 				A04131541F75731C007337EA /* AppDelegate.swift in Sources */,
 				A04131EC1F75877F007337EA /* TabBar.swift in Sources */,
+				A0AA08DC1F792F5000BC9E69 /* KCFABViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

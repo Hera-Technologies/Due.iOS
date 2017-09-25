@@ -125,7 +125,7 @@ class FirstVC: UITabBarController {
     let menu: KCFloatingActionButton = {
         let btn = KCFloatingActionButton()
         btn.buttonColor = .white
-        btn.plusColor = .black
+        btn.plusColor = dark
         btn.autoCloseOnTap = true
         btn.paddingY = 58
         btn.openAnimationType = .pop

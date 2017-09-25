@@ -194,7 +194,7 @@ class ChargeVC: UIViewController, STPPaymentCardTextFieldDelegate, UITextFieldDe
     
     @objc func requestPayment() {
         if nameField.text != "" && amountField.text != "" && payField.hasText && payField.isValid {
-            SweetAlert().showAlert("Antes de finalizar...", subTitle: "Deseja confirmar a operacão?", style: AlertStyle.warning, buttonTitle: "Cancelar", buttonColor: UIColor.colorFromRGB(0xFF8989), otherButtonTitle: "Confirmar", otherButtonColor: UIColor.colorFromRGB(0x99B9f3)) { (isOtherButton) -> Void in
+            SweetAlert().showAlert("Antes de finalizar...", subTitle: "Deseja confirmar a operacão?", style: .warning, buttonTitle: "Cancelar", buttonColor: UIColor.colorFromRGB(0xFF8989), otherButtonTitle: "Confirmar", otherButtonColor: UIColor.colorFromRGB(0x99B9f3)) { (isOtherButton) -> Void in
                 if isOtherButton == true {
                     self.clearFields()
                 } else {
@@ -241,7 +241,7 @@ class ChargeVC: UIViewController, STPPaymentCardTextFieldDelegate, UITextFieldDe
                 print(response)
                 if response.result.description == "SUCCESS" {
                     dismissActivityIndicator(view: self.view, indicator: self.indicator, completion: {
-                        _ = SweetAlert().showAlert("Muito obrigado! ❤️", subTitle: "Seu presente será processado. Se tudo der certo, você receberá a confirmação por email.", style: AlertStyle.success)
+                        _ = SweetAlert().showAlert("Muito obrigado! ❤️", subTitle: "Seu presente será processado. Se tudo der certo, você receberá a confirmação por email.", style: .success)
                         self.clearFields()
                     })
                 } else {
@@ -249,7 +249,7 @@ class ChargeVC: UIViewController, STPPaymentCardTextFieldDelegate, UITextFieldDe
                         let errMessage = """
                     Não foi possível realizar a transação. Verifique os possíveis motivos clicando no botão "FAQ" acima.
                     """
-                        _ = SweetAlert().showAlert("Oops...", subTitle: errMessage, style: AlertStyle.customImag(imageFile: "sad"), buttonTitle: "Ok")
+                        _ = SweetAlert().showAlert("Oops...", subTitle: errMessage, style: .customImag(imageFile: "sad"), buttonTitle: "Ok")
                     })
                 }
             })

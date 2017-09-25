@@ -71,6 +71,7 @@ class StoryCell: UICollectionViewCell {
         if storyField.text != nil {
             Database.database().reference().child("Codes").child(details.eventID!).child("story").updateChildValues(["texto": storyField.text!])
             _ = SweetAlert().showAlert("Muito bem!", subTitle: "Versão atualizada", style: .success, buttonTitle: "Ok")
+            
         }
     }
     

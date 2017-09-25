@@ -209,8 +209,6 @@ class InitialVC: UIViewController, UITextFieldDelegate, GIDSignInUIDelegate, GID
         
         faqBtn.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20).isActive = true
         faqBtn.topAnchor.constraint(equalTo: view.topAnchor, constant: 32).isActive = true
-        //        faqBtn.heightAnchor.constraint(equalToConstant: 30).isActive = true
-        //        faqBtn.widthAnchor.constraint(equalToConstant: 30).isActive = true
         faqBtn.addTarget(self, action: #selector(showFAQ), for: .touchUpInside)
         
         let distance = view.frame.size.height / 3.3

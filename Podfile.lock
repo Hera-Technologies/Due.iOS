@@ -67,7 +67,7 @@ PODS:
   - GTMSessionFetcher/Core (1.1.11)
   - GTMSessionFetcher/Full (1.1.11):
     - GTMSessionFetcher/Core (= 1.1.11)
-  - IQKeyboardManagerSwift (4.0.13)
+  - IQKeyboardManagerSwift (5.0.2)
   - leveldb-library (1.18.3)
   - nanopb (0.3.8):
     - nanopb/decode (= 0.3.8)
@@ -108,7 +108,7 @@ SPEC CHECKSUMS:
   GoogleToolboxForMac: 8e329f1b599f2512c6b10676d45736bcc2cbbeb0
   GTMOAuth2: be83fd28d63ae3087e7d351b1f39c1a7e24ab6e7
   GTMSessionFetcher: 5ad62e8200fa00ed011fe5e08d27fef72c5b1429
-  IQKeyboardManagerSwift: fb399c4cddcd8d9bbcd2d0c7c81ed290b61c088e
+  IQKeyboardManagerSwift: e580da046d804d2836ee84668cc17e43a850a35d
   leveldb-library: 10fb39c39e243db4af1828441162405bbcec1404
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
   Presentr: a21c7bbb3532c8ff60320e235c0a4869e72f8885

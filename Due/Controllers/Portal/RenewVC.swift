@@ -266,13 +266,13 @@ class RenewVC: UIViewController, STPPaymentCardTextFieldDelegate {
         cardParams.cvc = payField.cvc
         STPAPIClient.shared().createToken(withCard: cardParams) { (token, err) in
             if err != nil {
-                _ = SweetAlert().showAlert("Oops...", subTitle: err?.localizedDescription, style: AlertStyle.error)
+                _ = SweetAlert().showAlert("Oops...", subTitle: err?.localizedDescription, style: .error)
                 return
             }
             if let token = token {
                 self.sendToken(token: token, completion: { (err: Error?) in
                     if err != nil {
-                        _ = SweetAlert().showAlert("Oops...", subTitle: err?.localizedDescription, style: AlertStyle.error)
+                        _ = SweetAlert().showAlert("Oops...", subTitle: err?.localizedDescription, style: .error)
                         return
                     }
                 })
@@ -291,9 +291,9 @@ class RenewVC: UIViewController, STPPaymentCardTextFieldDelegate {
             if response.result.description == "SUCCESS" {
                 self.renewVersion()
                 self.payField.clear()
-                _ = SweetAlert().showAlert("Muito obrigado! ❤️", subTitle: "Seu presente será processado. Se tudo der certo, você receberá a confirmação por email.", style: AlertStyle.success)
+                _ = SweetAlert().showAlert("Muito obrigado! ❤️", subTitle: "Seu presente será processado. Se tudo der certo, você receberá a confirmação por email.", style: .success)
             } else {
-                _ = SweetAlert().showAlert("Oops...", subTitle: "Sentimos muito. Não foi possível realizar a transação.", style: AlertStyle.customImag(imageFile: "sad"), buttonTitle: "Ok")
+                _ = SweetAlert().showAlert("Oops...", subTitle: "Sentimos muito. Não foi possível realizar a transação.", style: .customImag(imageFile: "sad"), buttonTitle: "Ok")
             }
         })
     }
