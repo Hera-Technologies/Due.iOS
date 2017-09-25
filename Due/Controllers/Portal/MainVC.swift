@@ -90,6 +90,14 @@ class MainVC: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
         return img
     }()
     
+    let checkIcon:  NetworkImageView = {
+        let img = NetworkImageView()
+        img.image = UIImage(named: "tick")
+        img.isHidden = true
+        img.translatesAutoresizingMaskIntoConstraints = false
+        return img
+    }()
+    
     let videoBtn: UIButton = {
         let btn = UIButton(type: .system)
         btn.setTitle("+", for: .normal)
@@ -212,6 +220,7 @@ class MainVC: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
         view.addSubview(videoDesc)
         view.addSubview(videoContainer)
         view.addSubview(videoIcon)
+        view.addSubview(checkIcon)
         view.addSubview(videoBtn)
         view.addSubview(songTitle)
         view.addSubview(songDesc)
@@ -256,8 +265,13 @@ class MainVC: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
         
         videoIcon.centerXAnchor.constraint(equalTo: videoContainer.centerXAnchor).isActive = true
         videoIcon.centerYAnchor.constraint(equalTo: videoContainer.centerYAnchor).isActive = true
-        videoIcon.widthAnchor.constraint(equalTo: videoContainer.widthAnchor, multiplier: 0.68).isActive = true
-        videoIcon.heightAnchor.constraint(equalTo: videoContainer.heightAnchor, multiplier: 0.6).isActive = true
+        videoIcon.widthAnchor.constraint(equalTo: videoContainer.widthAnchor, multiplier: 0.6).isActive = true
+        videoIcon.heightAnchor.constraint(equalTo: videoContainer.heightAnchor, multiplier: 0.5).isActive = true
+        
+        checkIcon.centerXAnchor.constraint(equalTo: videoContainer.centerXAnchor).isActive = true
+        checkIcon.centerYAnchor.constraint(equalTo: videoContainer.centerYAnchor).isActive = true
+        checkIcon.widthAnchor.constraint(equalTo: videoContainer.widthAnchor, multiplier: 0.5).isActive = true
+        checkIcon.heightAnchor.constraint(equalTo: videoContainer.heightAnchor, multiplier: 0.6).isActive = true
         
         videoBtn.trailingAnchor.constraint(equalTo: videoContainer.trailingAnchor).isActive = true
         videoBtn.topAnchor.constraint(equalTo: videoContainer.bottomAnchor, constant: -20).isActive = true
@@ -347,7 +361,8 @@ class MainVC: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
                 self.songIcon.image = UIImage(named: "tick")
             }
             if snap.hasChild("videoUrl") {
-                self.videoIcon.image = UIImage(named: "tick")
+                self.videoIcon.isHidden = true
+                self.checkIcon.isHidden = false
             }
         })
     }
@@ -373,7 +388,8 @@ class MainVC: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         if let videoUrl = info[UIImagePickerControllerMediaURL] as? URL {
             video = videoUrl
-            videoIcon.image = UIImage(named: "tick")
+            videoIcon.isHidden = true
+            checkIcon.isHidden = false
         }
         self.dismiss(animated: true, completion: nil)
     }

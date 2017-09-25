@@ -20,8 +20,8 @@ class LoadingView: UIView {
     let message: UILabel = {
         let lbl = UILabel()
         lbl.text = "Só um segundo, estamos preparando tudo para você : )"
-        lbl.font = UIFont(name: "Avenir-Light", size: 25)
-        lbl.textColor = dark
+        lbl.font = UIFont(name: "AvenirNext-UltraLight", size: 25)
+        lbl.textColor = darker
         lbl.textAlignment = .justified
         lbl.numberOfLines = 0
         lbl.lineBreakMode = .byWordWrapping
@@ -61,8 +61,8 @@ class LoadingView: UIView {
         
         image.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
         image.bottomAnchor.constraint(equalTo: indicator.topAnchor, constant: -30).isActive = true
-        image.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0.2).isActive = true
-        image.heightAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0.22).isActive = true
+        image.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0.16).isActive = true
+        image.heightAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0.18).isActive = true
         
         message.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
         message.topAnchor.constraint(equalTo: indicator.bottomAnchor, constant: 30).isActive = true
