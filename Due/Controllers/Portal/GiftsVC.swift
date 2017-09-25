@@ -216,7 +216,7 @@ class GiftsVC: UIViewController, UICollectionViewDelegateFlowLayout, UICollectio
                     self.parseResponse(res: res)
                 }
             } else {
-                _ = SweetAlert().showAlert("Oops...", subTitle: "Algo deu errado. Não foi possível listar seus presentes.", style: .customImag(imageFile: "sad"), buttonTitle: "Ok")
+                _ = SweetAlert().showAlert("Oops...", subTitle: "Não foi possível listar seus presentes.", style: .customImag(imageFile: "sad"), buttonTitle: "Ok")
             }
         })
     }
