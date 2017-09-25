@@ -375,7 +375,7 @@ class PortalVC: UIViewController, UICollectionViewDelegateFlowLayout, UICollecti
     @objc func share() {
         if let name = event.text {
             let message = """
-            Baixe o app Due para ver a versão do nosso casamento! O código de acesso é \(name)
+            Baixe o Due para ver a versão do nosso casamento! O código de acesso é \(name)
             
             https://play.google.com/store/apps/details?id=com.herasoft.due
             

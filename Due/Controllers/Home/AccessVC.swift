@@ -18,8 +18,9 @@ class AccessVC: UIViewController, UITextFieldDelegate {
         let lbl = UILabel()
         lbl.text = "Qual o nome do evento?"
         lbl.textColor  = darker
-        lbl.textAlignment = .left
-        lbl.font = UIFont(name: "Avenir-Light", size: 22)
+        lbl.textAlignment = .justified
+        lbl.lineBreakMode = .byWordWrapping
+        lbl.font = UIFont(name: "Avenir-Roman", size: 22)
         lbl.adjustsFontSizeToFitWidth = true
         lbl.minimumScaleFactor = 0.4
         return lbl

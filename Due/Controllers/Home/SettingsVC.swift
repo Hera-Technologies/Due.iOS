@@ -178,7 +178,7 @@ class SettingsVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
     
     func share() {
         let message = """
-        Baixe o app Due!
+        Baixe o Due!
         
         https://play.google.com/store/apps/details?id=com.herasoft.due
         

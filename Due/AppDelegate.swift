@@ -25,7 +25,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
         GIDSignIn.sharedInstance().clientID = FirebaseApp.app()?.options.clientID
 
-        STPPaymentConfiguration.shared().publishableKey = "pk_test_vU31MNnKZRBtobErgiqCznGO"
+        STPPaymentConfiguration.shared().publishableKey = key
 
         IQKeyboardManager.sharedManager().enable = true
         IQKeyboardManager.sharedManager().disabledDistanceHandlingClasses.append(contentsOf: [MessageVC.self, CoupleVC.self, FormVC.self])

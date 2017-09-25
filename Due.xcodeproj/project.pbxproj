@@ -87,6 +87,7 @@
 		A04132081F758865007337EA /* ChargeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04132071F758865007337EA /* ChargeVC.swift */; };
 		A041320A1F758876007337EA /* ChargeFaqVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04132091F758876007337EA /* ChargeFaqVC.swift */; };
 		A06362C11F79650A004870D3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A06362C01F79650A004870D3 /* GoogleService-Info.plist */; };
+		A06362C31F798806004870D3 /* Shh.swift in Sources */ = {isa = PBXBuildFile; fileRef = A06362C21F798806004870D3 /* Shh.swift */; };
 		A0AA08DA1F792F4600BC9E69 /* SweetAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D8F2241F7925D1005CB665 /* SweetAlert.swift */; };
 		A0AA08DB1F792F4E00BC9E69 /* KCFABManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D8F21D1F7924C5005CB665 /* KCFABManager.swift */; };
 		A0AA08DC1F792F5000BC9E69 /* KCFABViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D8F21E1F7924C5005CB665 /* KCFABViewController.swift */; };
@@ -185,6 +186,7 @@
 		A04132071F758865007337EA /* ChargeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChargeVC.swift; sourceTree = "<group>"; };
 		A04132091F758876007337EA /* ChargeFaqVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChargeFaqVC.swift; sourceTree = "<group>"; };
 		A06362C01F79650A004870D3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		A06362C21F798806004870D3 /* Shh.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shh.swift; sourceTree = "<group>"; };
 		A0AA08E21F79303E00BC9E69 /* ForneVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForneVC.swift; sourceTree = "<group>"; };
 		A0AA08E41F79307E00BC9E69 /* ForneListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForneListVC.swift; sourceTree = "<group>"; };
 		A0AA08E61F7930A000BC9E69 /* EditForneVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditForneVC.swift; sourceTree = "<group>"; };
@@ -374,6 +376,7 @@
 				A041318A1F758201007337EA /* BounceButton.swift */,
 				A041318C1F75820F007337EA /* CustomTF.swift */,
 				A041318E1F758222007337EA /* Support.swift */,
+				A06362C21F798806004870D3 /* Shh.swift */,
 			);
 			path = CustomClasses;
 			sourceTree = "<group>";
@@ -633,6 +636,7 @@
 				A04131E41F7586FF007337EA /* GiftsVC.swift in Sources */,
 				A04131C81F758603007337EA /* RenewVC.swift in Sources */,
 				A04132021F75883D007337EA /* EventVC.swift in Sources */,
+				A06362C31F798806004870D3 /* Shh.swift in Sources */,
 				A04131E81F758720007337EA /* FormVC.swift in Sources */,
 				A04131DA1F7586A1007337EA /* PadrinhosVC.swift in Sources */,
 				A0AA08E11F792F6800BC9E69 /* iCarousel.m in Sources */,

@@ -315,7 +315,7 @@ class HomeVC: UIViewController, UICollectionViewDelegateFlowLayout, UICollection
         
         useremail.frame = CGRect(x: 20, y: view.frame.height * 0.26, width: view.frame.width * 0.54, height: 20)
         
-        let photoY = view.frame.size.height * 0.18
+        let photoY = view.frame.size.height * 0.19
         let size = view.frame.size.width * 0.3
         profilePic.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20).isActive = true
         profilePic.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: -photoY).isActive = true
