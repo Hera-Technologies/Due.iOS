@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8CEF55691B9D3DC4336A36F4 /* Pods_Due.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E47723E829DDED0C9E252E8 /* Pods_Due.framework */; };
 		A04131541F75731C007337EA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04131531F75731C007337EA /* AppDelegate.swift */; };
 		A041315B1F75731C007337EA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A041315A1F75731C007337EA /* Assets.xcassets */; };
 		A041315E1F75731C007337EA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A041315C1F75731C007337EA /* LaunchScreen.storyboard */; };
@@ -88,6 +89,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0DD040F4241C3A1EE4365BCB /* Pods-Due.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Due.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Due/Pods-Due.debug.xcconfig"; sourceTree = "<group>"; };
+		586DCA15D0CAE131316E672C /* Pods-Due.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Due.release.xcconfig"; path = "Pods/Target Support Files/Pods-Due/Pods-Due.release.xcconfig"; sourceTree = "<group>"; };
+		6E47723E829DDED0C9E252E8 /* Pods_Due.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Due.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A04131501F75731C007337EA /* Due.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Due.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A04131531F75731C007337EA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A041315A1F75731C007337EA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -121,7 +125,6 @@
 		A04131A61F7582E6007337EA /* StoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryCell.swift; sourceTree = "<group>"; };
 		A04131A81F7582F6007337EA /* AlbumPhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumPhotoCell.swift; sourceTree = "<group>"; };
 		A04131AA1F758301007337EA /* PhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCell.swift; sourceTree = "<group>"; };
-		A04131AC1F7583E5007337EA /* SweetAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SweetAlert.swift; sourceTree = "<group>"; };
 		A04131AD1F75845D007337EA /* InitialVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialVC.swift; sourceTree = "<group>"; };
 		A04131AF1F7584A0007337EA /* SignupVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupVC.swift; sourceTree = "<group>"; };
 		A04131B11F758505007337EA /* DocsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocsVC.swift; sourceTree = "<group>"; };
@@ -169,6 +172,18 @@
 		A04132051F758854007337EA /* FourthVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FourthVC.swift; sourceTree = "<group>"; };
 		A04132071F758865007337EA /* ChargeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChargeVC.swift; sourceTree = "<group>"; };
 		A04132091F758876007337EA /* ChargeFaqVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChargeFaqVC.swift; sourceTree = "<group>"; };
+		A0D8F2171F79169E005CB665 /* Due-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Due-Bridging-Header.h"; sourceTree = "<group>"; };
+		A0D8F2181F79169F005CB665 /* iCarousel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = iCarousel.h; sourceTree = "<group>"; };
+		A0D8F2191F79169F005CB665 /* iCarousel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iCarousel.m; sourceTree = "<group>"; };
+		A0D8F21A1F791907005CB665 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		A0D8F21D1F7924C5005CB665 /* KCFABManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KCFABManager.swift; sourceTree = "<group>"; };
+		A0D8F21E1F7924C5005CB665 /* KCFABViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KCFABViewController.swift; sourceTree = "<group>"; };
+		A0D8F21F1F7924C5005CB665 /* KCFABWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KCFABWindow.swift; sourceTree = "<group>"; };
+		A0D8F2201F7924C5005CB665 /* KCFloatingActionButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KCFloatingActionButton.h; sourceTree = "<group>"; };
+		A0D8F2211F7924C5005CB665 /* KCFloatingActionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KCFloatingActionButton.swift; sourceTree = "<group>"; };
+		A0D8F2221F7924C5005CB665 /* KCFloatingActionButtonDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KCFloatingActionButtonDelegate.swift; sourceTree = "<group>"; };
+		A0D8F2231F7924C5005CB665 /* KCFloatingActionButtonItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KCFloatingActionButtonItem.swift; sourceTree = "<group>"; };
+		A0D8F2241F7925D1005CB665 /* SweetAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SweetAlert.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -176,17 +191,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8CEF55691B9D3DC4336A36F4 /* Pods_Due.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		999C0D08E89A9F1BE24C5EF2 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				0DD040F4241C3A1EE4365BCB /* Pods-Due.debug.xcconfig */,
+				586DCA15D0CAE131316E672C /* Pods-Due.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		A04131471F75731C007337EA = {
 			isa = PBXGroup;
 			children = (
 				A04131521F75731C007337EA /* Due */,
 				A04131511F75731C007337EA /* Products */,
+				999C0D08E89A9F1BE24C5EF2 /* Pods */,
+				BEF383DFBAFDD439C0EFA162 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -208,6 +235,7 @@
 				A041315A1F75731C007337EA /* Assets.xcassets */,
 				A041315C1F75731C007337EA /* LaunchScreen.storyboard */,
 				A041315F1F75731C007337EA /* Info.plist */,
+				A0D8F21A1F791907005CB665 /* GoogleService-Info.plist */,
 			);
 			path = Due;
 			sourceTree = "<group>";
@@ -215,7 +243,11 @@
 		A04131651F757E9C007337EA /* Dependencies */ = {
 			isa = PBXGroup;
 			children = (
-				A04131AC1F7583E5007337EA /* SweetAlert.swift */,
+				A0D8F21C1F7924C5005CB665 /* MenuBtn */,
+				A0D8F2241F7925D1005CB665 /* SweetAlert.swift */,
+				A0D8F2181F79169F005CB665 /* iCarousel.h */,
+				A0D8F2191F79169F005CB665 /* iCarousel.m */,
+				A0D8F2171F79169E005CB665 /* Due-Bridging-Header.h */,
 			);
 			path = Dependencies;
 			sourceTree = "<group>";
@@ -373,6 +405,28 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		A0D8F21C1F7924C5005CB665 /* MenuBtn */ = {
+			isa = PBXGroup;
+			children = (
+				A0D8F21D1F7924C5005CB665 /* KCFABManager.swift */,
+				A0D8F21E1F7924C5005CB665 /* KCFABViewController.swift */,
+				A0D8F21F1F7924C5005CB665 /* KCFABWindow.swift */,
+				A0D8F2201F7924C5005CB665 /* KCFloatingActionButton.h */,
+				A0D8F2211F7924C5005CB665 /* KCFloatingActionButton.swift */,
+				A0D8F2221F7924C5005CB665 /* KCFloatingActionButtonDelegate.swift */,
+				A0D8F2231F7924C5005CB665 /* KCFloatingActionButtonItem.swift */,
+			);
+			path = MenuBtn;
+			sourceTree = "<group>";
+		};
+		BEF383DFBAFDD439C0EFA162 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6E47723E829DDED0C9E252E8 /* Pods_Due.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -380,9 +434,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A04131621F75731C007337EA /* Build configuration list for PBXNativeTarget "Due" */;
 			buildPhases = (
+				424F1D852E5F25E794DCF55E /* [CP] Check Pods Manifest.lock */,
 				A041314C1F75731C007337EA /* Sources */,
 				A041314D1F75731C007337EA /* Frameworks */,
 				A041314E1F75731C007337EA /* Resources */,
+				E14A1B639CC0AB857C85999A /* [CP] Embed Pods Frameworks */,
+				770563087EA22294E4737315 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -405,6 +462,7 @@
 				TargetAttributes = {
 					A041314F1F75731C007337EA = {
 						CreatedOnToolsVersion = 9.0;
+						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -438,6 +496,87 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		424F1D852E5F25E794DCF55E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Due-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		770563087EA22294E4737315 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Due/Pods-Due-resources.sh",
+				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Due/Pods-Due-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E14A1B639CC0AB857C85999A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Due/Pods-Due-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKShareKit/FBSDKShareKit.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMOAuth2/GTMOAuth2.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/Presentr/Presentr.framework",
+				"${BUILT_PRODUCTS_DIR}/Stripe/Stripe.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKShareKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMOAuth2.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Presentr.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Stripe.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Due/Pods-Due-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		A041314C1F75731C007337EA /* Sources */ = {
@@ -646,8 +785,10 @@
 		};
 		A04131631F75731C007337EA /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0DD040F4241C3A1EE4365BCB /* Pods-Due.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = NWHFT8X67Q;
 				INFOPLIST_FILE = Due/Info.plist;
@@ -655,6 +796,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Hera-Technologies.Due";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Due/Dependencies/Due-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -662,8 +805,10 @@
 		};
 		A04131641F75731C007337EA /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 586DCA15D0CAE131316E672C /* Pods-Due.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = NWHFT8X67Q;
 				INFOPLIST_FILE = Due/Info.plist;
@@ -671,6 +816,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Hera-Technologies.Due";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Due/Dependencies/Due-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};

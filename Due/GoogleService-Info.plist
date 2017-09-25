@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AD_UNIT_ID_FOR_BANNER_TEST</key>
+	<string>ca-app-pub-3940256099942544/2934735716</string>
+	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
+	<string>ca-app-pub-3940256099942544/4411468910</string>
+	<key>CLIENT_ID</key>
+	<string>379830176093-g78dk4vf7s59s4o0f96kgbif0ojecmc5.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.379830176093-g78dk4vf7s59s4o0f96kgbif0ojecmc5</string>
+	<key>API_KEY</key>
+	<string>AIzaSyD8-Xy1VNqqpq_nL8SO9_NNyfYpEsAUa6g</string>
+	<key>GCM_SENDER_ID</key>
+	<string>379830176093</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>Hera-Technologies.Due</string>
+	<key>PROJECT_ID</key>
+	<string>dueapp-e70bd</string>
+	<key>STORAGE_BUCKET</key>
+	<string>dueapp-e70bd.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<true></true>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<false></false>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:379830176093:ios:4f80df93875ed095</string>
+	<key>DATABASE_URL</key>
+	<string>https://dueapp-e70bd.firebaseio.com</string>
+</dict>
+</plist>
