@@ -12,7 +12,21 @@ import Firebase
 class SignupVC: UIViewController, UITextFieldDelegate {
     
     let homeScreen = UINavigationController(rootViewController: HomeVC())
-    let indicator = UIActivityIndicatorView()
+    
+    let indicator: UIActivityIndicatorView = {
+        let ind = UIActivityIndicatorView()
+        ind.activityIndicatorViewStyle = .whiteLarge
+        ind.hidesWhenStopped = true
+        ind.translatesAutoresizingMaskIntoConstraints = false
+        return ind
+    }()
+    
+    let indicatorContainer: UIView = {
+        let vi = UIView()
+        vi.backgroundColor = UIColor(red: 75/255, green: 75/255, blue: 75/255, alpha: 0.6)
+        vi.translatesAutoresizingMaskIntoConstraints = false
+        return vi
+    }()
     
     let titulo: UILabel = {
         let lbl = UILabel()
@@ -143,6 +157,7 @@ class SignupVC: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
         view.backgroundColor = .white
         setup()
         signupBtn.addTarget(self, action: #selector(handleSignup), for: .touchUpInside)
@@ -157,7 +172,7 @@ class SignupVC: UIViewController, UITextFieldDelegate {
     
     @objc func handleSignup() {
         guard let mail = emailTxt.text, let password = passTxt.text, let name = nameTxt.text else { return }
-        showActivityIndicator(view: self.view, indicator: indicator)
+        indicateActivity()
         Auth.auth().createUser(withEmail: mail, password: password, completion: { (user: User?, err) in
             if err != nil {
                 let alert = UIAlertController(title: "Hmm...", message: err?.localizedDescription, preferredStyle: .alert)
@@ -174,9 +189,9 @@ class SignupVC: UIViewController, UITextFieldDelegate {
                     print(err ?? "")
                     return
                 }
-                dismissActivityIndicator(view: self.view, indicator: self.indicator, completion: {
+                self.stopActivity {
                     self.present(self.homeScreen, animated: true, completion: nil)
-                })
+                }
             })
         })
     }
@@ -195,6 +210,7 @@ class SignupVC: UIViewController, UITextFieldDelegate {
         view.addSubview(signupBtn)
         view.addSubview(linha2)
         view.addSubview(loginBtn)
+        view.addSubview(indicatorContainer)
         
         titulo.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         titulo.topAnchor.constraint(equalTo: view.topAnchor, constant: 12).isActive = true
@@ -256,8 +272,24 @@ class SignupVC: UIViewController, UITextFieldDelegate {
         
     }
     
-    override func viewDidDisappear(_ animated: Bool) {
+    func indicateActivity() {
+        view.addSubview(indicatorContainer)
+        indicatorContainer.tag = 5
+        indicatorContainer.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        indicatorContainer.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+        indicatorContainer.widthAnchor.constraint(equalToConstant: 100).isActive = true
+        indicatorContainer.heightAnchor.constraint(equalToConstant: 100).isActive = true
+        indicatorContainer.layer.cornerRadius = 18
+        indicatorContainer.addSubview(indicator)
+        indicator.centerXAnchor.constraint(equalTo: indicatorContainer.centerXAnchor).isActive = true
+        indicator.centerYAnchor.constraint(equalTo: indicatorContainer.centerYAnchor).isActive = true
+        indicator.startAnimating()
+    }
+    
+    func stopActivity(completion: () -> Void) {
         indicator.stopAnimating()
+        view.viewWithTag(5)?.removeFromSuperview()
+        completion()
     }
     
     // MARK: KEYBOARD METHODS

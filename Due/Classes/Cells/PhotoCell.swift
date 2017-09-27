@@ -68,7 +68,7 @@ class PhotoCell: UITableViewCell {
         
         addSubview(profilePhoto)
         addSubview(username)
-        //        addSubview(saveBtn)
+        addSubview(saveBtn)
         addSubview(photo)
         addSubview(caption)
         
@@ -80,9 +80,9 @@ class PhotoCell: UITableViewCell {
         username.leftAnchor.constraint(equalTo: profilePhoto.rightAnchor, constant: 12).isActive = true
         username.centerYAnchor.constraint(equalTo: profilePhoto.centerYAnchor).isActive = true
         
-        //        saveBtn.trailingAnchor.constraint(equalTo: photo.trailingAnchor, constant: -8).isActive = true
-        //        saveBtn.centerYAnchor.constraint(equalTo: profilePhoto.centerYAnchor).isActive = true
-        //        saveBtn.addTarget(self, action: #selector(savePic), for: .touchUpInside)
+        saveBtn.trailingAnchor.constraint(equalTo: photo.trailingAnchor, constant: -8).isActive = true
+        saveBtn.centerYAnchor.constraint(equalTo: profilePhoto.centerYAnchor).isActive = true
+        saveBtn.addTarget(self, action: #selector(savePic), for: .touchUpInside)
         
         let hgt = UIScreen.main.bounds.height * 0.32
         photo.topAnchor.constraint(equalTo: profilePhoto.bottomAnchor, constant: 12).isActive = true

@@ -103,7 +103,7 @@ class SecondVC: UIViewController, iCarouselDelegate, iCarouselDataSource {
         let message = UITextView()
         
         message.center.x = width * 0.05
-        message.frame.origin.y = tempView.frame.height * 0.73
+        message.frame.origin.y = tempView.frame.height * 0.74
         message.frame.size = CGSize(width: tempView.frame.width * 0.9, height: tempView.frame.height * 0.26)
         message.text = eventModel.messages.object(at: index) as? String
         message.font = UIFont(name: "Avenir-Roman", size: 16)
