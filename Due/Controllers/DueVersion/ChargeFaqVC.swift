@@ -14,10 +14,10 @@ class ChargeFAQ: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     var arr = [[String: String]]()
     
-    let back: UIButton = {
+    let closeBtn: UIButton = {
         let btn = UIButton(type: .system)
-        btn.setTitle("<", for: .normal)
-        btn.titleLabel!.font = UIFont(name: "ChalkboardSE-Light", size: 30)
+        btn.setTitle("x", for: .normal)
+        btn.titleLabel!.font = UIFont(name: "ArialRoundedMTBold", size: 28)
         btn.setTitleColor(dark, for: UIControlState())
         btn.translatesAutoresizingMaskIntoConstraints = false
         return btn
@@ -94,15 +94,15 @@ class ChargeFAQ: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     func setup() {
         
-        view.addSubview(back)
+        view.addSubview(closeBtn)
         view.addSubview(viewTitle)
         view.addSubview(line)
         view.addSubview(image)
         view.addSubview(table)
         
-        back.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 12).isActive = true
-        back.topAnchor.constraint(equalTo: view.topAnchor, constant: 20).isActive = true
-        back.addTarget(self, action: #selector(goBack), for: .touchUpInside)
+        closeBtn.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 12).isActive = true
+        closeBtn.topAnchor.constraint(equalTo: view.topAnchor, constant: 20).isActive = true
+        closeBtn.addTarget(self, action: #selector(close), for: .touchUpInside)
         
         let titleY = view.frame.height * 0.35
         viewTitle.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20).isActive = true
@@ -135,15 +135,17 @@ class ChargeFAQ: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     func setupText() {
         
-        let dic1 = ["question": "Processamento de transações", "answer": "O serviço de processamento de pagamentos é fornecido por uma empresa chamada Stripe, Inc, atuante em diversos países e já bem posicionada no mercado."]
+        let dic1 = ["question": "Sobre os presentes", "answer": "Os presentes da tela anterior são meramente simbólicos. Nós apenas atribuímos valores à presentes interessantes para que convidados possam se satisfazer com a ideia de que estariam proporcionando aquilo ao casal."]
         
-        let dic2 = ["question": "Formas de pagamento", "answer": "No momento, as transações somente podem ser efetuadas por meio de cartão de crédito e à vista."]
+        let dic2 = ["question": "Processamento de transações", "answer": "O serviço de processamento de pagamentos é fornecido por uma empresa chamada Stripe, Inc, atuante em diversos países e já bem posicionada no mercado."]
         
-        let dic3 = ["question": "Armazenamento de dados", "answer": "Após efetuar qualquer transação em nosso app, os dados do seu cartão são descartados."]
+        let dic3 = ["question": "Formas de pagamento", "answer": "No momento, as transações somente podem ser efetuadas por meio de cartão de crédito e à vista."]
         
-        let dic4 = ["question": "Proteção de dados", "answer": "Nós utilizamos SSL (Secure Sockets Layer) e criptografia para proteger os seus dados."]
+        let dic4 = ["question": "Armazenamento de dados", "answer": "Após efetuar qualquer transação em nosso app, os dados do seu cartão são descartados."]
         
-        arr = [dic1, dic2, dic3, dic4]
+        let dic5 = ["question": "Proteção de dados", "answer": "Nós utilizamos SSL (Secure Sockets Layer) e criptografia para proteger os seus dados."]
+        
+        arr = [dic1, dic2, dic3, dic4, dic5]
         
     }
     
@@ -194,8 +196,8 @@ class ChargeFAQ: UIViewController, UITableViewDelegate, UITableViewDataSource {
         
     }
     
-    @objc func goBack() {
-        _ = navigationController?.popViewController(animated: true)
+    @objc func close() {
+        dismiss(animated: true, completion: nil)
     }
     
 }

@@ -317,14 +317,5 @@ class RenewVC: UIViewController, STPPaymentCardTextFieldDelegate {
         }
     }
     
-    // Identify numbers in a String
-    
-    func identifyNumbers(amount: String) -> Int {
-        let numbers = amount.components(separatedBy: CharacterSet.decimalDigits.inverted)
-        let newStr = numbers.joined(separator: "")
-        let num = Int(newStr)
-        return num!
-    }
-    
 }
 

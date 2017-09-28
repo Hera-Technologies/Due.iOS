@@ -7,13 +7,22 @@
 //
 
 import UIKit
+import Firebase 
 
-class FourthVC: UIViewController {
+fileprivate let cellID = "cell"
+
+class FourthVC: UIViewController, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
+
+    var arr = [Gift]()
+    let indicator = UIActivityIndicatorView()
     
-    let gradient: CAGradientLayer = {
-        let grad = CAGradientLayer()
-        grad.colors = bourbon
-        return grad
+    let faqBtn: UIButton = {
+        let btn = UIButton(type: .system)
+        btn.setTitle("FAQ", for: .normal)
+        btn.setTitleColor(dark, for: .normal)
+        btn.titleLabel?.font = UIFont(name: "Avenir-Roman", size: 20)
+        btn.translatesAutoresizingMaskIntoConstraints = false
+        return btn
     }()
     
     let viewTitle: UILabel = {
@@ -33,62 +42,20 @@ class FourthVC: UIViewController {
         return ln
     }()
     
-    let leftIcon: UIImageView = {
-        let img = UIImageView()
-        img.image = #imageLiteral(resourceName: "truck")
-        img.translatesAutoresizingMaskIntoConstraints = false
-        return img
-    }()
-    
-    let middleIcon: UIImageView = {
-        let img = UIImageView()
-        img.image = #imageLiteral(resourceName: "gift")
-        img.translatesAutoresizingMaskIntoConstraints = false
-        return img
-    }()
-    
-    let rightIcon: UIImageView = {
-        let img = UIImageView()
-        img.image = #imageLiteral(resourceName: "plane")
-        img.translatesAutoresizingMaskIntoConstraints = false
-        return img
-    }()
-    
-    let label: UILabel = {
-        let lbl = UILabel()
-        lbl.text = "Seu presente é uma ordem"
-        lbl.textAlignment = .center
-        lbl.font = UIFont(name: "Avenir-Heavy", size: 22)
-        lbl.textColor = dark
-        lbl.numberOfLines = 2
-        lbl.translatesAutoresizingMaskIntoConstraints = false
-        return lbl
-    }()
-    
-    let message: UILabel = {
-        let lbl = UILabel()
-        lbl.text = "Esta é a oportunidade para familiares e amigos presentearem os recém casados, contribuindo para a nova jornada que os espera."
-        lbl.textAlignment = .center
-        lbl.font = UIFont(name: "Avenir-Roman", size: 15)
-        lbl.textColor = .gray
-        lbl.numberOfLines = 0
-        lbl.translatesAutoresizingMaskIntoConstraints = false
-        return lbl
-    }()
-    
-    let contributeBtn: BounceButton = {
-        let btn = BounceButton()
-        btn.setTitle("Presentear", for: .normal)
-        btn.titleLabel!.font = UIFont(name: "Avenir-Heavy", size: 20)
-        btn.setTitleColor(.white, for: .normal)
-        btn.clipsToBounds = true
-        btn.layer.masksToBounds = true
-        return btn
+    let collec: UICollectionView = {
+        let layout = UICollectionViewFlowLayout()
+        layout.minimumLineSpacing = 10
+        let col = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        col.backgroundColor = .clear
+        col.showsVerticalScrollIndicator = false
+        col.translatesAutoresizingMaskIntoConstraints = false
+        return col
     }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
+        fetchGifts()
         view.backgroundColor = .white
         setup()
         
@@ -96,21 +63,18 @@ class FourthVC: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.isNavigationBarHidden = true
-        gradient.frame = contributeBtn.frame
-        gradient.cornerRadius = contributeBtn.layer.cornerRadius
-        view.layer.insertSublayer(gradient, at: 0)
     }
     
     func setup() {
         
+        view.addSubview(faqBtn)
         view.addSubview(viewTitle)
         view.addSubview(line)
-        view.addSubview(leftIcon)
-        view.addSubview(middleIcon)
-        view.addSubview(rightIcon)
-        view.addSubview(label)
-        view.addSubview(message)
-        view.addSubview(contributeBtn)
+        view.addSubview(collec)
+        
+        faqBtn.topAnchor.constraint(equalTo: view.topAnchor, constant: 32).isActive = true 
+        faqBtn.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20).isActive = true
+        faqBtn.addTarget(self, action: #selector(faq), for: .touchUpInside)
         
         let titleY = view.frame.height * 0.38
         viewTitle.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20).isActive = true
@@ -121,47 +85,70 @@ class FourthVC: UIViewController {
         line.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
         line.heightAnchor.constraint(equalToConstant: 0.8).isActive = true
         
-        let iconY = view.frame.height * 0.2
-        middleIcon.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        middleIcon.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: -iconY).isActive = true
-        middleIcon.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.3).isActive = true
-        middleIcon.heightAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.3).isActive = true
-        
-        leftIcon.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20).isActive = true
-        leftIcon.bottomAnchor.constraint(equalTo: middleIcon.bottomAnchor, constant: 20).isActive = true
-        leftIcon.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.22).isActive = true
-        leftIcon.heightAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.22).isActive = true
-        
-        rightIcon.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20).isActive = true
-        rightIcon.bottomAnchor.constraint(equalTo: middleIcon.bottomAnchor, constant: 20).isActive = true
-        rightIcon.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.22).isActive = true
-        rightIcon.heightAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.22).isActive = true
-        
-        label.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        label.topAnchor.constraint(equalTo: middleIcon.bottomAnchor, constant: 30).isActive = true
-        label.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.85).isActive = true
-        
-        message.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        message.topAnchor.constraint(equalTo: label.bottomAnchor, constant: 10).isActive = true
-        message.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.85).isActive = true
-        
-        var btnY: CGFloat?
-        let size = UIScreen.main.bounds.width
-        if size <= 320  {
-            btnY = view.frame.height * 0.75
-        } else {
-            btnY = view.frame.height * 0.65
-        }
-        let hgt = view.frame.height * 0.08
-        contributeBtn.frame.size = CGSize(width: view.frame.width / 2, height: hgt)
-        contributeBtn.frame.origin = CGPoint(x: view.frame.width * 0.25, y: btnY!)
-        contributeBtn.layer.cornerRadius = hgt / 2
-        contributeBtn.addTarget(self, action: #selector(contribute), for: .touchUpInside)
+        collec.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        collec.topAnchor.constraint(equalTo: line.bottomAnchor).isActive = true
+        collec.widthAnchor.constraint(equalTo: view.widthAnchor).isActive = true
+        collec.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        collec.delegate = self
+        collec.dataSource = self
+        collec.register(GiftCell.self, forCellWithReuseIdentifier: cellID)
+        collec.contentInset = UIEdgeInsets(top: 20, left: 15, bottom: 20, right: 15)
         
     }
     
-    @objc func contribute() {
-        self.navigationController?.pushViewController(ChargeVC(), animated: true)
+    @objc func faq() {
+        present(ChargeFAQ(), animated: true, completion: nil)
+    }
+    
+    func fetchGifts() {
+        showActivityIndicator(view: view, indicator: indicator)
+        Database.database().reference().child("Gifts").observe(.value, with: { (snap) in
+            self.arr = []
+            if let gifts = snap.children.allObjects as? [DataSnapshot] {
+                for gift in gifts {
+                    if let data = gift.value as? [String: Any] {
+                        let present = Gift(data: data)
+                        self.arr.append(present)
+                    }
+                }
+            }
+            DispatchQueue.main.async {
+                dismissActivityIndicator(view: self.view, indicator: self.indicator, completion: {
+                    self.collec.reloadData()
+                })
+            }
+        })
+    }
+    
+// MARK: COLLECTIONVIEW DELEGATE AND DATA SOURCE
+
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return arr.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collec.dequeueReusableCell(withReuseIdentifier: cellID, for: indexPath) as! GiftCell
+        cell.vc = self
+        cell.configureCell(model: arr[indexPath.item])
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let w = view.frame.width * 0.42
+        let h = view.frame.width * 0.4
+        return CGSize(width: w, height: h)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let cell = collectionView.cellForItem(at: indexPath) as! GiftCell
+        if let image = cell.photo.image, let name = cell.giftLbl.text, let desc = cell.desc, let amount = cell.priceLbl.text {
+            let vc = GiftDetailVC(image: image, name: name, desc: desc, amount: amount)
+            navigationController?.pushViewController(vc, animated: true)
+        }
     }
     
 }
+
+
+
+

@@ -30,7 +30,6 @@ class AlbumVC: UIViewController, UICollectionViewDelegateFlowLayout, UICollectio
         btn.layer.shadowOffset = CGSize(width: 0, height: 1.5)
         btn.layer.shadowRadius = 1.8
         btn.layer.shadowOpacity = 0.45
-        btn.layer.cornerRadius = 17.5
         btn.translatesAutoresizingMaskIntoConstraints = false
         return btn
     }()

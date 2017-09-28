@@ -8,7 +8,7 @@
 
 import UIKit
 
-// COLOR PALETTE
+// MARK: COLOR PALETTE
 
 let bourbon = [UIColor(red: 236/255, green: 111/255, blue: 102/255, alpha: 1).cgColor, UIColor(red: 243/255, green: 161/255, blue: 131/255, alpha: 1).cgColor]
 let offwhite = UIColor(red: 245/255, green: 245/255, blue: 245/255, alpha: 1)
@@ -17,7 +17,7 @@ let dark = UIColor(red: 75/255, green: 75/255, blue: 75/255, alpha: 1)
 let darker = UIColor(red: 40/255, green: 40/255, blue: 40/255, alpha: 1)
 
 
-// HOME SCREEN ARRAYS
+// MARK: STRUCTS
 
 struct HomeCellConfig {
     var icon: UIImage
@@ -25,6 +25,8 @@ struct HomeCellConfig {
     var message: String
 }
 
+
+// MARK: EXTENSIONS
 
 extension String {
     
@@ -82,6 +84,18 @@ func showActivityIndicator(view: UIView, indicator: UIActivityIndicatorView) {
     view.addSubview(container)
     indicator.startAnimating()
     
+}
+
+
+// MARK: HELPER METHODS
+
+// Identify numbers in a String
+
+func identifyNumbers(amount: String) -> Int {
+    let numbers = amount.components(separatedBy: CharacterSet.decimalDigits.inverted)
+    let newStr = numbers.joined(separator: "")
+    let num = Int(newStr)
+    return num!
 }
 
 func dismissActivityIndicator(view: UIView, indicator: UIActivityIndicatorView, completion: () -> Void) {

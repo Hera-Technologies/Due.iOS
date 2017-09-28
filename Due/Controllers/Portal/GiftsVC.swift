@@ -169,7 +169,7 @@ class GiftsVC: UIViewController, UICollectionViewDelegateFlowLayout, UICollectio
         collec.topAnchor.constraint(equalTo: line.bottomAnchor).isActive = true
         collec.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
         collec.contentInset = UIEdgeInsets(top: 15, left: 0, bottom: 15, right: 0)
-        collec.register(GiftCell.self, forCellWithReuseIdentifier: cellID)
+        collec.register(DonationCell.self, forCellWithReuseIdentifier: cellID)
         collec.dataSource = self
         collec.delegate = self
         
@@ -243,7 +243,7 @@ class GiftsVC: UIViewController, UICollectionViewDelegateFlowLayout, UICollectio
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellID, for: indexPath) as! GiftCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellID, for: indexPath) as! DonationCell
         cell.vc = self
         cell.configure(model: arr[indexPath.item])
         return cell
@@ -264,7 +264,7 @@ class GiftsVC: UIViewController, UICollectionViewDelegateFlowLayout, UICollectio
     
     // MARK: COLLECTION VIEW CELL
     
-    class GiftCell: UICollectionViewCell {
+    class DonationCell: UICollectionViewCell {
         
         var model: Donation?
         var vc: GiftsVC?

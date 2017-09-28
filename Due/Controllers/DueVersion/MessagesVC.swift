@@ -100,8 +100,10 @@ class MessagesVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
                     }
                 }
             }
-            self.table.reloadData()
-            self.indicator.stopAnimating()
+            DispatchQueue.main.async {
+                self.table.reloadData()
+                self.indicator.stopAnimating()
+            }
         })
     }
     
