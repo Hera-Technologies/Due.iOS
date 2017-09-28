@@ -60,7 +60,7 @@ class InitialVC: UIViewController, UITextFieldDelegate, GIDSignInUIDelegate, GID
     
     let emailIcon: UIImageView = {
         let img = UIImageView()
-        img.image = UIImage(named: "emailsmall")
+        img.image = UIImage(named: "whitemail")
         img.contentMode = .scaleAspectFit
         img.translatesAutoresizingMaskIntoConstraints = false
         return img
@@ -81,7 +81,7 @@ class InitialVC: UIViewController, UITextFieldDelegate, GIDSignInUIDelegate, GID
     
     let passIcon: UIImageView = {
         let img = UIImageView()
-        img.image = UIImage(named: "locksmall")
+        img.image = UIImage(named: "whitepass")
         img.contentMode = .scaleAspectFit
         img.translatesAutoresizingMaskIntoConstraints = false
         return img
@@ -133,7 +133,7 @@ class InitialVC: UIViewController, UITextFieldDelegate, GIDSignInUIDelegate, GID
     
     let signupBtn: UIButton = {
         let btn = UIButton(type: .system)
-        btn.setTitle("Criar conta", for: .normal)
+        btn.setTitle("Crie uma conta", for: .normal)
         btn.titleLabel!.font = UIFont(name: "Avenir-Heavy", size: 20)
         btn.setTitleColor(.white, for: .normal)
         btn.translatesAutoresizingMaskIntoConstraints = false
@@ -219,6 +219,8 @@ class InitialVC: UIViewController, UITextFieldDelegate, GIDSignInUIDelegate, GID
         
         emailIcon.leadingAnchor.constraint(equalTo: line1.leadingAnchor, constant: 5).isActive = true
         emailIcon.centerYAnchor.constraint(equalTo: emailTxt.centerYAnchor).isActive = true
+        emailIcon.widthAnchor.constraint(equalToConstant: 20).isActive = true
+        emailIcon.heightAnchor.constraint(equalToConstant: 20).isActive = true
         emailTxt.leftAnchor.constraint(equalTo: emailIcon.rightAnchor, constant: 13).isActive = true
         emailTxt.bottomAnchor.constraint(equalTo: line1.topAnchor, constant: 0).isActive = true
         emailTxt.widthAnchor.constraint(equalTo: line1.widthAnchor, multiplier: 1).isActive = true
@@ -233,6 +235,8 @@ class InitialVC: UIViewController, UITextFieldDelegate, GIDSignInUIDelegate, GID
         
         passIcon.leadingAnchor.constraint(equalTo: line1.leadingAnchor, constant: 5).isActive = true
         passIcon.centerYAnchor.constraint(equalTo: passTxt.centerYAnchor).isActive = true
+        passIcon.widthAnchor.constraint(equalToConstant: 22).isActive = true
+        passIcon.heightAnchor.constraint(equalToConstant: 18).isActive = true
         passTxt.topAnchor.constraint(equalTo: line1.bottomAnchor, constant: 0).isActive = true
         passTxt.rightAnchor.constraint(equalTo: forgotPassBtn.leftAnchor, constant: -8).isActive = true
         passTxt.leftAnchor.constraint(equalTo: passIcon.rightAnchor, constant: 13).isActive = true

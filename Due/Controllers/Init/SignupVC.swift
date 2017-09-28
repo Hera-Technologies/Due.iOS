@@ -58,7 +58,7 @@ class SignupVC: UIViewController, UITextFieldDelegate {
     
     let nameIcon: UIImageView = {
         let icon = UIImageView()
-        icon.image = UIImage(named: "usersmall")
+        icon.image = UIImage(named: "hint")
         icon.translatesAutoresizingMaskIntoConstraints = false
         return icon
     }()
@@ -101,7 +101,7 @@ class SignupVC: UIViewController, UITextFieldDelegate {
     
     let passIcon: UIImageView = {
         let icon = UIImageView()
-        icon.image = UIImage(named: "pass")
+        icon.image = UIImage(named: "password")
         icon.translatesAutoresizingMaskIntoConstraints = false
         return icon
     }()
@@ -125,8 +125,8 @@ class SignupVC: UIViewController, UITextFieldDelegate {
         let btn = UIButton(type: .system)
         btn.setTitle("Criar conta", for: UIControlState())
         btn.titleLabel!.font = UIFont(name: "Avenir-Heavy", size: 18)
-        btn.setTitleColor(.black, for: UIControlState())
-        btn.backgroundColor = .white
+        btn.setTitleColor(.white, for: UIControlState())
+        btn.backgroundColor = darker
         btn.layer.shadowColor = UIColor.darkGray.cgColor
         btn.layer.shadowOffset = CGSize(width: 0, height: 1.5)
         btn.layer.shadowRadius = 1.8
@@ -172,14 +172,16 @@ class SignupVC: UIViewController, UITextFieldDelegate {
     
     @objc func handleSignup() {
         guard let mail = emailTxt.text, let password = passTxt.text, let name = nameTxt.text else { return }
-        indicateActivity()
         Auth.auth().createUser(withEmail: mail, password: password, completion: { (user: User?, err) in
+            self.indicateActivity()
             if err != nil {
                 let alert = UIAlertController(title: "Hmm...", message: err?.localizedDescription, preferredStyle: .alert)
                 let action = UIAlertAction(title: "Ok", style: .default, handler: nil)
                 alert.addAction(action)
                 self.present(alert, animated: true, completion: nil)
-                return
+                self.stopActivity {
+                    return
+                }
             }
             guard let uid = user?.uid else { return }
             let ref = Database.database().reference().child("Users").child(uid)
@@ -225,22 +227,28 @@ class SignupVC: UIViewController, UITextFieldDelegate {
         
         nameIcon.rightAnchor.constraint(equalTo: nameTxt.leftAnchor, constant: -10).isActive = true
         nameIcon.centerYAnchor.constraint(equalTo: nameTxt.centerYAnchor).isActive = true
+        nameIcon.widthAnchor.constraint(equalToConstant: 27).isActive = true
+        nameIcon.heightAnchor.constraint(equalToConstant: 27).isActive = true
         nameTxt.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: 10).isActive = true
         nameTxt.bottomAnchor.constraint(equalTo: emailTxt.topAnchor, constant: -18).isActive = true
         nameTxt.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.7).isActive = true
         nameTxt.heightAnchor.constraint(equalToConstant: 42).isActive = true
         nameTxt.delegate = self
         
-        emailIcon.rightAnchor.constraint(equalTo: emailTxt.leftAnchor, constant: -10).isActive = true
+        emailIcon.centerXAnchor.constraint(equalTo: nameIcon.centerXAnchor).isActive = true
         emailIcon.centerYAnchor.constraint(equalTo: emailTxt.centerYAnchor).isActive = true
+        emailIcon.widthAnchor.constraint(equalToConstant: 23).isActive = true
+        emailIcon.heightAnchor.constraint(equalToConstant: 15).isActive = true
         emailTxt.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: 10).isActive = true
         emailTxt.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: -23).isActive = true
         emailTxt.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.7).isActive = true
         emailTxt.heightAnchor.constraint(equalToConstant: 42).isActive = true
         emailTxt.delegate = self
         
-        passIcon.rightAnchor.constraint(equalTo: passTxt.leftAnchor, constant: -10).isActive = true
+        passIcon.centerXAnchor.constraint(equalTo: nameIcon.centerXAnchor).isActive = true
         passIcon.centerYAnchor.constraint(equalTo: passTxt.centerYAnchor).isActive = true
+        passIcon.widthAnchor.constraint(equalToConstant: 20).isActive = true
+        passIcon.heightAnchor.constraint(equalToConstant: 23).isActive = true
         passTxt.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: 10).isActive = true
         passTxt.topAnchor.constraint(equalTo: emailTxt.bottomAnchor, constant: 18).isActive = true
         passTxt.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.7).isActive = true

@@ -2,17 +2,17 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "emailsmall.png",
+      "filename" : "whitepass.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "emailsmall@2x.png",
+      "filename" : "whitepass@2x.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
-      "filename" : "emailsmall@3x.png",
+      "filename" : "whitepass@3x.png",
       "scale" : "3x"
     }
   ],

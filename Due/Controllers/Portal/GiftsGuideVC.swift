@@ -14,7 +14,7 @@ class GiftsGuideVC: UIViewController, UITableViewDelegate, UITableViewDataSource
     
     let arr = [
         """
-    Criamos este guia informativo a fim de trazer esclarecimentos aos noivos acerca do modo de funcionamento dos presentes virtuais no Due.
+    Este guia informativo visa trazer esclarecimentos aos noivos acerca do modo de funcionamento dos presentes virtuais no Due.
 
     Prezamos muito pela satisfação dos nossos usuários e, por isso, os tratamos com honestidade e transparência.
     """,
