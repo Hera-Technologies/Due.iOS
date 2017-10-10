@@ -151,7 +151,7 @@ class GiftsVC: UIViewController, UICollectionViewDelegateFlowLayout, UICollectio
         
         formBtn.bottomAnchor.constraint(equalTo: line.topAnchor, constant: -8).isActive = true
         formBtn.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20).isActive = true
-        formBtn.heightAnchor.constraint(equalToConstant: 28).isActive = true
+        formBtn.heightAnchor.constraint(equalToConstant: 25).isActive = true
         formBtn.widthAnchor.constraint(equalToConstant: 25).isActive = true
         formBtn.addTarget(self, action: #selector(openFormUrl), for: .touchUpInside)
         
@@ -181,7 +181,7 @@ class GiftsVC: UIViewController, UICollectionViewDelegateFlowLayout, UICollectio
     }
     
     @objc func goBack() {
-        navigationController?.popToViewController(navigationController!.viewControllers[2], animated: true)
+        self.navigationController?.popToViewController(navigationController!.viewControllers[1], animated: true)
     }
     
     @objc func showGuide() {

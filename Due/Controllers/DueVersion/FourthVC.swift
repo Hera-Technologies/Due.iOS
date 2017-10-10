@@ -121,7 +121,7 @@ class FourthVC: UIViewController, UICollectionViewDelegateFlowLayout, UICollecti
     }
     
 // MARK: COLLECTIONVIEW DELEGATE AND DATA SOURCE
-
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return arr.count
     }
@@ -146,6 +146,7 @@ class FourthVC: UIViewController, UICollectionViewDelegateFlowLayout, UICollecti
             navigationController?.pushViewController(vc, animated: true)
         }
     }
+    
     
 }
 

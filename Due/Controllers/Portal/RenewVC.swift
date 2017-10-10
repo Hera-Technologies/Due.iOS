@@ -116,7 +116,7 @@ class RenewVC: UIViewController, STPPaymentCardTextFieldDelegate {
         txt.font = UIFont(name: "Avenir-Roman", size: 16)
         txt.textColor = darker
         txt.backgroundColor = .clear
-        txt.numberPlaceholder = "Cartão nº"
+        txt.numberPlaceholder = "cartão nº"
         txt.expirationPlaceholder = "mm/aa"
         txt.cvcPlaceholder = "cvc"
         txt.layer.borderWidth = 0
@@ -203,7 +203,7 @@ class RenewVC: UIViewController, STPPaymentCardTextFieldDelegate {
         payField.trailingAnchor.constraint(equalTo: lineOne.trailingAnchor).isActive = true
         payField.delegate = self
         
-        let height = view.frame.height * 0.07
+        let height = view.frame.height * 0.075
         buyBtn.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         buyBtn.topAnchor.constraint(equalTo: payField.bottomAnchor, constant: 20).isActive = true
         buyBtn.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.5).isActive = true

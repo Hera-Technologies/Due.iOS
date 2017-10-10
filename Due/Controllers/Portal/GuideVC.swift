@@ -21,22 +21,22 @@ class GuideVC: UIViewController, UICollectionViewDelegate, UICollectionViewDeleg
     let pages: [GuidePage] = {
         
         let msgOne = """
-        Agora que vocês têm uma versão Due, podem editá-la à vontade. Antes de começar, dêem um nome à ela.
+        Antes de começar a editar sua versão, escolham um nome para ela.
         """
         let first = GuidePage(imageName: "jigsaw", label: "Bem vindos ao Portal", message: msgOne)
         
         let msgTwo = """
-        Uma vez completa, vocês poderão clicar no botão "Iniciar" e tornar sua versão acessível a outros usuários.
+        Uma vez completa, vocês poderão "ligar" a versão e torná-la acessível a outros usuários.
         """
         let second = GuidePage(imageName: "onoff", label: "Online / Offline", message: msgTwo)
         
         let msgThree = """
-        Assim que a versão estiver online, compartilhem o app e repassem o nome dela aos seus convidados para que possam acessá-la!
+        Uma vez que a versão estiver online, compartilhem o app com seus convidados para que possam acessá-la!
         """
         let third = GuidePage(imageName: "login", label: "Lembrem-se", message: msgThree)
         
         let msgFour = """
-        Somente após a versão ficar online, o prazo de 3 meses começa a contar. Findo o prazo, a versão será deletada, caso vocês não renovem o plano.
+        Os 3 meses começam a contar somente quando a versão ficar online. Após este prazo, a versão será deletada.
         """
         let fourth = GuidePage(imageName: "clock", label: "No seu tempo", message: msgFour)
         

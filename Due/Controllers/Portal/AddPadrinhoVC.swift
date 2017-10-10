@@ -22,6 +22,7 @@ class AddPadrinhoVC: UIViewController, UIImagePickerControllerDelegate, UINaviga
         fatalError("init(coder:) has not been implemented")
     }
     
+    let indicator = UIActivityIndicatorView()
     var prevPic: String?
     var message: String?
     var child: String?
@@ -164,42 +165,6 @@ class AddPadrinhoVC: UIViewController, UIImagePickerControllerDelegate, UINaviga
         dismiss(animated: true, completion: nil)
     }
     
-    // MARK: UPDATING DUE VERSION
-    
-    @objc func updateVersion() {
-        if photo.image != nil && field.text != "" {
-            if child != "" {
-                // Updating existing padrinho
-                if selectedImage != nil {
-                    // This means User picked a different picture
-                    // Delete previous photo
-                    Storage.storage().reference(forURL: prevPic!).delete(completion: { (err) in
-                        if err != nil {
-                            print(err?.localizedDescription ?? "")
-                        }
-                        // Store new picture and update DB
-                        self.updatePadrinhoPhoto()
-                    })
-                }
-                if field.text != message {
-                    // This means User modified the message
-                    Database.database().reference().child("Codes").child(details.eventID!).child("padrinhos").child(child!).updateChildValues(["texto": field.text!])
-                }
-                _ = SweetAlert().showAlert("Muito bem!", subTitle: "Versão atualizada", style: .success, buttonTitle: "Ok") { (action) in
-                    self.dismiss(animated: true, completion: nil)
-                }
-            } else {
-                // Creating new padrinho
-                createNewPadrinho()
-            }
-        } else {
-            let alert = UIAlertController(title: "Oops...", message: "Não se esqueça de escolher uma foto e escrever uma mensagem!", preferredStyle: .alert)
-            let action = UIAlertAction(title: "Ok", style: .default, handler: nil)
-            alert.addAction(action)
-            present(alert, animated: true, completion: nil)
-        }
-    }
-    
     // MARK: PICKING PHOTO
     
     @objc func openPhotosApp() {
@@ -221,7 +186,53 @@ class AddPadrinhoVC: UIViewController, UIImagePickerControllerDelegate, UINaviga
         dismiss(animated: true, completion: nil)
     }
     
-    // MARK: UPDATING PADRINHO PHOTO
+    // MARK: UPDATING DUE VERSION
+    // 1. Change the picture and hit send
+    // 2. Change the message and hit send
+    // 3. Change both and hit send
+    // 4. Change none and hit send (for whatever reason)
+    // 5. Change none and exit screen with close button
+    
+    @objc func updateVersion() {
+        if photo.image != nil && field.text != "" {
+            verifyNewOrOld()
+        } else {
+            let alert = UIAlertController(title: "Oops...", message: "Não se esqueça de escolher uma foto e escrever uma mensagem!", preferredStyle: .alert)
+            let action = UIAlertAction(title: "Ok", style: .default, handler: nil)
+            alert.addAction(action)
+            present(alert, animated: true, completion: nil)
+        }
+    }
+    
+// MARK: UPDATING PADRINHO
+    
+    func verifyNewOrOld() {
+        if child != "" {
+            showActivityIndicator(view: self.view, indicator: indicator)
+            updateExisting()
+        } else {
+            createNewPadrinho()
+        }
+    }
+    
+    func updateExisting() {
+        if selectedImage != nil {
+            // User picked a different picture
+            // Delete previous photo
+            Storage.storage().reference(forURL: prevPic!).delete(completion: { (err) in
+                if err != nil {
+                    print(err?.localizedDescription ?? "")
+                }
+                // Store new picture and update DB
+                self.updatePadrinhoPhoto()
+            })
+        } else {
+        Database.database().reference().child("Codes").child(details.eventID!).child("padrinhos").child(child!).updateChildValues(["texto": field.text!])
+            dismissActivityIndicator(view: self.view, indicator: self.indicator, completion: {
+                self.dismiss(animated: true, completion: nil)
+            })
+        }
+    }
     
     func updatePadrinhoPhoto() {
         if let image = selectedImage as UIImage? {
@@ -234,17 +245,21 @@ class AddPadrinhoVC: UIViewController, UIImagePickerControllerDelegate, UINaviga
                         return
                     }
                     if let imageUrl = metadata?.downloadURL()?.absoluteString {
-                        Database.database().reference().child("Codes").child(details.eventID!).child("padrinhos").child(self.child!).updateChildValues(["foto": imageUrl])
+                    Database.database().reference().child("Codes").child(details.eventID!).child("padrinhos").child(self.child!).updateChildValues(["foto": imageUrl, "texto": self.field.text!])
+                        dismissActivityIndicator(view: self.view, indicator: self.indicator, completion: {
+                            self.dismiss(animated: true, completion: nil)
+                        })
                     }
                 })
             }
         }
     }
     
-    // MARK: CREATING A NEW PADRINHO
+// MARK: CREATING A NEW PADRINHO
     
     func createNewPadrinho() {
         if let image = selectedImage as UIImage? {
+            showActivityIndicator(view: self.view, indicator: indicator)
             let imageID = NSUUID().uuidString
             let ref = Storage.storage().reference().child(details.eventID!).child("padrinhosPhotos").child(imageID)
             if let uploadData = UIImageJPEGRepresentation(image, 0.2) {
@@ -255,9 +270,9 @@ class AddPadrinhoVC: UIViewController, UIImagePickerControllerDelegate, UINaviga
                     }
                     if let imageUrl = metadata?.downloadURL()?.absoluteString {
                         self.updateDB(imageUrl: imageUrl, completion: {
-                            self.photo.image = nil
-                            self.field.text = ""
-                            self.dismiss(animated: true, completion: nil)
+                            dismissActivityIndicator(view: self.view, indicator: self.indicator, completion: {
+                                self.dismiss(animated: true, completion: nil)
+                            })
                         })
                     }
                 })

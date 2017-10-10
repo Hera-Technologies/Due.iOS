@@ -146,7 +146,7 @@ class PadrinhosVC: UIViewController, UICollectionViewDelegateFlowLayout, UIColle
     }
     
     @objc func goBack() {
-        navigationController?.popToViewController(navigationController!.viewControllers[2], animated: true)
+        self.navigationController?.popToViewController(navigationController!.viewControllers[1], animated: true)
     }
     
     @objc func addPadrinho() {

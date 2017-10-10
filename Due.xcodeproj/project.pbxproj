@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		8CEF55691B9D3DC4336A36F4 /* Pods_Due.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E47723E829DDED0C9E252E8 /* Pods_Due.framework */; };
+		A02A0ACD1F850013007D5278 /* Pulse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A02A0ACC1F850013007D5278 /* Pulse.swift */; };
 		A04131541F75731C007337EA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04131531F75731C007337EA /* AppDelegate.swift */; };
 		A041315B1F75731C007337EA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A041315A1F75731C007337EA /* Assets.xcassets */; };
 		A041315E1F75731C007337EA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A041315C1F75731C007337EA /* LaunchScreen.storyboard */; };
@@ -30,7 +31,6 @@
 		A04131951F758250007337EA /* DiagonalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04131941F758250007337EA /* DiagonalView.swift */; };
 		A04131971F758260007337EA /* CardBack.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04131961F758260007337EA /* CardBack.swift */; };
 		A04131991F758269007337EA /* CardFront.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04131981F758269007337EA /* CardFront.swift */; };
-		A041319B1F758284007337EA /* HomeScreenCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A041319A1F758284007337EA /* HomeScreenCell.swift */; };
 		A041319D1F758290007337EA /* PortalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A041319C1F758290007337EA /* PortalCell.swift */; };
 		A041319F1F758299007337EA /* InfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A041319E1F758299007337EA /* InfoCell.swift */; };
 		A04131A11F7582A8007337EA /* PadrinhoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04131A01F7582A8007337EA /* PadrinhoCell.swift */; };
@@ -90,6 +90,7 @@
 		A067E3861F7C44DA00AF68BC /* GiftCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A067E3851F7C44DA00AF68BC /* GiftCell.swift */; };
 		A067E3881F7C5DF500AF68BC /* GiftDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A067E3871F7C5DF500AF68BC /* GiftDetailVC.swift */; };
 		A067E38A1F7C6F6D00AF68BC /* Gift.swift in Sources */ = {isa = PBXBuildFile; fileRef = A067E3891F7C6F6D00AF68BC /* Gift.swift */; };
+		A0A6FF2A1F8966F00083A804 /* HomeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A6FF291F8966F00083A804 /* HomeCell.swift */; };
 		A0AA08DA1F792F4600BC9E69 /* SweetAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D8F2241F7925D1005CB665 /* SweetAlert.swift */; };
 		A0AA08DB1F792F4E00BC9E69 /* KCFABManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D8F21D1F7924C5005CB665 /* KCFABManager.swift */; };
 		A0AA08DC1F792F5000BC9E69 /* KCFABViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D8F21E1F7924C5005CB665 /* KCFABViewController.swift */; };
@@ -101,12 +102,14 @@
 		A0AA08E31F79303E00BC9E69 /* ForneVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0AA08E21F79303E00BC9E69 /* ForneVC.swift */; };
 		A0AA08E51F79307E00BC9E69 /* ForneListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0AA08E41F79307E00BC9E69 /* ForneListVC.swift */; };
 		A0AA08E71F7930A000BC9E69 /* EditForneVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0AA08E61F7930A000BC9E69 /* EditForneVC.swift */; };
+		A0FEBDB51F8BE8FD00288077 /* SwitchBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0FEBDB41F8BE8FC00288077 /* SwitchBtn.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0DD040F4241C3A1EE4365BCB /* Pods-Due.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Due.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Due/Pods-Due.debug.xcconfig"; sourceTree = "<group>"; };
 		586DCA15D0CAE131316E672C /* Pods-Due.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Due.release.xcconfig"; path = "Pods/Target Support Files/Pods-Due/Pods-Due.release.xcconfig"; sourceTree = "<group>"; };
 		6E47723E829DDED0C9E252E8 /* Pods_Due.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Due.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A02A0ACC1F850013007D5278 /* Pulse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pulse.swift; sourceTree = "<group>"; };
 		A04131501F75731C007337EA /* Due.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Due.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A04131531F75731C007337EA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A041315A1F75731C007337EA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -131,7 +134,6 @@
 		A04131941F758250007337EA /* DiagonalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiagonalView.swift; sourceTree = "<group>"; };
 		A04131961F758260007337EA /* CardBack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardBack.swift; sourceTree = "<group>"; };
 		A04131981F758269007337EA /* CardFront.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardFront.swift; sourceTree = "<group>"; };
-		A041319A1F758284007337EA /* HomeScreenCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenCell.swift; sourceTree = "<group>"; };
 		A041319C1F758290007337EA /* PortalCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortalCell.swift; sourceTree = "<group>"; };
 		A041319E1F758299007337EA /* InfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoCell.swift; sourceTree = "<group>"; };
 		A04131A01F7582A8007337EA /* PadrinhoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PadrinhoCell.swift; sourceTree = "<group>"; };
@@ -191,6 +193,7 @@
 		A067E3851F7C44DA00AF68BC /* GiftCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GiftCell.swift; sourceTree = "<group>"; };
 		A067E3871F7C5DF500AF68BC /* GiftDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GiftDetailVC.swift; sourceTree = "<group>"; };
 		A067E3891F7C6F6D00AF68BC /* Gift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gift.swift; sourceTree = "<group>"; };
+		A0A6FF291F8966F00083A804 /* HomeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCell.swift; sourceTree = "<group>"; };
 		A0AA08E21F79303E00BC9E69 /* ForneVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForneVC.swift; sourceTree = "<group>"; };
 		A0AA08E41F79307E00BC9E69 /* ForneListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForneListVC.swift; sourceTree = "<group>"; };
 		A0AA08E61F7930A000BC9E69 /* EditForneVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditForneVC.swift; sourceTree = "<group>"; };
@@ -205,6 +208,7 @@
 		A0D8F2221F7924C5005CB665 /* KCFloatingActionButtonDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KCFloatingActionButtonDelegate.swift; sourceTree = "<group>"; };
 		A0D8F2231F7924C5005CB665 /* KCFloatingActionButtonItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KCFloatingActionButtonItem.swift; sourceTree = "<group>"; };
 		A0D8F2241F7925D1005CB665 /* SweetAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SweetAlert.swift; sourceTree = "<group>"; };
+		A0FEBDB41F8BE8FC00288077 /* SwitchBtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchBtn.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -378,6 +382,7 @@
 			children = (
 				A04131881F7581EE007337EA /* NetworkImageView.swift */,
 				A041318A1F758201007337EA /* BounceButton.swift */,
+				A02A0ACC1F850013007D5278 /* Pulse.swift */,
 				A041318C1F75820F007337EA /* CustomTF.swift */,
 				A041318E1F758222007337EA /* Support.swift */,
 				A06362C21F798806004870D3 /* Shh.swift */,
@@ -392,6 +397,7 @@
 				A04131941F758250007337EA /* DiagonalView.swift */,
 				A04131961F758260007337EA /* CardBack.swift */,
 				A04131981F758269007337EA /* CardFront.swift */,
+				A0FEBDB41F8BE8FC00288077 /* SwitchBtn.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -399,7 +405,7 @@
 		A04131701F757FE2007337EA /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				A041319A1F758284007337EA /* HomeScreenCell.swift */,
+				A0A6FF291F8966F00083A804 /* HomeCell.swift */,
 				A041319C1F758290007337EA /* PortalCell.swift */,
 				A041319E1F758299007337EA /* InfoCell.swift */,
 				A04131A01F7582A8007337EA /* PadrinhoCell.swift */,
@@ -627,6 +633,7 @@
 				A04131D81F75868F007337EA /* AddPhotoVC.swift in Sources */,
 				A04131B81F758549007337EA /* SaleVC.swift in Sources */,
 				A04131F21F7587B5007337EA /* AlbumVC.swift in Sources */,
+				A0A6FF2A1F8966F00083A804 /* HomeCell.swift in Sources */,
 				A0AA08E01F792F6100BC9E69 /* KCFloatingActionButtonItem.swift in Sources */,
 				A04131871F7581C4007337EA /* AlbumPhoto.swift in Sources */,
 				A04131771F758155007337EA /* PortalButton.swift in Sources */,
@@ -666,6 +673,7 @@
 				A041317D1F75817C007337EA /* Message.swift in Sources */,
 				A04131CC1F758622007337EA /* NameChangeVC.swift in Sources */,
 				A0AA08E31F79303E00BC9E69 /* ForneVC.swift in Sources */,
+				A0FEBDB51F8BE8FD00288077 /* SwitchBtn.swift in Sources */,
 				A04131F01F7587A2007337EA /* CasalVC.swift in Sources */,
 				A041318B1F758201007337EA /* BounceButton.swift in Sources */,
 				A04131FE1F758822007337EA /* PhotoZoomVC.swift in Sources */,
@@ -691,7 +699,6 @@
 				A067E3861F7C44DA00AF68BC /* GiftCell.swift in Sources */,
 				A0AA08DA1F792F4600BC9E69 /* SweetAlert.swift in Sources */,
 				A04131971F758260007337EA /* CardBack.swift in Sources */,
-				A041319B1F758284007337EA /* HomeScreenCell.swift in Sources */,
 				A04131A11F7582A8007337EA /* PadrinhoCell.swift in Sources */,
 				A04131C01F75858A007337EA /* AccessVC.swift in Sources */,
 				A067E38A1F7C6F6D00AF68BC /* Gift.swift in Sources */,
@@ -701,6 +708,7 @@
 				A04131541F75731C007337EA /* AppDelegate.swift in Sources */,
 				A04131EC1F75877F007337EA /* TabBar.swift in Sources */,
 				A0AA08DC1F792F5000BC9E69 /* KCFABViewController.swift in Sources */,
+				A02A0ACD1F850013007D5278 /* Pulse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

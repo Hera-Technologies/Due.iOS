@@ -140,6 +140,15 @@ class InitialVC: UIViewController, UITextFieldDelegate, GIDSignInUIDelegate, GID
         return btn
     }()
     
+    let socialLbl: UILabel = {
+        let lbl = UILabel()
+        lbl.text = "Ou, entre com:"
+        lbl.font = UIFont(name: "Avenir-Roman", size: 16)
+        lbl.textColor = .white
+        lbl.translatesAutoresizingMaskIntoConstraints = false
+        return lbl
+    }()
+    
     let fbBtn: BounceButton = {
         let btn = BounceButton()
         btn.setTitle("f", for: .normal)
@@ -204,6 +213,7 @@ class InitialVC: UIViewController, UITextFieldDelegate, GIDSignInUIDelegate, GID
         view.addSubview(loginBtn)
         view.addSubview(signupLbl)
         view.addSubview(fbBtn)
+        view.addSubview(socialLbl)
         view.addSubview(googleBtn)
         view.addSubview(signupBtn)
         
@@ -219,12 +229,13 @@ class InitialVC: UIViewController, UITextFieldDelegate, GIDSignInUIDelegate, GID
         
         emailIcon.leadingAnchor.constraint(equalTo: line1.leadingAnchor, constant: 5).isActive = true
         emailIcon.centerYAnchor.constraint(equalTo: emailTxt.centerYAnchor).isActive = true
-        emailIcon.widthAnchor.constraint(equalToConstant: 20).isActive = true
-        emailIcon.heightAnchor.constraint(equalToConstant: 20).isActive = true
+        emailIcon.widthAnchor.constraint(equalToConstant: 18).isActive = true
+        emailIcon.heightAnchor.constraint(equalToConstant: 22).isActive = true
+        
         emailTxt.leftAnchor.constraint(equalTo: emailIcon.rightAnchor, constant: 13).isActive = true
         emailTxt.bottomAnchor.constraint(equalTo: line1.topAnchor, constant: 0).isActive = true
         emailTxt.widthAnchor.constraint(equalTo: line1.widthAnchor, multiplier: 1).isActive = true
-        emailTxt.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.07).isActive = true
+        emailTxt.heightAnchor.constraint(equalToConstant: 40).isActive = true
         emailTxt.delegate = self
         
         let lineY = view.frame.height * 0.07
@@ -233,14 +244,15 @@ class InitialVC: UIViewController, UITextFieldDelegate, GIDSignInUIDelegate, GID
         line1.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.8).isActive = true
         line1.heightAnchor.constraint(equalToConstant: 0.5).isActive = true
         
-        passIcon.leadingAnchor.constraint(equalTo: line1.leadingAnchor, constant: 5).isActive = true
-        passIcon.centerYAnchor.constraint(equalTo: passTxt.centerYAnchor).isActive = true
+        passIcon.centerXAnchor.constraint(equalTo: emailIcon.centerXAnchor).isActive = true
+        passIcon.topAnchor.constraint(equalTo: line1.bottomAnchor, constant: 12).isActive = true
         passIcon.widthAnchor.constraint(equalToConstant: 22).isActive = true
         passIcon.heightAnchor.constraint(equalToConstant: 18).isActive = true
-        passTxt.topAnchor.constraint(equalTo: line1.bottomAnchor, constant: 0).isActive = true
+        
+        passTxt.topAnchor.constraint(equalTo: line1.bottomAnchor, constant: 4).isActive = true
         passTxt.rightAnchor.constraint(equalTo: forgotPassBtn.leftAnchor, constant: -8).isActive = true
         passTxt.leftAnchor.constraint(equalTo: passIcon.rightAnchor, constant: 13).isActive = true
-        passTxt.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.07).isActive = true
+        passTxt.heightAnchor.constraint(equalToConstant: 40).isActive = true
         passTxt.delegate = self
         
         forgotPassBtn.trailingAnchor.constraint(equalTo: line1.trailingAnchor).isActive = true
@@ -262,6 +274,9 @@ class InitialVC: UIViewController, UITextFieldDelegate, GIDSignInUIDelegate, GID
         signupBtn.centerYAnchor.constraint(equalTo: signupLbl.centerYAnchor).isActive = true
         signupBtn.leftAnchor.constraint(equalTo: signupLbl.rightAnchor, constant: 8).isActive = true
         signupBtn.addTarget(self, action: #selector(signup), for: .touchUpInside)
+        
+        socialLbl.leadingAnchor.constraint(equalTo: line1.leadingAnchor).isActive = true
+        socialLbl.centerYAnchor.constraint(equalTo: fbBtn.centerYAnchor, constant: 0).isActive = true
         
         let y = view.frame.height * 0.37
         let size: CGFloat = 65
@@ -291,7 +306,7 @@ class InitialVC: UIViewController, UITextFieldDelegate, GIDSignInUIDelegate, GID
     }
     
     @objc func showFAQ() {
-        navigationController?.pushViewController(FaqVC(), animated: true)
+        self.navigationController?.pushViewController(FaqVC(), animated: true)
     }
     
     // MARK: KEYBOARD METHODS

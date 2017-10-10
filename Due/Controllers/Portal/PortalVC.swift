@@ -19,7 +19,7 @@ class PortalVC: UIViewController, UICollectionViewDelegateFlowLayout, UICollecti
         NotificationCenter.default.removeObserver(self)
     }
     
-    // MARK: ALERTS
+// MARK: ALERTS
     
     let nameAlert: Presentr = {
         let width = ModalSize.fluid(percentage: 0.8)
@@ -55,16 +55,16 @@ class PortalVC: UIViewController, UICollectionViewDelegateFlowLayout, UICollecti
         return pre
     }()
     
-    // MARK: ELEMENTS
+// MARK: ELEMENTS
     
     var progresso: [Float] = [0.0, 0.0, 0.0, 0.0]
     var aux: Bool = true
     
-    let buttons: [PortalButton] = {
+    let screens: [PortalButton] = {
         let main = PortalButton(titulo: "Tela Inicial", icon: "video", items: "7 itens")
         let padrinhos = PortalButton(titulo: "Padrinhos", icon: "padrinhos", items: "1 item")
         let evento = PortalButton(titulo: "Evento", icon: "map", items: "4 itens")
-        let presentes = PortalButton(titulo: "Presentes", icon: "cart", items: "1 item")
+        let presentes = PortalButton(titulo: "Presentes", icon: "giftbox", items: "1 item")
         return [main, padrinhos, evento, presentes]
     }()
     
@@ -77,21 +77,121 @@ class PortalVC: UIViewController, UICollectionViewDelegateFlowLayout, UICollecti
         return btn
     }()
     
-    let seeBtn: UIButton = {
-        let btn = UIButton()
-        btn.setImage(UIImage(named: "eye"), for: UIControlState())
-        btn.translatesAutoresizingMaskIntoConstraints = false
-        return btn
-    }()
-    
     let viewTitle: UILabel = {
         let lbl = UILabel()
         lbl.text = "Portal"
         lbl.textColor = dark
         lbl.textAlignment = .left
-        lbl.font = UIFont(name: "Avenir-Black", size: 30)
+        lbl.font = UIFont(name: "Avenir-Black", size: 24)
         lbl.translatesAutoresizingMaskIntoConstraints = false
         return lbl
+    }()
+    
+    let lineOne: UIView = {
+        let ln = UIView()
+        ln.backgroundColor = UIColor(red: 55/255, green: 236/255, blue: 186/255, alpha: 1)
+        ln.layer.cornerRadius = 1
+        ln.translatesAutoresizingMaskIntoConstraints = false
+        return ln
+    }()
+    
+    let eventLbl: UILabel = {
+        let lbl = UILabel()
+        lbl.text = "Evento"
+        lbl.textColor  = .lightGray
+        lbl.font = UIFont(name: "Avenir-Heavy", size: 20)
+        lbl.translatesAutoresizingMaskIntoConstraints = false
+        return lbl
+    }()
+    
+    let eventNameLbl: UILabel = {
+        let lbl = UILabel()
+        lbl.textColor  = dark
+        lbl.textAlignment = .center
+        lbl.font = UIFont(name: "Avenir-Black", size: 28)
+        lbl.alpha = 0
+        lbl.translatesAutoresizingMaskIntoConstraints = false
+        return lbl
+    }()
+    
+    let editBtn: UIButton = {
+        let btn = UIButton()
+        btn.setImage(UIImage(named: "edit"), for: UIControlState())
+        btn.translatesAutoresizingMaskIntoConstraints = false
+        btn.alpha = 0
+        return btn
+    }()
+    
+    let lineTwo: UIView = {
+        let ln = UIView()
+        ln.backgroundColor = linewhite
+        ln.translatesAutoresizingMaskIntoConstraints = false
+        return ln
+    }()
+    
+    let powerIcon: UIImageView = {
+        let img = UIImageView()
+        img.image = #imageLiteral(resourceName: "offline")
+        img.contentMode = .scaleAspectFit
+        img.translatesAutoresizingMaskIntoConstraints = false
+        return img
+    }()
+    
+    let statusLbl: UILabel = {
+        let lbl = UILabel()
+        lbl.text = "Versão offline"
+        lbl.textColor = dark
+        lbl.textAlignment = .center
+        lbl.font = UIFont(name: "Avenir-Heavy", size: 22)
+        lbl.translatesAutoresizingMaskIntoConstraints = false
+        return lbl
+    }()
+    
+    let messageLbl: UILabel = {
+        let lbl = UILabel()
+        lbl.text = "Complete sua versão para deixá-la online."
+        lbl.textColor = .gray
+        lbl.textAlignment = .justified
+        lbl.font = UIFont(name: "Avenir-Roman", size: 16)
+        lbl.numberOfLines = 0
+        lbl.translatesAutoresizingMaskIntoConstraints = false
+        return lbl
+    }()
+    
+    let container: UIView = {
+        let vi = UIView()
+        vi.backgroundColor = .white
+        vi.layer.shadowColor = UIColor.gray.cgColor
+        vi.layer.shadowOffset = CGSize(width: 0, height: 3)
+        vi.layer.shadowRadius = 6
+        vi.layer.shadowOpacity = 0.3
+        vi.layer.cornerRadius = 15
+        vi.translatesAutoresizingMaskIntoConstraints = false
+        return vi
+    }()
+    
+    let timeLbl: UILabel = {
+        let lbl = UILabel()
+        lbl.textColor  = dark
+        lbl.text = "Início - Fim"
+        lbl.font = UIFont(name: "Avenir-Heavy", size: 20)
+        lbl.translatesAutoresizingMaskIntoConstraints = false
+        return lbl
+    }()
+    
+    let switchBtn: SwitchBtn = {
+        let sw = SwitchBtn()
+        sw.translatesAutoresizingMaskIntoConstraints = false
+        return sw
+    }()
+    
+    let renewBtn: UIButton = {
+        let btn = UIButton()
+        btn.setImage(#imageLiteral(resourceName: "renew"), for: .normal)
+        btn.isHidden = true
+        btn.isEnabled = false
+        btn.translatesAutoresizingMaskIntoConstraints = false
+        return btn
     }()
     
     let shareBtn: UIButton = {
@@ -101,134 +201,30 @@ class PortalVC: UIViewController, UICollectionViewDelegateFlowLayout, UICollecti
         return btn
     }()
     
-    let line: UIView = {
-        let ln = UIView()
-        ln.backgroundColor = linewhite
-        ln.translatesAutoresizingMaskIntoConstraints = false
-        return ln
-    }()
-    
-    let event: UILabel = {
-        let lbl = UILabel()
-        lbl.textColor  = dark
-        lbl.textAlignment = .center
-        lbl.font = UIFont(name: "Avenir-Black", size: 24)
-        lbl.alpha = 0
-        lbl.translatesAutoresizingMaskIntoConstraints = false
-        return lbl
-    }()
-    
-    let edit: UIButton = {
+    let seeBtn: UIButton = {
         let btn = UIButton()
-        btn.setImage(UIImage(named: "edit"), for: UIControlState())
-        btn.translatesAutoresizingMaskIntoConstraints = false
-        btn.alpha = 0
-        return btn
-    }()
-    
-    let statusLbl: UILabel = {
-        let lbl = UILabel()
-        lbl.textColor  = .gray
-        lbl.text = "status:"
-        lbl.textAlignment = .center
-        lbl.font = UIFont(name: "Avenir-Book", size: 18)
-        lbl.translatesAutoresizingMaskIntoConstraints = false
-        return lbl
-    }()
-    
-    let status: UILabel = {
-        let lbl = UILabel()
-        lbl.textColor  = darker
-        lbl.text = "offline"
-        lbl.textAlignment = .center
-        lbl.font = UIFont(name: "Avenir-Roman", size: 18)
-        lbl.translatesAutoresizingMaskIntoConstraints = false
-        return lbl
-    }()
-    
-    let startLbl: UILabel = {
-        let lbl = UILabel()
-        lbl.textColor  = .gray
-        lbl.text = "início em:"
-        lbl.textAlignment = .center
-        lbl.font = UIFont(name: "Avenir-Book", size: 18)
-        lbl.translatesAutoresizingMaskIntoConstraints = false
-        return lbl
-    }()
-    
-    let start: UILabel = {
-        let lbl = UILabel()
-        lbl.textColor  = darker
-        lbl.textAlignment = .center
-        lbl.font = UIFont(name: "Avenir-Roman", size: 18)
-        lbl.translatesAutoresizingMaskIntoConstraints = false
-        return lbl
-    }()
-    
-    let endLbl: UILabel = {
-        let lbl = UILabel()
-        lbl.textColor  = .gray
-        lbl.text = "válida até:"
-        lbl.textAlignment = .center
-        lbl.font = UIFont(name: "Avenir-Book", size: 18)
-        lbl.translatesAutoresizingMaskIntoConstraints = false
-        return lbl
-    }()
-    
-    let end: UILabel = {
-        let lbl = UILabel()
-        lbl.textColor  = darker
-        lbl.textAlignment = .center
-        lbl.font = UIFont(name: "Avenir-Roman", size: 18)
-        lbl.translatesAutoresizingMaskIntoConstraints = false
-        return lbl
-    }()
-    
-    let initBtn: BounceButton = {
-        let btn = BounceButton()
-        btn.setTitle("Iniciar", for: UIControlState())
-        btn.titleLabel?.font = UIFont(name: "Avenir-Heavy", size: 18)
-        btn.setTitleColor(.white, for: UIControlState())
-        btn.backgroundColor = darker
+        btn.setImage(UIImage(named: "eye"), for: UIControlState())
+        btn.contentMode = .scaleAspectFit
         btn.translatesAutoresizingMaskIntoConstraints = false
         return btn
     }()
     
-    let renewBtn: BounceButton = {
-        let btn = BounceButton()
-        btn.setTitle("Renovar", for: UIControlState())
-        btn.titleLabel?.font = UIFont(name: "Avenir-Heavy", size: 18)
-        btn.setTitleColor(.white, for: UIControlState())
-        btn.backgroundColor = UIColor(red: 55/255, green: 236/255, blue: 186/255, alpha: 1)
-        btn.layer.shadowColor = UIColor.darkGray.cgColor
-        btn.layer.shadowOffset = CGSize(width: 0, height: 1.5)
-        btn.layer.shadowRadius = 1.8
-        btn.layer.shadowOpacity = 0.45
-        btn.isHidden = true
-        btn.isEnabled = false
+    let guideBtn: UIButton = {
+        let btn = UIButton()
+        btn.setImage(UIImage(named: "guide"), for: UIControlState())
+        btn.contentMode = .scaleAspectFit
         btn.translatesAutoresizingMaskIntoConstraints = false
         return btn
     }()
     
     let collec: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
-        layout.scrollDirection = .horizontal
-        layout.minimumLineSpacing = 0
+        layout.minimumLineSpacing = 10
         let col = UICollectionView(frame: .zero, collectionViewLayout: layout)
         col.backgroundColor = .clear
-        col.isPagingEnabled = true
-        col.showsHorizontalScrollIndicator = false
+        col.showsVerticalScrollIndicator = false
         col.translatesAutoresizingMaskIntoConstraints = false
         return col
-    }()
-    
-    let control: UIPageControl = {
-        let ctr = UIPageControl()
-        ctr.pageIndicatorTintColor = linewhite
-        ctr.currentPageIndicatorTintColor = .darkGray
-        ctr.numberOfPages = 4
-        ctr.translatesAutoresizingMaskIntoConstraints = false
-        return ctr
     }()
     
     // MARK: VIEWDIDLOAD
@@ -236,7 +232,7 @@ class PortalVC: UIViewController, UICollectionViewDelegateFlowLayout, UICollecti
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = .white
+        view.backgroundColor = UIColor(red: 250/255, green: 250/255, blue: 250/255, alpha: 1)
         setup()
         
         if details.nameSet == false {
@@ -271,109 +267,121 @@ class PortalVC: UIViewController, UICollectionViewDelegateFlowLayout, UICollecti
         view.addSubview(backBtn)
         view.addSubview(seeBtn)
         view.addSubview(viewTitle)
-        view.addSubview(line)
-        view.addSubview(event)
-        view.addSubview(edit)
+        view.addSubview(lineOne)
+        view.addSubview(eventLbl)
+        view.addSubview(eventNameLbl)
+        view.addSubview(editBtn)
+        view.addSubview(lineTwo)
+        view.addSubview(powerIcon)
         view.addSubview(statusLbl)
-        view.addSubview(status)
-        view.addSubview(startLbl)
-        view.addSubview(start)
-        view.addSubview(endLbl)
-        view.addSubview(end)
-        view.addSubview(initBtn)
+        view.addSubview(messageLbl)
+        view.addSubview(container)
+        view.addSubview(timeLbl)
+        view.addSubview(switchBtn)
         view.addSubview(renewBtn)
         view.addSubview(shareBtn)
+        view.addSubview(guideBtn)
         view.addSubview(collec)
-        view.addSubview(control)
         
         backBtn.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 12).isActive = true
         backBtn.topAnchor.constraint(equalTo: view.topAnchor, constant: 20).isActive = true
         backBtn.addTarget(self, action: #selector(backHome), for: .touchUpInside)
         
-        seeBtn.centerYAnchor.constraint(equalTo: backBtn.centerYAnchor, constant: 4).isActive = true
-        seeBtn.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -25).isActive = true
-        seeBtn.heightAnchor.constraint(equalToConstant: 20).isActive = true
-        seeBtn.widthAnchor.constraint(equalToConstant: 35).isActive = true
-        seeBtn.addTarget(self, action: #selector(seeEvent), for: .touchUpInside)
+        viewTitle.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: 0).isActive = true
+        viewTitle.centerYAnchor.constraint(equalTo: backBtn.centerYAnchor, constant: -3).isActive = true
         
-        let titleY = view.frame.height * 0.35
-        viewTitle.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20).isActive = true
-        viewTitle.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: -titleY).isActive = true
+        lineOne.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 15).isActive = true
+        lineOne.topAnchor.constraint(equalTo: viewTitle.bottomAnchor, constant: 30).isActive = true
+        lineOne.widthAnchor.constraint(equalToConstant: 20).isActive = true
+        lineOne.heightAnchor.constraint(equalToConstant: 2).isActive = true
         
-        shareBtn.centerYAnchor.constraint(equalTo: viewTitle.centerYAnchor).isActive = true
-        shareBtn.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -30).isActive = true
+        eventLbl.leftAnchor.constraint(equalTo: lineOne.rightAnchor, constant: 6).isActive = true
+        eventLbl.centerYAnchor.constraint(equalTo: lineOne.centerYAnchor).isActive = true
+    
+        eventNameLbl.topAnchor.constraint(equalTo: eventLbl.bottomAnchor, constant: 8).isActive = true
+        eventNameLbl.leadingAnchor.constraint(equalTo: lineOne.centerXAnchor, constant: 0).isActive = true
+        
+        editBtn.centerYAnchor.constraint(equalTo: eventNameLbl.centerYAnchor).isActive = true
+        editBtn.leftAnchor.constraint(equalTo: eventNameLbl.rightAnchor, constant: 10).isActive = true
+        editBtn.heightAnchor.constraint(equalToConstant: 30).isActive = true
+        editBtn.widthAnchor.constraint(equalToConstant: 30).isActive = true
+        editBtn.addTarget(self, action: #selector(editEventName), for: .touchUpInside)
+        
+        lineTwo.leadingAnchor.constraint(equalTo: eventNameLbl.centerXAnchor, constant: 0).isActive = true
+        lineTwo.topAnchor.constraint(equalTo: eventNameLbl.bottomAnchor, constant: 8).isActive = true
+        lineTwo.trailingAnchor.constraint(equalTo: editBtn.trailingAnchor, constant: 0).isActive = true
+        lineTwo.heightAnchor.constraint(equalToConstant: 4).isActive = true
+        
+        powerIcon.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20).isActive = true
+        powerIcon.topAnchor.constraint(equalTo: lineTwo.bottomAnchor, constant: 25).isActive = true
+        powerIcon.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.2).isActive = true
+        powerIcon.heightAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.2).isActive = true
+        
+        statusLbl.topAnchor.constraint(equalTo: lineTwo.bottomAnchor, constant: 18).isActive = true
+        statusLbl.leftAnchor.constraint(equalTo: powerIcon.rightAnchor, constant: 12).isActive = true
+        
+        messageLbl.topAnchor.constraint(equalTo: statusLbl.bottomAnchor, constant: 4).isActive = true
+        messageLbl.leadingAnchor.constraint(equalTo: statusLbl.leadingAnchor).isActive = true
+        messageLbl.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20).isActive = true
+        
+        container.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        container.topAnchor.constraint(equalTo: powerIcon.bottomAnchor, constant: 25).isActive = true
+        container.heightAnchor.constraint(equalToConstant: 75).isActive = true
+        container.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.92).isActive = true
+        
+        timeLbl.leftAnchor.constraint(equalTo: container.leftAnchor, constant: 15).isActive = true
+        timeLbl.centerYAnchor.constraint(equalTo: container.centerYAnchor).isActive = true
+        
+        switchBtn.centerYAnchor.constraint(equalTo: container.centerYAnchor, constant: 0).isActive = true
+        switchBtn.rightAnchor.constraint(equalTo: container.rightAnchor, constant: -15).isActive = true
+        switchBtn.heightAnchor.constraint(equalToConstant: 31).isActive = true
+        switchBtn.widthAnchor.constraint(equalToConstant: 51).isActive = true
+        switchBtn.layer.cornerRadius = 15.5
+        let tap = UITapGestureRecognizer(target: self, action: #selector(checkVersionCompletion))
+        switchBtn.addGestureRecognizer(tap)
+        
+        renewBtn.centerYAnchor.constraint(equalTo: container.centerYAnchor, constant: 0).isActive = true
+        renewBtn.leftAnchor.constraint(equalTo: timeLbl.rightAnchor, constant: 10).isActive = true
+        renewBtn.heightAnchor.constraint(equalToConstant: 25).isActive = true
+        renewBtn.widthAnchor.constraint(equalToConstant: 25).isActive = true
+        renewBtn.addTarget(self, action: #selector(renewVersion), for: .touchUpInside)
+        
+        shareBtn.leadingAnchor.constraint(equalTo: timeLbl.leadingAnchor).isActive = true
+        shareBtn.topAnchor.constraint(equalTo: container.bottomAnchor, constant: 15).isActive = true
         shareBtn.heightAnchor.constraint(equalToConstant: 25).isActive = true
         shareBtn.widthAnchor.constraint(equalToConstant: 25).isActive = true
         shareBtn.addTarget(self, action: #selector(share), for: .touchUpInside)
         
-        line.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 12).isActive = true
-        line.topAnchor.constraint(equalTo: viewTitle.bottomAnchor, constant: 0).isActive = true
-        line.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
-        line.heightAnchor.constraint(equalToConstant: 0.8).isActive = true
+        seeBtn.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: 0).isActive = true
+        seeBtn.centerYAnchor.constraint(equalTo: shareBtn.centerYAnchor).isActive = true
+        seeBtn.heightAnchor.constraint(equalToConstant: 32).isActive = true
+        seeBtn.widthAnchor.constraint(equalToConstant: 33).isActive = true
+        seeBtn.addTarget(self, action: #selector(seeEvent), for: .touchUpInside)
         
-        let eventY = view.frame.height * 0.25
-        event.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: -eventY).isActive = true
-        event.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20).isActive = true
+        guideBtn.trailingAnchor.constraint(equalTo: switchBtn.trailingAnchor, constant: 0).isActive = true
+        guideBtn.centerYAnchor.constraint(equalTo: shareBtn.centerYAnchor).isActive = true
+        guideBtn.heightAnchor.constraint(equalToConstant: 28).isActive = true
+        guideBtn.widthAnchor.constraint(equalToConstant: 24).isActive = true
+        guideBtn.addTarget(self, action: #selector(showGuide), for: .touchUpInside)
         
-        edit.centerYAnchor.constraint(equalTo: event.centerYAnchor).isActive = true
-        edit.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -30).isActive = true
-        edit.heightAnchor.constraint(equalToConstant: 30).isActive = true
-        edit.widthAnchor.constraint(equalToConstant: 30).isActive = true
-        edit.addTarget(self, action: #selector(editEventName), for: .touchUpInside)
-        
-        var lblY: CGFloat?
-        let size = UIScreen.main.bounds.width
-        if size <= 320 {
-            lblY = view.frame.height * 0.16
-        } else {
-            lblY = view.frame.height * 0.18
-        }
-        statusLbl.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: -lblY!).isActive = true
-        statusLbl.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 30).isActive = true
-        status.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -30).isActive = true
-        status.centerYAnchor.constraint(equalTo: statusLbl.centerYAnchor).isActive = true
-        
-        startLbl.topAnchor.constraint(equalTo: statusLbl.bottomAnchor, constant: 15).isActive = true
-        startLbl.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 30).isActive = true
-        start.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -30).isActive = true
-        start.centerYAnchor.constraint(equalTo: startLbl.centerYAnchor).isActive = true
-        
-        endLbl.topAnchor.constraint(equalTo: startLbl.bottomAnchor, constant: 15).isActive = true
-        endLbl.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 30).isActive = true
-        end.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -30).isActive = true
-        end.centerYAnchor.constraint(equalTo: endLbl.centerYAnchor).isActive = true
-        
-        let height = view.frame.height * 0.07
-        initBtn.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -30).isActive = true
-        initBtn.topAnchor.constraint(equalTo: endLbl.bottomAnchor, constant: 25).isActive = true
-        initBtn.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.4).isActive = true
-        initBtn.heightAnchor.constraint(equalToConstant: height).isActive = true
-        initBtn.layer.cornerRadius = height / 2
-        initBtn.addTarget(self, action: #selector(checkIfVersionIsCompleteBeforeInit), for: .touchUpInside)
-        
-        renewBtn.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -30).isActive = true
-        renewBtn.topAnchor.constraint(equalTo: endLbl.bottomAnchor, constant: 25).isActive = true
-        renewBtn.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.4).isActive = true
-        renewBtn.heightAnchor.constraint(equalToConstant: height).isActive = true
-        renewBtn.layer.cornerRadius = height / 2
-        renewBtn.addTarget(self, action: #selector(renewVersion), for: .touchUpInside)
-        
-        control.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 30).isActive = true
-        control.topAnchor.constraint(equalTo: initBtn.bottomAnchor, constant: 20).isActive = true
-        control.heightAnchor.constraint(equalToConstant: 15).isActive = true
-        
-        collec.topAnchor.constraint(equalTo: control.bottomAnchor, constant: 0).isActive = true
+        collec.topAnchor.constraint(equalTo: seeBtn.bottomAnchor, constant: 0).isActive = true
         collec.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
         collec.widthAnchor.constraint(equalTo: view.widthAnchor).isActive = true
         collec.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        collec.contentInset = UIEdgeInsets(top: 15, left: 15, bottom: 15, right: 15)
         collec.delegate = self
         collec.dataSource = self
         collec.register(PortalCell.self, forCellWithReuseIdentifier: cellID)
         
+        let size = UIScreen.main.bounds.width
+        if size <= 320 {
+            timeLbl.font = UIFont(name: "Avenir-Heavy", size: 16)
+        }
+        
     }
     
     @objc func share() {
-        if let name = event.text {
+        if let name = eventNameLbl.text {
             let message = """
             Baixe o Due para ver a versão do nosso casamento! O código de acesso é \(name)
             
@@ -388,9 +396,13 @@ class PortalVC: UIViewController, UICollectionViewDelegateFlowLayout, UICollecti
     }
     
     @objc func renewVersion() {
-        nomeDoEvento = event.text
+        nomeDoEvento = eventNameLbl.text
         let vc = RenewVC()
         customPresentViewController(renewAlert, viewController: vc, animated: true, completion: nil)
+    }
+    
+    @objc func showGuide() {
+        self.navigationController?.pushViewController(GuideVC(), animated: true)
     }
     
     // MARK: FETCH EVENT
@@ -404,9 +416,9 @@ class PortalVC: UIViewController, UICollectionViewDelegateFlowLayout, UICollecti
     
     func animateContainer(eventName: String) {
         UIView.animate(withDuration: 1, delay: 0, options: .curveEaseIn, animations: {
-            self.event.text = eventName
-            self.event.alpha = 1
-            self.edit.alpha = 1
+            self.eventNameLbl.text = eventName
+            self.eventNameLbl.alpha = 1
+            self.editBtn.alpha = 1
             self.view.layoutIfNeeded()
         }, completion: nil)
     }
@@ -418,10 +430,10 @@ class PortalVC: UIViewController, UICollectionViewDelegateFlowLayout, UICollecti
         present(vc, animated: true, completion: nil)
     }
     
-    // MARK: EDIT EVENT NAME
+// MARK: EDIT EVENT NAME
     
     @objc func editEventName() {
-        nomeDoEvento = event.text
+        nomeDoEvento = eventNameLbl.text
         let nameChange = NameChangeVC()
         customPresentViewController(nameChangeAlert, viewController: nameChange, animated: true, completion: nil)
     }
@@ -430,9 +442,9 @@ class PortalVC: UIViewController, UICollectionViewDelegateFlowLayout, UICollecti
         self.navigationController?.popToRootViewController(animated: true)
     }
     
-    // MARK: INITIATE DUE VERSION
+// MARK: INITIATE DUE VERSION
     
-    @objc func checkIfVersionIsCompleteBeforeInit() {
+    @objc func checkVersionCompletion() {
         if aux == false {
             _ = SweetAlert().showAlert("Oops...", subTitle: "Você precisa completar sua versão para poder iniciá-la", style: .error)
         } else {
@@ -441,7 +453,7 @@ class PortalVC: UIViewController, UICollectionViewDelegateFlowLayout, UICollecti
     }
     
     func confirmInit() {
-        SweetAlert().showAlert("Iniciar versão?", subTitle: "Sua versão se tornará acessível para outros usuários, dando início ao prazo de 3 meses.", style: AlertStyle.warning, buttonTitle: "Cancelar", buttonColor: UIColor.colorFromRGB(0xFF8989), otherButtonTitle:  "Confirmar", otherButtonColor: UIColor.colorFromRGB(0x99B9f3)) { (isOtherButton) -> Void in
+        SweetAlert().showAlert("Iniciar versão?", subTitle: "Sua versão se tornará acessível para outros usuários, dando início ao prazo de 3 meses. Esta ação não pode ser desfeita.", style: AlertStyle.warning, buttonTitle: "Cancelar", buttonColor: UIColor.colorFromRGB(0xFF8989), otherButtonTitle:  "Confirmar", otherButtonColor: UIColor.colorFromRGB(0x99B9f3)) { (isOtherButton) -> Void in
             if !isOtherButton {
                 self.initVersion()
                 _ = SweetAlert().showAlert("Versão online!", subTitle: "Sua versão agora está online! Compartilhe o app com amigos e familiares para que a vejam! O prazo de 3 meses começa agora.", style: AlertStyle.success)
@@ -450,10 +462,11 @@ class PortalVC: UIViewController, UICollectionViewDelegateFlowLayout, UICollecti
     }
     
     func initVersion() {
+        switchBtn.moveBall()
         let date = Calendar.current.date(byAdding: .month, value: 3, to: Date())
         let currentDate = Date()
         let formatter = DateFormatter()
-        formatter.dateFormat = "dd.MM.yyyy"
+        formatter.dateFormat = "dd.MM.yy"
         let today = formatter.string(from: currentDate)
         let exp = formatter.string(from: date!)
         
@@ -466,88 +479,66 @@ class PortalVC: UIViewController, UICollectionViewDelegateFlowLayout, UICollecti
     }
     
     func displayDates() {
-        if let dateStart = details.dateStart, let dateEnd = details.dateEnd {
-            start.text = dateStart
-            end.text = dateEnd
-            status.text = "online"
-            initBtn.isHidden = true
-            initBtn.isEnabled = false
+        if let startDate = details.dateStart, let endDate = details.dateEnd {
+            timeLbl.text = "\(startDate) - \(endDate)"
+            statusLbl.text = "Versão online"
+            messageLbl.text = "Compartilhe o app com seus convidados!"
+            switchBtn.isUserInteractionEnabled = false
+            switchBtn.moveBall()
+            powerIcon.image = #imageLiteral(resourceName: "online")
             renewBtn.isHidden = false
             renewBtn.isEnabled = true
         }
-        
     }
     
     @objc func updateExpDate(notification: NSNotification) {
-        if let newExpDate = details.dateEnd {
-            end.text = newExpDate
+        if let newExpDate = details.dateEnd, let startDate = details.dateStart {
+            timeLbl.text = "\(startDate) - \(newExpDate)"
         }
     }
     
-    // MARK: COLLECTION VIEW DELEGATE AND DATA SOURCE
+// MARK: COLLECTION VIEW DELEGATE AND DATA SOURCE
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 4
+        return screens.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellID, for: indexPath) as! PortalCell
-        cell.vc = self
+        cell.delegate = self
+        cell.model = screens[indexPath.item]
         setProgress {
             let progress = self.progresso[indexPath.item]
             cell.progressBar.setProgress(progress, animated: true)
-            cell.progressLbl.text = "\(cell.progressBar.progress * 100)%"
+            let intValue = Int(cell.progressBar.progress * 100)
+            cell.progressLbl.text = "\(intValue)%"
             for num in self.progresso {
                 if num < 1.0 {
                     self.aux = false
                 }
             }
         }
-        cell.configureCell(button: buttons[indexPath.item])
         return cell
     }
     
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let cell = collectionView.cellForItem(at: indexPath) as! PortalCell
-        switch indexPath.item {
-        case 0:
-            animateCell(cell: cell, completion: {
-                self.navigationController?.pushViewController(MainVC(), animated: true)
-            })
-        case 1:
-            animateCell(cell: cell, completion: {
-                self.navigationController?.pushViewController(PadrinhosVC(), animated: true)
-            })
-        case 2:
-            animateCell(cell: cell, completion: {
-                self.navigationController?.pushViewController(EventoVC(), animated: true)
-            })
-        default:
-            animateCell(cell: cell, completion: {
-                self.navigationController?.pushViewController(GiftsVC(), animated: true)
-            })
-        }
-    }
-    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: collec.frame.width, height: collec.frame.height)
-    }
-    
-    func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
-        let pageNum = Int(targetContentOffset.pointee.x / view.frame.width)
-        control.currentPage = pageNum
-    }
-    
-    func animateCell(cell: PortalCell, completion: @escaping () -> Void) {
-        UIView.animate(withDuration: 0.3, delay: 0, options: .curveEaseInOut, animations: {
-            cell.transform = CGAffineTransform(scaleX: 1.4, y: 1.4)
-            cell.transform = CGAffineTransform.identity
-        }) { (boo) in
-            completion()
+        var w: CGFloat?
+        var h: CGFloat?
+        let size = UIScreen.main.bounds.width
+        if size >= 414 {
+            w = view.frame.width * 0.45
+            h = view.frame.height * 0.17
+        } else if size < 414 && size > 320 {
+            w = view.frame.width * 0.45
+            h = view.frame.height * 0.17
+        } else if size <= 320 {
+            w = view.frame.width * 0.43
+            h = view.frame.height * 0.17
         }
+        return CGSize(width: w!, height: h!)
     }
     
-    // MARK: FETCH VERSION PROGRESS
+// MARK: FETCH VERSION PROGRESS
     
     func setProgress(completion: @escaping () -> Void) {
         progresso = [0.0, 0.0, 0.0, 0.0]
@@ -608,5 +599,27 @@ class PortalVC: UIViewController, UICollectionViewDelegateFlowLayout, UICollecti
     }
     
 }
+
+
+extension PortalVC: PortalCellDelegate {
+    func transition(cell: PortalCell) {
+        if let index = collec.indexPath(for: cell) {
+            switch index.item {
+            case 0: self.navigationController?.pushViewController(MainVC(), animated: true)
+            case 1: self.navigationController?.pushViewController(PadrinhosVC(), animated: true)
+            case 2: self.navigationController?.pushViewController(EventoVC(), animated: true)
+            default: self.navigationController?.pushViewController(GiftsVC(), animated: true)
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+
 
 

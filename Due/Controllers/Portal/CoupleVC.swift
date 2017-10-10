@@ -153,7 +153,7 @@ class CoupleVC: UIViewController, UICollectionViewDelegateFlowLayout, UICollecti
     }
     
     @objc func goBack() {
-        navigationController?.popToViewController(navigationController!.viewControllers[2], animated: true)
+        self.navigationController?.popToViewController(navigationController!.viewControllers[1], animated: true)
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {

@@ -140,15 +140,15 @@ class CoupleCell: UICollectionViewCell {
         brideContainer.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: 0.35).isActive = true
         
         noivaTitle.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 25).isActive = true
-        noivaTitle.centerYAnchor.constraint(equalTo: brideContainer.centerYAnchor, constant: 0).isActive = true
+        noivaTitle.bottomAnchor.constraint(equalTo: noivaTxt.topAnchor, constant: -8).isActive = true
         
         noivaEditBtn.leftAnchor.constraint(equalTo: noivaTitle.rightAnchor, constant: 10).isActive = true
         noivaEditBtn.centerYAnchor.constraint(equalTo: noivaTitle.centerYAnchor).isActive = true
-        noivaEditBtn.heightAnchor.constraint(equalToConstant: 27).isActive = true
-        noivaEditBtn.widthAnchor.constraint(equalToConstant: 27).isActive = true
+        noivaEditBtn.heightAnchor.constraint(equalToConstant: 25).isActive = true
+        noivaEditBtn.widthAnchor.constraint(equalToConstant: 25).isActive = true
         noivaEditBtn.addTarget(self, action: #selector(editBride), for: .touchUpInside)
         
-        noivaTxt.topAnchor.constraint(equalTo: noivaTitle.bottomAnchor, constant: 15).isActive = true
+        noivaTxt.centerYAnchor.constraint(equalTo: brideContainer.centerYAnchor, constant: 0).isActive = true
         noivaTxt.leadingAnchor.constraint(equalTo: noivaTitle.leadingAnchor, constant: 8).isActive = true
         
         let size = frame.width * 0.3
@@ -164,15 +164,15 @@ class CoupleCell: UICollectionViewCell {
         groomContainer.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: 0.35).isActive = true
         
         noivoTitle.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 25).isActive = true
-        noivoTitle.centerYAnchor.constraint(equalTo: groomContainer.centerYAnchor, constant: 0).isActive = true
+        noivoTitle.bottomAnchor.constraint(equalTo: noivoTxt.topAnchor, constant: -8).isActive = true
         
         noivoEditBtn.leftAnchor.constraint(equalTo: noivoTitle.rightAnchor, constant: 10).isActive = true
         noivoEditBtn.centerYAnchor.constraint(equalTo: noivoTitle.centerYAnchor).isActive = true
-        noivoEditBtn.heightAnchor.constraint(equalToConstant: 27).isActive = true
-        noivoEditBtn.widthAnchor.constraint(equalToConstant: 27).isActive = true
+        noivoEditBtn.heightAnchor.constraint(equalToConstant: 25).isActive = true
+        noivoEditBtn.widthAnchor.constraint(equalToConstant: 25).isActive = true
         noivoEditBtn.addTarget(self, action: #selector(editGroom), for: .touchUpInside)
         
-        noivoTxt.topAnchor.constraint(equalTo: noivoTitle.bottomAnchor, constant: 15).isActive = true
+        noivoTxt.centerYAnchor.constraint(equalTo: groomContainer.centerYAnchor).isActive = true
         noivoTxt.leadingAnchor.constraint(equalTo: noivoTitle.leadingAnchor, constant: 8).isActive = true
         
         noivoPic.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -30).isActive = true

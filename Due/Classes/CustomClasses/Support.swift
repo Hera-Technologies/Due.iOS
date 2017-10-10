@@ -16,16 +16,6 @@ let linewhite = UIColor(red: 236/255, green: 236/255, blue: 236/255, alpha: 1)
 let dark = UIColor(red: 75/255, green: 75/255, blue: 75/255, alpha: 1)
 let darker = UIColor(red: 40/255, green: 40/255, blue: 40/255, alpha: 1)
 
-
-// MARK: STRUCTS
-
-struct HomeCellConfig {
-    var icon: UIImage
-    var title: String
-    var message: String
-}
-
-
 // MARK: EXTENSIONS
 
 extension String {
@@ -60,6 +50,21 @@ extension Dictionary {
     
 }
 
+
+// MARK: HELPER METHODS
+
+
+// Identify numbers in a String
+
+func identifyNumbers(amount: String) -> Int {
+    let numbers = amount.components(separatedBy: CharacterSet.decimalDigits.inverted)
+    let newStr = numbers.joined(separator: "")
+    let num = Int(newStr)
+    return num!
+}
+
+// Activity indicator 
+
 func showActivityIndicator(view: UIView, indicator: UIActivityIndicatorView) {
     
     let container: UIView = UIView()
@@ -84,18 +89,6 @@ func showActivityIndicator(view: UIView, indicator: UIActivityIndicatorView) {
     view.addSubview(container)
     indicator.startAnimating()
     
-}
-
-
-// MARK: HELPER METHODS
-
-// Identify numbers in a String
-
-func identifyNumbers(amount: String) -> Int {
-    let numbers = amount.components(separatedBy: CharacterSet.decimalDigits.inverted)
-    let newStr = numbers.joined(separator: "")
-    let num = Int(newStr)
-    return num!
 }
 
 func dismissActivityIndicator(view: UIView, indicator: UIActivityIndicatorView, completion: () -> Void) {

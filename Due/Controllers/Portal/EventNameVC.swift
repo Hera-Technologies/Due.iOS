@@ -19,7 +19,6 @@ class EventNameVC: UIViewController, UITextFieldDelegate {
         lbl.textColor  = darker
         lbl.textAlignment = .justified
         lbl.numberOfLines = 2
-        lbl.lineBreakMode = .byWordWrapping
         lbl.font = UIFont(name: "Avenir-Roman", size: 22)
         lbl.translatesAutoresizingMaskIntoConstraints = false
         return lbl

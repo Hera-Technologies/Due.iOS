@@ -186,7 +186,7 @@ class AccessVC: UIViewController, UITextFieldDelegate {
     }
     
     @objc func amostra() {
-        eventModel.eventCode = "-KuuSZbJ49gkmLLP-gYF"
+        eventModel.eventCode = "-Kw1Pb89rM1ZZaO7cxNs"
         present(LoadingVC(), animated: true, completion: nil)
     }
     

@@ -255,7 +255,7 @@ class PhotoAlbumVC: UIViewController, UICollectionViewDelegateFlowLayout, UIColl
     }
     
     @objc func goBack() {
-        navigationController?.popToViewController(navigationController!.viewControllers[2], animated: true)
+        self.navigationController?.popToViewController(navigationController!.viewControllers[1], animated: true)
     }
     
     // MARK: COLLECTION VIEW DELEGATE AND DATA SOURCE

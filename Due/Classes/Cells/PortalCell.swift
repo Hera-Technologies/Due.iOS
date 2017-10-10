@@ -8,58 +8,62 @@
 
 import UIKit
 
+protocol PortalCellDelegate {
+    func transition(cell: PortalCell)
+}
+
 class PortalCell: UICollectionViewCell {
     
-    var vc: PortalVC?
-    var model: PortalButton!
+    var model: PortalButton? {
+        didSet {
+            if let model = model {
+                titulo.text = model.titulo
+                itemsLbl.text = model.items
+                icon.image = UIImage(named: model.icon!)
+            }
+        }
+    }
     
-    let gradient: CAGradientLayer = {
-        let grad = CAGradientLayer()
-        grad.colors = bourbon
-        grad.cornerRadius = 12
-        return grad
-    }()
-    
-    let container: UIView = {
-        let vi = UIView()
-        vi.backgroundColor = .clear
-        return vi
-    }()
+    var delegate: PortalCellDelegate?
     
     let titulo: UILabel = {
         let lbl = UILabel()
-        lbl.textAlignment = .center
-        lbl.textColor = .white
+        lbl.textAlignment = .left
+        lbl.textColor = dark
+        lbl.font = UIFont(name: "Avenir-Heavy", size: 22)
         lbl.translatesAutoresizingMaskIntoConstraints = false
         return lbl
     }()
     
     let icon: NetworkImageView = {
         let img = NetworkImageView()
+        img.contentMode = .scaleAspectFit
         img.translatesAutoresizingMaskIntoConstraints = false
         return img
     }()
     
-    let fileIcon: NetworkImageView = {
+    let itemsIcon: NetworkImageView = {
         let img = NetworkImageView()
         img.image = #imageLiteral(resourceName: "files")
         img.translatesAutoresizingMaskIntoConstraints = false
         return img
     }()
     
-    let itensLbl: UILabel = {
+    let itemsLbl: UILabel = {
         let lbl = UILabel()
+        lbl.font = UIFont(name: "Avenir-Roman", size: 14)
         lbl.textAlignment = .center
-        lbl.textColor = .white
+        lbl.textColor = .gray
         lbl.translatesAutoresizingMaskIntoConstraints = false
         return lbl
     }()
     
     let progressBar: UIProgressView = {
         let bar = UIProgressView(progressViewStyle: .bar)
-        bar.progressTintColor = UIColor(red: 55/255, green: 236/255, blue: 186/255, alpha: 1)
-        bar.trackTintColor = .white
+        bar.progressTintColor = UIColor(red: 80/255, green: 227/255, blue: 194/255, alpha: 1)
+        bar.trackTintColor = .clear
         bar.layer.masksToBounds = true
+        bar.progress = 0.3
         bar.translatesAutoresizingMaskIntoConstraints = false
         return bar
     }()
@@ -67,106 +71,85 @@ class PortalCell: UICollectionViewCell {
     let progressLbl: UILabel = {
         let lbl = UILabel()
         lbl.textAlignment = .center
-        lbl.textColor = .white
+        lbl.textColor = .gray
         lbl.font = UIFont(name: "Avenir-Book", size: 13)
-        lbl.translatesAutoresizingMaskIntoConstraints = false
-        return lbl
-    }()
-    
-    let beginBtn: UILabel = {
-        let lbl = UILabel()
-        lbl.text = "Editar"
-        lbl.textAlignment = .center
-        lbl.textColor = UIColor(red: 236/255, green: 111/255, blue: 102/255, alpha: 1)
-        lbl.backgroundColor = .white
-        lbl.layer.masksToBounds = true
-        lbl.font = UIFont(name: "Avenir-Heavy", size: 18)
         lbl.translatesAutoresizingMaskIntoConstraints = false
         return lbl
     }()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
-        backgroundColor = .clear
+
+        backgroundColor = .white
+        layer.cornerRadius = 16
+        layer.shadowColor = UIColor.gray.cgColor
+        layer.shadowOffset = CGSize(width: 0, height: 3)
+        layer.shadowRadius = 6
+        layer.shadowOpacity = 0.3
         setup()
+        adjust()
     }
     
     func setup() {
+        addSubview(titulo)
+        addSubview(itemsIcon)
+        addSubview(itemsLbl)
+        addSubview(icon)
+        addSubview(progressBar)
+        addSubview(progressLbl)
         
-        addSubview(container)
-        container.addSubview(titulo)
-        container.addSubview(itensLbl)
-        container.addSubview(fileIcon)
-        container.addSubview(icon)
-        container.addSubview(progressBar)
-        container.addSubview(progressLbl)
-        container.addSubview(beginBtn)
+        icon.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 12).isActive = true
+        icon.topAnchor.constraint(equalTo: self.topAnchor, constant: 12).isActive = true
+        icon.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0.3).isActive = true
+        icon.heightAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0.27).isActive = true
         
-        let containerHeight: CGFloat?
-        let lblY = self.frame.height * 0.12
+        itemsIcon.leftAnchor.constraint(equalTo: icon.rightAnchor, constant: 12).isActive = true
+        itemsIcon.centerYAnchor.constraint(equalTo: icon.centerYAnchor, constant: 0).isActive = true
+        itemsIcon.widthAnchor.constraint(equalToConstant: 18).isActive = true
+        itemsIcon.heightAnchor.constraint(equalToConstant: 20).isActive = true
         
-        // MARK: ADJUSTING CONTENT TO DEVICE
-        let size = UIScreen.main.bounds.width
-        if size <= 320 {
-            containerHeight = self.frame.height * 0.9
-            titulo.font = UIFont(name: "Avenir-Book", size: 20)
-            titulo.topAnchor.constraint(equalTo: container.topAnchor, constant: 15).isActive = true
-            itensLbl.font = UIFont(name: "Avenir-Roman", size: 13)
-            progressBar.widthAnchor.constraint(equalTo: container.widthAnchor, multiplier: 0.7).isActive = true
-            progressBar.heightAnchor.constraint(equalToConstant: 6).isActive = true
-            progressBar.layer.cornerRadius = 3
-            beginBtn.bottomAnchor.constraint(equalTo: container.bottomAnchor, constant: -15).isActive = true
-        } else {
-            containerHeight = self.frame.height * 0.85
-            titulo.font = UIFont(name: "Avenir-Book", size: 33)
-            let titleY = self.frame.height * 0.25
-            titulo.centerYAnchor.constraint(equalTo: container.centerYAnchor, constant: -titleY).isActive = true
-            itensLbl.font = UIFont(name: "Avenir-Roman", size: 15)
-            progressBar.widthAnchor.constraint(equalTo: container.widthAnchor, multiplier: 0.75).isActive = true
-            progressBar.heightAnchor.constraint(equalToConstant: 8).isActive = true
-            progressBar.layer.cornerRadius = 4
-            let btnY = self.frame.height * 0.22
-            beginBtn.centerYAnchor.constraint(equalTo: container.centerYAnchor, constant: btnY).isActive = true
-        }
+        itemsLbl.leftAnchor.constraint(equalTo: itemsIcon.rightAnchor, constant: 6).isActive = true
+        itemsLbl.centerYAnchor.constraint(equalTo: itemsIcon.centerYAnchor, constant: 0).isActive = true
         
-        container.frame.size = CGSize(width: self.frame.width * 0.95, height: containerHeight!)
-        container.center = CGPoint(x: self.frame.width / 2, y: self.frame.height / 2)
-        gradient.frame = container.frame
-        layer.insertSublayer(gradient, at: 0)
+        titulo.leadingAnchor.constraint(equalTo: icon.leadingAnchor).isActive = true
+        titulo.topAnchor.constraint(equalTo: icon.bottomAnchor, constant: 8).isActive = true
         
-        titulo.leftAnchor.constraint(equalTo: container.leftAnchor, constant: 20).isActive = true
+        progressBar.centerYAnchor.constraint(equalTo: progressLbl.centerYAnchor, constant: 0).isActive = true
+        progressBar.leadingAnchor.constraint(equalTo: titulo.leadingAnchor).isActive = true
+        progressBar.rightAnchor.constraint(equalTo: progressLbl.leftAnchor, constant: -5).isActive = true
+        progressBar.heightAnchor.constraint(equalToConstant: 1).isActive = true
+        progressBar.layer.cornerRadius = 1
         
-        fileIcon.leadingAnchor.constraint(equalTo: titulo.leadingAnchor).isActive = true
-        fileIcon.centerYAnchor.constraint(equalTo: itensLbl.centerYAnchor).isActive = true
-        
-        itensLbl.leftAnchor.constraint(equalTo: fileIcon.rightAnchor, constant: 8).isActive = true
-        itensLbl.centerYAnchor.constraint(equalTo: container.centerYAnchor, constant: -lblY).isActive = true
-        
-        icon.rightAnchor.constraint(equalTo: container.rightAnchor, constant: -20).isActive = true
-        icon.centerYAnchor.constraint(equalTo: titulo.centerYAnchor, constant: 5).isActive = true
-        icon.widthAnchor.constraint(equalTo: container.widthAnchor, multiplier: 0.16).isActive = true
-        icon.heightAnchor.constraint(equalTo: container.widthAnchor, multiplier: 0.12).isActive = true
-        
-        progressBar.leftAnchor.constraint(equalTo: container.leftAnchor, constant: 20).isActive = true
-        progressBar.centerYAnchor.constraint(equalTo: container.centerYAnchor).isActive = true
-        
-        progressLbl.centerYAnchor.constraint(equalTo: progressBar.centerYAnchor, constant: 0).isActive = true
-        progressLbl.leftAnchor.constraint(equalTo: progressBar.rightAnchor, constant: 8).isActive = true
-        
-        let hgt = UIScreen.main.bounds.height * 0.07
-        beginBtn.rightAnchor.constraint(equalTo: container.rightAnchor, constant: -20).isActive = true
-        beginBtn.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0.4).isActive = true
-        beginBtn.heightAnchor.constraint(equalToConstant: hgt).isActive = true
-        beginBtn.layer.cornerRadius = hgt / 2
-        
+        progressLbl.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -4).isActive = true
+        progressLbl.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -12).isActive = true
     }
     
-    func configureCell(button: PortalButton) {
-        self.model = button
-        self.titulo.text = button.titulo
-        self.icon.image = UIImage(named: button.icon!)
-        self.itensLbl.text = button.items
+    func adjust() {
+        let size = UIScreen.main.bounds.width
+        if size >= 414 {
+            
+        } else if size < 414 && size > 320 {
+            
+        } else if size <= 320 {
+            titulo.font = UIFont(name: "Avenir-Heavy", size: 18)
+            titulo.topAnchor.constraint(equalTo: icon.bottomAnchor, constant: 4).isActive = true
+            itemsLbl.font = UIFont(name: "Avenir-Roman", size: 13)
+            progressLbl.font = UIFont(name: "Avenir-Book", size: 12)
+        }
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        UIView.animate(withDuration: 0.3, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .curveEaseOut, animations: {
+            self.transform = CGAffineTransform(scaleX: 0.92, y: 0.92)
+        }, completion: nil)
+    }
+    
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        UIView.animate(withDuration: 0.2, delay: 0.1, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .curveEaseIn, animations: {
+            self.transform = CGAffineTransform.identity
+        }, completion: { (_) in
+            self.delegate?.transition(cell: self)
+        })
     }
     
     required init?(coder aDecoder: NSCoder) {

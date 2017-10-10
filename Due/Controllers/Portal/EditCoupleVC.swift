@@ -41,7 +41,7 @@ class EditCoupleVC: UIViewController, UIImagePickerControllerDelegate, UINavigat
         let lbl = UILabel()
         lbl.textColor = dark
         lbl.textAlignment = .center
-        lbl.font = UIFont(name: "Avenir-Heavy", size: 20)
+        lbl.font = UIFont(name: "Avenir-Heavy", size: 25)
         lbl.translatesAutoresizingMaskIntoConstraints = false
         return lbl
     }()

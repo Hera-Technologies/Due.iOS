@@ -347,7 +347,7 @@ class MainVC: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
     }
     
     @objc func goBack() {
-        navigationController?.popToViewController(navigationController!.viewControllers[2], animated: true)
+        self.navigationController?.popToViewController(navigationController!.viewControllers[1], animated: true)
     }
     
     // MARK: FETCH DATA FROM FIREBASE

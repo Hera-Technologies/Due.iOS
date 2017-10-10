@@ -20,6 +20,7 @@ class HomeVC: UIViewController, UICollectionViewDelegateFlowLayout, UICollection
     let picker = UIImagePickerController()
     var selectedImage = UIImage()
     let indicatorView = LoadingView()
+    let defaults = UserDefaults.standard
     
     let gradient: CAGradientLayer = {
         let grad = CAGradientLayer()
@@ -44,12 +45,7 @@ class HomeVC: UIViewController, UICollectionViewDelegateFlowLayout, UICollection
     
     // MARK: OTHER ELEMENTS
     
-    let arr: [HomeCellConfig] = {
-        let product = HomeCellConfig(icon: #imageLiteral(resourceName: "luz"), title: "Produto", message: "Adquira uma versão Due para o seu casamento")
-        let access = HomeCellConfig(icon: #imageLiteral(resourceName: "chave"), title: "Acesso", message: "Clique aqui para acessar um evento")
-        let portal = HomeCellConfig(icon: #imageLiteral(resourceName: "caneta"), title: "Portal", message: "Clique aqui para editar sua versão Due")
-        return [product, access, portal]
-    }()
+    var array: [UIImage] = [#imageLiteral(resourceName: "productcell"), #imageLiteral(resourceName: "eventcell"), #imageLiteral(resourceName: "portalcell")]
     
     let logo: UIImageView = {
         let img = UIImageView()
@@ -160,7 +156,7 @@ class HomeVC: UIViewController, UICollectionViewDelegateFlowLayout, UICollection
             if let exp = dict["dateEnd"] as? String {
                 let currentDate = Date()
                 let formatter = DateFormatter()
-                formatter.dateFormat = "dd.MM.yyyy"
+                formatter.dateFormat = "dd.MM.yy"
                 let expDate = formatter.date(from: exp)
                 switch currentDate.compare(expDate!) {
                 case .orderedDescending:
@@ -333,7 +329,7 @@ class HomeVC: UIViewController, UICollectionViewDelegateFlowLayout, UICollection
         collec.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 1).isActive = true
         collec.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.47).isActive = true
         collec.bottomAnchor.constraint(equalTo: copyRights.topAnchor, constant: -5).isActive = true
-        collec.register(HomeScreenCell.self, forCellWithReuseIdentifier: cellID)
+        collec.register(HomeCell.self, forCellWithReuseIdentifier: cellID)
         collec.delegate = self
         collec.dataSource = self
         
@@ -349,12 +345,13 @@ class HomeVC: UIViewController, UICollectionViewDelegateFlowLayout, UICollection
     // MARK: COLLECTION VIEW DELEGATE AND DATA SOURCE
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return arr.count
+        return array.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellID, for: indexPath) as! HomeScreenCell
-        cell.cellConfig = arr[indexPath.item]
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellID, for: indexPath) as! HomeCell
+        cell.delegate = self
+        cell.icon.image = array[indexPath.item]
         return cell
     }
     
@@ -362,41 +359,14 @@ class HomeVC: UIViewController, UICollectionViewDelegateFlowLayout, UICollection
         return CGSize(width: collectionView.frame.width * 0.6, height: collectionView.frame.size.height * 0.9)
     }
     
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let cell = collectionView.cellForItem(at: indexPath) as! HomeScreenCell
-        switch indexPath.row {
-        case 0:
-            animateCell(cell: cell, completion: {
-                self.comprar()
-            })
-        case 1:
-            animateCell(cell: cell, completion: {
-                self.acessarEvento()
-            })
-        default:
-            animateCell(cell: cell, completion: {
-                self.openPortal()
-            })
-        }
-    }
+// MARK: COLLECTION VIEW CELL FUNCTIONS
     
-    // MARK: COLLECTION VIEW CELL FUNCTIONS
-    
-    func animateCell(cell: HomeScreenCell, completion: @escaping () -> Void) {
-        UIView.animate(withDuration: 0.3, delay: 0, options: .curveEaseInOut, animations: {
-            cell.transform = CGAffineTransform(scaleX: 1.4, y: 1.4)
-            cell.transform = CGAffineTransform.identity
-        }) { (boo) in
-            completion()
-        }
-    }
-    
-    func acessarEvento() {
+    func accessEvent() {
         let code = AccessVC()
         customPresentViewController(access, viewController: code, animated: true, completion: nil)
     }
     
-    func comprar() {
+    func buyDue() {
         if details.hasDue == true {
             let alert = UIAlertController(title: "Oops...", message: "Você já possui uma versão Due", preferredStyle: .alert)
             let action = UIAlertAction(title: "Ok", style: .default, handler: nil)
@@ -410,7 +380,12 @@ class HomeVC: UIViewController, UICollectionViewDelegateFlowLayout, UICollection
     
     func openPortal() {
         if details.hasDue == true {
-            navigationController?.pushViewController(GuideVC(), animated: true)
+            if defaults.bool(forKey: "guideSeen") {
+                navigationController?.pushViewController(GuideVC(), animated: true)
+                defaults.set(true, forKey: "guideSeen")
+            } else {
+                navigationController?.pushViewController(PortalVC(), animated: true)
+            }
         } else {
             let alert = UIAlertController(title: "Oops...", message: "Parece que você não possui uma versão Due. Gostaria de obter uma?", preferredStyle: .alert)
             let yes = UIAlertAction(title: "Sim", style: .default, handler: { (action) in
@@ -442,4 +417,19 @@ class HomeVC: UIViewController, UICollectionViewDelegateFlowLayout, UICollection
     }
     
 }
+
+extension HomeVC: HomeCellDelegate {
+    func transition(cell: HomeCell) {
+        if let index = collec.indexPath(for: cell) {
+            switch index.item {
+                case 0: buyDue()
+                case 1: accessEvent()
+                default: openPortal()
+            }
+        }
+    }
+}
+
+
+
 

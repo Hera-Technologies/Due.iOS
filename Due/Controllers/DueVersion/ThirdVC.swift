@@ -9,16 +9,15 @@
 import UIKit
 
 fileprivate let cellID = "cell"
+struct CellConfig {
+    var icon: UIImage
+    var label: String
+    var message: String
+}
 
 class ThirdVC: UIViewController, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
     
-    // MARK: ELEMENTS
-    
-    struct CellConfig {
-        var icon: UIImage
-        var label: String
-        var message: String
-    }
+// MARK: ELEMENTS
     
     let arr: [CellConfig] = {
         let pht = CellConfig(icon: #imageLiteral(resourceName: "moments"), label: "Momentos", message: "A história do casamento em um só lugar. Acompanhe e faça parte, compartilhando seus momentos também!")
@@ -116,41 +115,20 @@ class ThirdVC: UIViewController, UICollectionViewDelegateFlowLayout, UICollectio
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellID, for: indexPath) as! EventCell
         cell.cellConfig = arr[indexPath.item]
+        cell.delegate = self
         return cell
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let cell = collectionView.cellForItem(at: indexPath) as! EventCell
-        switch indexPath.item {
-        case 0:
-            animateCell(cell: cell, completion: {
-                self.navigationController?.pushViewController(PhotosVC(), animated: true)
-            })
-        case 1:
-            animateCell(cell: cell, completion: {
-                self.navigationController?.pushViewController(MessagesVC(), animated: true)
-            })
-        default:
-            animateCell(cell: cell, completion: {
-                self.navigationController?.pushViewController(EventVC(), animated: true)
-            })
-        }
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: collectionView.frame.width * 0.8, height: collectionView.frame.height * 0.25)
     }
     
-    func animateCell(cell: EventCell, completion: @escaping () -> Void) {
-        UIView.animate(withDuration: 0.3, delay: 0, options: .curveEaseInOut, animations: {
-            cell.transform = CGAffineTransform(scaleX: 1.4, y: 1.4)
-            cell.transform = CGAffineTransform.identity
-        }) { (boo) in
-            completion()
-        }
-    }
+}
+// MARK: COLLECTION VIEW CELL
     
-    // MARK: COLLECTION VIEW CELL
+    protocol EventCellDelegate {
+        func transition(cell: EventCell)
+    }
     
     class EventCell: UICollectionViewCell {
         
@@ -162,6 +140,8 @@ class ThirdVC: UIViewController, UICollectionViewDelegateFlowLayout, UICollectio
                 message.text = cellConfig.message
             }
         }
+        
+        var delegate: EventCellDelegate?
         
         let icon: UIImageView = {
             let img = UIImageView()
@@ -217,10 +197,37 @@ class ThirdVC: UIViewController, UICollectionViewDelegateFlowLayout, UICollectio
             
         }
         
+        override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+            UIView.animate(withDuration: 0.3, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .curveEaseOut, animations: {
+                self.transform = CGAffineTransform(scaleX: 0.92, y: 0.92)
+            }, completion: nil)
+        }
+        
+        override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+            UIView.animate(withDuration: 0.2, delay: 0.1, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .curveEaseIn, animations: {
+                self.transform = CGAffineTransform.identity
+            }, completion: { (_) in
+                self.delegate?.transition(cell: self)
+            })
+        }
+        
         required init?(coder aDecoder: NSCoder) {
             fatalError("init(coder:) has not been implemented")
         }
         
     }
-    
+
+
+extension ThirdVC: EventCellDelegate {
+    func transition(cell: EventCell) {
+        if let index = collec.indexPath(for: cell) {
+            switch index.item {
+            case 0: self.navigationController?.pushViewController(PhotosVC(), animated: true)
+            case 1: self.navigationController?.pushViewController(MessagesVC(), animated: true)
+            default: self.navigationController?.pushViewController(EventVC(), animated: true)
+            }
+        }
+    }
 }
+
+

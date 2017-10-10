@@ -131,7 +131,7 @@ class GiftDetailVC: UIViewController, STPPaymentCardTextFieldDelegate, UITextFie
         txt.textColor = darker
         txt.backgroundColor = .clear
         txt.borderWidth = 0
-        txt.numberPlaceholder = "Cartão nº"
+        txt.numberPlaceholder = "cartão nº"
         txt.expirationPlaceholder = "mm/aa"
         txt.cvcPlaceholder = "cvc"
         txt.translatesAutoresizingMaskIntoConstraints = false
