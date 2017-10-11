@@ -51,11 +51,12 @@ class InitialVC: UIViewController, UITextFieldDelegate, GIDSignInUIDelegate, GID
         return img
     }()
     
-    let line1: UIView = {
-        let ln = UIView()
-        ln.backgroundColor = .white
-        ln.translatesAutoresizingMaskIntoConstraints = false
-        return ln
+    let emailContainer: UIView = {
+        let vi = UIView()
+        vi.backgroundColor = .white
+        vi.alpha = 0.35
+        vi.translatesAutoresizingMaskIntoConstraints = false
+        return vi
     }()
     
     let emailIcon: UIImageView = {
@@ -72,11 +73,19 @@ class InitialVC: UIViewController, UITextFieldDelegate, GIDSignInUIDelegate, GID
         tf.placeholder = "Email"
         tf.textColor = .white
         tf.font = UIFont(name: "Avenir-Roman", size: 18)
-        tf.textAlignment = .left
+        tf.textAlignment = .right
         tf.autocapitalizationType = .none
         tf.keyboardType = .emailAddress
         tf.translatesAutoresizingMaskIntoConstraints = false
         return tf
+    }()
+    
+    let passContainer: UIView = {
+        let vi = UIView()
+        vi.backgroundColor = .white
+        vi.alpha = 0.35
+        vi.translatesAutoresizingMaskIntoConstraints = false
+        return vi
     }()
     
     let passIcon: UIImageView = {
@@ -93,7 +102,7 @@ class InitialVC: UIViewController, UITextFieldDelegate, GIDSignInUIDelegate, GID
         tf.placeholder = "Senha"
         tf.textColor = .white
         tf.font = UIFont(name: "Avenir-Roman", size: 18)
-        tf.textAlignment = .left
+        tf.textAlignment = .right
         tf.autocapitalizationType = .none
         tf.returnKeyType = .done
         tf.isSecureTextEntry = true
@@ -101,78 +110,52 @@ class InitialVC: UIViewController, UITextFieldDelegate, GIDSignInUIDelegate, GID
         return tf
     }()
     
+    let loginBtn: BounceButton = {
+        let btn = BounceButton()
+        btn.setImage(#imageLiteral(resourceName: "loginbtn"), for: .normal)
+        btn.backgroundColor = UIColor(red: 184/255, green: 233/255, blue: 134/255, alpha: 1)
+        btn.translatesAutoresizingMaskIntoConstraints = false
+        return btn
+    }()
+    
     let forgotPassBtn: UIButton = {
         let btn = UIButton(type: .system)
         btn.setTitle("Senha?", for: .normal)
-        btn.titleLabel!.font = UIFont(name: "Avenir-Light", size: 14)
-        btn.setTitleColor(.white, for: UIControlState())
+        btn.titleLabel!.font = UIFont(name: "Avenir-Roman", size: 15)
+        btn.setTitleColor(.white, for: .normal)
         btn.backgroundColor = .clear
         btn.translatesAutoresizingMaskIntoConstraints = false
         return btn
     }()
     
-    let loginBtn: UIButton = {
-        let btn = UIButton(type: .system)
-        btn.setTitle("Entrar", for: .normal)
-        btn.titleLabel!.font = UIFont(name: "Avenir-Heavy", size: 20)
-        btn.setTitleColor(.white, for: UIControlState())
-        btn.layer.borderWidth = 1
-        btn.layer.borderColor = UIColor.white.cgColor
-        btn.translatesAutoresizingMaskIntoConstraints = false
-        return btn
-    }()
-    
-    let signupLbl: UILabel = {
-        let lbl = UILabel()
-        lbl.text = "Primeira vez aqui?"
-        lbl.font = UIFont(name: "Avenir-Roman", size: 16)
-        lbl.textColor = .white
-        lbl.translatesAutoresizingMaskIntoConstraints = false
-        return lbl
-    }()
-    
     let signupBtn: UIButton = {
         let btn = UIButton(type: .system)
-        btn.setTitle("Crie uma conta", for: .normal)
-        btn.titleLabel!.font = UIFont(name: "Avenir-Heavy", size: 20)
+        btn.setTitle("Criar conta", for: .normal)
+        btn.titleLabel!.font = UIFont(name: "Avenir-Roman", size: 15)
         btn.setTitleColor(.white, for: .normal)
         btn.translatesAutoresizingMaskIntoConstraints = false
         return btn
     }()
     
-    let socialLbl: UILabel = {
-        let lbl = UILabel()
-        lbl.text = "Ou, entre com:"
-        lbl.font = UIFont(name: "Avenir-Roman", size: 16)
-        lbl.textColor = .white
-        lbl.translatesAutoresizingMaskIntoConstraints = false
-        return lbl
+    let orLbl: UIImageView = {
+        let img = UIImageView()
+        img.image = #imageLiteral(resourceName: "orlbl")
+        img.translatesAutoresizingMaskIntoConstraints = false
+        return img
     }()
     
     let fbBtn: BounceButton = {
         let btn = BounceButton()
-        btn.setTitle("f", for: .normal)
-        btn.titleLabel!.font = UIFont(name: "Avenir-Black", size: 30)
-        btn.setTitleColor(.black, for: .normal)
-        btn.backgroundColor = .white
-        btn.layer.shadowColor = UIColor.darkGray.cgColor
-        btn.layer.shadowOffset = CGSize(width: 0, height: 1.5)
-        btn.layer.shadowRadius = 1.8
-        btn.layer.shadowOpacity = 0.45
+        btn.setImage(#imageLiteral(resourceName: "fblogin"), for: .normal)
+        btn.backgroundColor = UIColor(red: 74/255, green: 144/255, blue: 226/255, alpha: 1)
         btn.translatesAutoresizingMaskIntoConstraints = false
         return btn
     }()
     
     let googleBtn: BounceButton = {
         let btn = BounceButton()
-        btn.setTitle("g+", for: .normal)
-        btn.titleLabel!.font = UIFont(name: "Baskerville", size: 30)
-        btn.setTitleColor(.black, for: .normal)
-        btn.backgroundColor = .white
-        btn.layer.shadowColor = UIColor.darkGray.cgColor
-        btn.layer.shadowOffset = CGSize(width: 0, height: 1.5)
-        btn.layer.shadowRadius = 1.8
-        btn.layer.shadowOpacity = 0.45
+        btn.setImage(#imageLiteral(resourceName: "googlelogin"), for: .normal)
+        btn.backgroundColor = UIColor(red: 253/255, green: 90/255, blue: 110/255, alpha: 1)
         btn.translatesAutoresizingMaskIntoConstraints = false
         return btn
     }()
@@ -204,94 +187,96 @@ class InitialVC: UIViewController, UITextFieldDelegate, GIDSignInUIDelegate, GID
         
         view.addSubview(faqBtn)
         view.addSubview(logo)
-        view.addSubview(line1)
+        view.addSubview(emailContainer)
         view.addSubview(emailIcon)
         view.addSubview(emailTxt)
+        view.addSubview(passContainer)
         view.addSubview(passIcon)
         view.addSubview(passTxt)
         view.addSubview(forgotPassBtn)
         view.addSubview(loginBtn)
-        view.addSubview(signupLbl)
         view.addSubview(fbBtn)
-        view.addSubview(socialLbl)
+        view.addSubview(orLbl)
         view.addSubview(googleBtn)
         view.addSubview(signupBtn)
+        
+        let logoY = view.frame.height * 0.3
+        let containerY = view.frame.height * 0.05
+        let hgt = view.frame.height * 0.075
         
         faqBtn.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20).isActive = true
         faqBtn.topAnchor.constraint(equalTo: view.topAnchor, constant: 32).isActive = true
         faqBtn.addTarget(self, action: #selector(showFAQ), for: .touchUpInside)
         
-        let distance = view.frame.size.height / 3.3
         logo.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        logo.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: -distance).isActive = true
+        logo.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: -logoY).isActive = true
         logo.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.25).isActive = true
         logo.heightAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.25).isActive = true
         
-        emailIcon.leadingAnchor.constraint(equalTo: line1.leadingAnchor, constant: 5).isActive = true
-        emailIcon.centerYAnchor.constraint(equalTo: emailTxt.centerYAnchor).isActive = true
+        emailContainer.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: -containerY).isActive = true
+        emailContainer.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        emailContainer.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.85).isActive = true
+        emailContainer.heightAnchor.constraint(equalToConstant: hgt).isActive = true
+        emailContainer.layer.cornerRadius = hgt / 2
+        
+        emailIcon.centerYAnchor.constraint(equalTo: emailContainer.centerYAnchor).isActive = true
+        emailIcon.leftAnchor.constraint(equalTo: emailContainer.leftAnchor, constant: 25).isActive = true
         emailIcon.widthAnchor.constraint(equalToConstant: 18).isActive = true
         emailIcon.heightAnchor.constraint(equalToConstant: 22).isActive = true
         
-        emailTxt.leftAnchor.constraint(equalTo: emailIcon.rightAnchor, constant: 13).isActive = true
-        emailTxt.bottomAnchor.constraint(equalTo: line1.topAnchor, constant: 0).isActive = true
-        emailTxt.widthAnchor.constraint(equalTo: line1.widthAnchor, multiplier: 1).isActive = true
-        emailTxt.heightAnchor.constraint(equalToConstant: 40).isActive = true
+        emailTxt.centerYAnchor.constraint(equalTo: emailContainer.centerYAnchor).isActive = true
+        emailTxt.rightAnchor.constraint(equalTo: emailContainer.rightAnchor, constant: -25).isActive = true
+        emailTxt.leftAnchor.constraint(equalTo: emailIcon.rightAnchor, constant: 15).isActive = true
         emailTxt.delegate = self
         
-        let lineY = view.frame.height * 0.07
-        line1.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        line1.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: -lineY).isActive = true
-        line1.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.8).isActive = true
-        line1.heightAnchor.constraint(equalToConstant: 0.5).isActive = true
+        passContainer.topAnchor.constraint(equalTo: emailContainer.bottomAnchor, constant: 12).isActive = true
+        passContainer.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        passContainer.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.85).isActive = true
+        passContainer.heightAnchor.constraint(equalToConstant: hgt).isActive = true
+        passContainer.layer.cornerRadius = hgt / 2
         
+        passIcon.centerYAnchor.constraint(equalTo: passContainer.centerYAnchor).isActive = true
         passIcon.centerXAnchor.constraint(equalTo: emailIcon.centerXAnchor).isActive = true
-        passIcon.topAnchor.constraint(equalTo: line1.bottomAnchor, constant: 12).isActive = true
         passIcon.widthAnchor.constraint(equalToConstant: 22).isActive = true
         passIcon.heightAnchor.constraint(equalToConstant: 18).isActive = true
         
-        passTxt.topAnchor.constraint(equalTo: line1.bottomAnchor, constant: 4).isActive = true
-        passTxt.rightAnchor.constraint(equalTo: forgotPassBtn.leftAnchor, constant: -8).isActive = true
-        passTxt.leftAnchor.constraint(equalTo: passIcon.rightAnchor, constant: 13).isActive = true
-        passTxt.heightAnchor.constraint(equalToConstant: 40).isActive = true
+        passTxt.centerYAnchor.constraint(equalTo: passContainer.centerYAnchor).isActive = true
+        passTxt.rightAnchor.constraint(equalTo: passContainer.rightAnchor, constant: -25).isActive = true
+        passTxt.leftAnchor.constraint(equalTo: passIcon.rightAnchor, constant: 15).isActive = true
         passTxt.delegate = self
         
-        forgotPassBtn.trailingAnchor.constraint(equalTo: line1.trailingAnchor).isActive = true
-        forgotPassBtn.centerYAnchor.constraint(equalTo: passTxt.centerYAnchor).isActive = true
-        forgotPassBtn.addTarget(self, action: #selector(resetPassword), for: .touchUpInside)
-        
-        let hgt = view.frame.height * 0.07
         loginBtn.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        loginBtn.topAnchor.constraint(equalTo: passTxt.bottomAnchor, constant: 25).isActive = true
-        loginBtn.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.5).isActive = true
+        loginBtn.topAnchor.constraint(equalTo: passContainer.bottomAnchor, constant: 25).isActive = true
+        loginBtn.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.85).isActive = true
         loginBtn.heightAnchor.constraint(equalToConstant: hgt).isActive = true
         loginBtn.layer.cornerRadius = hgt / 2
         loginBtn.addTarget(self, action: #selector(handleLogin), for: .touchUpInside)
         
-        let lblY = view.frame.height * 0.2
-        signupLbl.leadingAnchor.constraint(equalTo: line1.leadingAnchor).isActive = true
-        signupLbl.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: lblY).isActive = true
-        
-        signupBtn.centerYAnchor.constraint(equalTo: signupLbl.centerYAnchor).isActive = true
-        signupBtn.leftAnchor.constraint(equalTo: signupLbl.rightAnchor, constant: 8).isActive = true
+        signupBtn.topAnchor.constraint(equalTo: loginBtn.bottomAnchor, constant: 8).isActive = true
+        signupBtn.leadingAnchor.constraint(equalTo: loginBtn.leadingAnchor, constant: 15).isActive = true
         signupBtn.addTarget(self, action: #selector(signup), for: .touchUpInside)
         
-        socialLbl.leadingAnchor.constraint(equalTo: line1.leadingAnchor).isActive = true
-        socialLbl.centerYAnchor.constraint(equalTo: fbBtn.centerYAnchor, constant: 0).isActive = true
+        forgotPassBtn.topAnchor.constraint(equalTo: loginBtn.bottomAnchor, constant: 8).isActive = true
+        forgotPassBtn.trailingAnchor.constraint(equalTo: loginBtn.trailingAnchor, constant: -15).isActive = true
+        forgotPassBtn.addTarget(self, action: #selector(resetPassword), for: .touchUpInside)
         
-        let y = view.frame.height * 0.37
-        let size: CGFloat = 65
-        fbBtn.trailingAnchor.constraint(equalTo: line1.trailingAnchor).isActive = true
-        fbBtn.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: y).isActive = true
-        fbBtn.widthAnchor.constraint(equalToConstant: size).isActive = true
-        fbBtn.heightAnchor.constraint(equalToConstant: size).isActive = true
-        fbBtn.layer.cornerRadius = size / 2
+        let lblY = view.frame.height * 0.3
+        
+        orLbl.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        orLbl.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: lblY).isActive = true
+        
+        fbBtn.leadingAnchor.constraint(equalTo: loginBtn.leadingAnchor, constant: 0).isActive = true
+        fbBtn.topAnchor.constraint(equalTo: orLbl.bottomAnchor, constant: 20).isActive = true
+        fbBtn.heightAnchor.constraint(equalToConstant: hgt).isActive = true
+        fbBtn.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.4).isActive = true
+        fbBtn.layer.cornerRadius = hgt / 2
         fbBtn.addTarget(self, action: #selector(loginWithFB), for: .touchUpInside)
         
-        googleBtn.rightAnchor.constraint(equalTo: fbBtn.leftAnchor, constant: -35).isActive = true
-        googleBtn.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: y).isActive = true
-        googleBtn.widthAnchor.constraint(equalToConstant: size).isActive = true
-        googleBtn.heightAnchor.constraint(equalToConstant: size).isActive = true
-        googleBtn.layer.cornerRadius = size / 2
+        googleBtn.trailingAnchor.constraint(equalTo: loginBtn.trailingAnchor).isActive = true
+        googleBtn.topAnchor.constraint(equalTo: orLbl.bottomAnchor, constant: 20).isActive = true
+        googleBtn.heightAnchor.constraint(equalToConstant: hgt).isActive = true
+        googleBtn.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.4).isActive = true
+        googleBtn.layer.cornerRadius = hgt / 2
         googleBtn.addTarget(self, action: #selector(loginWithGoogle), for: .touchUpInside)
         
         UIView.animate(withDuration: 2.0, animations: {
@@ -379,14 +364,14 @@ class InitialVC: UIViewController, UITextFieldDelegate, GIDSignInUIDelegate, GID
     
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
         if error != nil {
-            print(error.localizedDescription)
+            _ = SweetAlert().showAlert("Oops...", subTitle: "Não foi possível fazer o login.", style: .error, buttonTitle: "Ok")
             return
         }
         if let idToken = user.authentication.idToken, let token = user.authentication.accessToken {
             let credentials = GoogleAuthProvider.credential(withIDToken: idToken, accessToken: token)
             Auth.auth().signIn(with: credentials, completion: { (user, err) in
                 if err != nil {
-                    print(err?.localizedDescription ?? "")
+                    _ = SweetAlert().showAlert("Oops...", subTitle: "Não foi possível fazer o login.", style: .error, buttonTitle: "Ok")
                     return
                 }
                 guard let uid = user?.uid else { return }
@@ -406,7 +391,7 @@ class InitialVC: UIViewController, UITextFieldDelegate, GIDSignInUIDelegate, GID
     @objc func loginWithFB() {
         FBSDKLoginManager().logIn(withReadPermissions: ["email", "public_profile"], from: self) { (result, err) in
             if err != nil {
-                _ = SweetAlert().showAlert("Oops...", subTitle: "Não foi possível logar com o Facebook", style: .error, buttonTitle: "Ok")
+                _ = SweetAlert().showAlert("Oops...", subTitle: "Não foi possível fazer o login.", style: .error, buttonTitle: "Ok")
                 return
             }
             guard let result = result else { return }
@@ -420,7 +405,7 @@ class InitialVC: UIViewController, UITextFieldDelegate, GIDSignInUIDelegate, GID
         let credentials = FacebookAuthProvider.credential(withAccessToken: token)
         Auth.auth().signIn(with: credentials) { (user, err) in
             if err != nil {
-                print(err?.localizedDescription ?? "")
+                _ = SweetAlert().showAlert("Oops...", subTitle: "Não foi possível fazer o login.", style: .error, buttonTitle: "Ok")
                 return
             }
             guard let uid = user?.uid else { return }

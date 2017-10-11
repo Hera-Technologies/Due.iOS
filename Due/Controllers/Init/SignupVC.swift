@@ -31,10 +31,9 @@ class SignupVC: UIViewController, UITextFieldDelegate {
     let titulo: UILabel = {
         let lbl = UILabel()
         lbl.text = "Conta Due"
-        lbl.textColor = .black
+        lbl.textColor = dark
         lbl.backgroundColor = .clear
-        lbl.textAlignment = .center
-        lbl.font = UIFont(name: "Avenir-Heavy", size: 22)
+        lbl.font = UIFont(name: "Avenir-Black", size: 28)
         lbl.translatesAutoresizingMaskIntoConstraints = false
         return lbl
     }()
@@ -43,17 +42,10 @@ class SignupVC: UIViewController, UITextFieldDelegate {
         let btn = UIButton(type: .system)
         btn.setTitle("x", for: .normal)
         btn.titleLabel!.font = UIFont(name: "ArialRoundedMTBold", size: 26)
-        btn.setTitleColor(.black, for: UIControlState())
+        btn.setTitleColor(dark, for: UIControlState())
         btn.backgroundColor = .clear
         btn.translatesAutoresizingMaskIntoConstraints = false
         return btn
-    }()
-    
-    let linha: UIView = {
-        let ln = UIView()
-        ln.backgroundColor = linewhite
-        ln.translatesAutoresizingMaskIntoConstraints = false
-        return ln
     }()
     
     let nameIcon: UIImageView = {
@@ -135,13 +127,6 @@ class SignupVC: UIViewController, UITextFieldDelegate {
         return btn
     }()
     
-    let linha2: UIView = {
-        let ln = UIView()
-        ln.backgroundColor = linewhite
-        ln.translatesAutoresizingMaskIntoConstraints = false
-        return ln
-    }()
-    
     let loginBtn: UIButton = {
         let btn = UIButton(type: .system)
         btn.setTitle("Já possui uma conta? Faça o login", for: .normal)
@@ -202,7 +187,6 @@ class SignupVC: UIViewController, UITextFieldDelegate {
         
         view.addSubview(titulo)
         view.addSubview(closeBtn)
-        view.addSubview(linha)
         view.addSubview(nameIcon)
         view.addSubview(nameTxt)
         view.addSubview(emailIcon)
@@ -210,25 +194,14 @@ class SignupVC: UIViewController, UITextFieldDelegate {
         view.addSubview(passIcon)
         view.addSubview(passTxt)
         view.addSubview(signupBtn)
-        view.addSubview(linha2)
         view.addSubview(loginBtn)
         view.addSubview(indicatorContainer)
-        
-        titulo.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        titulo.topAnchor.constraint(equalTo: view.topAnchor, constant: 12).isActive = true
-        
-        closeBtn.centerYAnchor.constraint(equalTo: titulo.centerYAnchor, constant: -3).isActive = true
-        closeBtn.trailingAnchor.constraint(equalTo: linha.trailingAnchor).isActive = true
-        
-        linha.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        linha.topAnchor.constraint(equalTo: titulo.bottomAnchor, constant: 10).isActive = true
-        linha.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.85).isActive = true
-        linha.heightAnchor.constraint(equalToConstant: 0.8).isActive = true
         
         nameIcon.rightAnchor.constraint(equalTo: nameTxt.leftAnchor, constant: -10).isActive = true
         nameIcon.centerYAnchor.constraint(equalTo: nameTxt.centerYAnchor).isActive = true
         nameIcon.widthAnchor.constraint(equalToConstant: 27).isActive = true
         nameIcon.heightAnchor.constraint(equalToConstant: 27).isActive = true
+        
         nameTxt.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: 10).isActive = true
         nameTxt.bottomAnchor.constraint(equalTo: emailTxt.topAnchor, constant: -18).isActive = true
         nameTxt.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.7).isActive = true
@@ -239,6 +212,7 @@ class SignupVC: UIViewController, UITextFieldDelegate {
         emailIcon.centerYAnchor.constraint(equalTo: emailTxt.centerYAnchor).isActive = true
         emailIcon.widthAnchor.constraint(equalToConstant: 23).isActive = true
         emailIcon.heightAnchor.constraint(equalToConstant: 15).isActive = true
+        
         emailTxt.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: 10).isActive = true
         emailTxt.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: -23).isActive = true
         emailTxt.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.7).isActive = true
@@ -249,23 +223,19 @@ class SignupVC: UIViewController, UITextFieldDelegate {
         passIcon.centerYAnchor.constraint(equalTo: passTxt.centerYAnchor).isActive = true
         passIcon.widthAnchor.constraint(equalToConstant: 20).isActive = true
         passIcon.heightAnchor.constraint(equalToConstant: 23).isActive = true
+        
         passTxt.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: 10).isActive = true
         passTxt.topAnchor.constraint(equalTo: emailTxt.bottomAnchor, constant: 18).isActive = true
         passTxt.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.7).isActive = true
         passTxt.heightAnchor.constraint(equalToConstant: 42).isActive = true
         passTxt.delegate = self
         
-        let height = view.frame.height * 0.07
+        let height = view.frame.height * 0.075
         signupBtn.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         signupBtn.heightAnchor.constraint(equalToConstant: height).isActive = true
         signupBtn.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.5).isActive = true
-        signupBtn.topAnchor.constraint(equalTo: passTxt.bottomAnchor, constant: 22).isActive = true
+        signupBtn.topAnchor.constraint(equalTo: passTxt.bottomAnchor, constant: 30).isActive = true
         signupBtn.layer.cornerRadius = height / 2
-        
-        linha2.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        linha2.topAnchor.constraint(equalTo: signupBtn.bottomAnchor, constant: 20).isActive = true
-        linha2.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.55).isActive = true
-        linha2.heightAnchor.constraint(equalToConstant: 0.8).isActive = true
         
         var btnY = CGFloat()
         let size = UIScreen.main.bounds.width
@@ -277,6 +247,12 @@ class SignupVC: UIViewController, UITextFieldDelegate {
         
         loginBtn.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         loginBtn.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: btnY).isActive = true
+        
+        closeBtn.topAnchor.constraint(equalTo: view.topAnchor, constant: 3).isActive = true
+        closeBtn.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -12).isActive = true
+        
+        titulo.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20).isActive = true
+        titulo.topAnchor.constraint(equalTo: closeBtn.bottomAnchor, constant: 15).isActive = true
         
     }
     
