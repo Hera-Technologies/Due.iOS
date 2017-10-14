@@ -408,13 +408,23 @@ class InitialVC: UIViewController, UITextFieldDelegate, GIDSignInUIDelegate, GID
                 _ = SweetAlert().showAlert("Oops...", subTitle: "Não foi possível fazer o login.", style: .error, buttonTitle: "Ok")
                 return
             }
-            guard let uid = user?.uid else { return }
-            let ref = Database.database().reference().child("Users").child(uid)
-            ref.updateChildValues(["email": user?.email as Any, "name": user?.displayName as Any])
-            if let photo = user?.photoURL {
-                let url = photo.absoluteString
-                let value = ["photo": url]
-                ref.updateChildValues(value)
+            FBSDKGraphRequest(graphPath: "me", parameters: ["fields": "picture.type(large)"]).start { (connec, res, err) in
+                if err != nil {
+                    print(err?.localizedDescription ?? "")
+                    return
+                }
+                guard let uid = user?.uid else { return }
+                let ref = Database.database().reference().child("Users").child(uid)
+                if let result = res as? [String: AnyObject] {
+                    if let picture = result["picture"] as? [String: AnyObject] {
+                        if let data = picture["data"] as? [String: AnyObject] {
+                            if let imageUrl = data["url"] as? String {
+                                ref.updateChildValues(["photo": imageUrl])
+                            }
+                        }
+                    }
+                }
+                ref.updateChildValues(["email": user?.email as Any, "name": user?.displayName as Any])
             }
         }
     }
